@@ -18,11 +18,12 @@ func get_blueprint_from_id(blueprint_id: String) -> ItemBlueprint:
 		# List of all rarity pools to check
 		var rarity_pools: Array[Array] = [
 			pool.normal,
-			pool.rare,
+			pool.common,
+			pool.uncommon,
 			pool.magic,
-			pool.epic,
+			pool.rare,
 			pool.legendary,
-			pool.mythic,
+			pool.unique,
 		]
 
 		# Check each rarity pool

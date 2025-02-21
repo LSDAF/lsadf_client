@@ -88,15 +88,15 @@ func test_get_blueprint_from_id_magic() -> void:
 	assert_eq(result.texture.get_class(), "PlaceholderTexture2D")
 
 
-func test_get_blueprint_from_id_epic() -> void:
+func test_get_blueprint_from_id_unique() -> void:
 	# Arrange
 	var test_blueprint := ItemBlueprint.new()
-	test_blueprint.id = "sword_epic_1"
-	test_blueprint.name = "Test Epic Sword"
+	test_blueprint.id = "sword_unique_1"
+	test_blueprint.name = "Test Unique Sword"
 	test_blueprint.texture = PlaceholderTexture2D.new()
 
 	var test_pool := ItemPool.new()
-	test_pool.epic = [test_blueprint]
+	test_pool.unique = [test_blueprint]
 
 	sut.boots = ItemPool.new()
 	sut.chestplates = ItemPool.new()
@@ -106,12 +106,12 @@ func test_get_blueprint_from_id_epic() -> void:
 	sut.swords = test_pool
 
 	# Act
-	var result: ItemBlueprint = sut.get_blueprint_from_id("sword_epic_1")
+	var result: ItemBlueprint = sut.get_blueprint_from_id("sword_unique_1")
 
 	# Assert
 	assert_not_null(result)
-	assert_eq(result.id, "sword_epic_1")
-	assert_eq(result.name, "Test Epic Sword")
+	assert_eq(result.id, "sword_unique_1")
+	assert_eq(result.name, "Test Unique Sword")
 	assert_eq(result.texture.get_class(), "PlaceholderTexture2D")
 
 
@@ -142,15 +142,15 @@ func test_get_blueprint_from_id_legendary() -> void:
 	assert_eq(result.texture.get_class(), "PlaceholderTexture2D")
 
 
-func test_get_blueprint_from_id_mythic() -> void:
+func test_get_blueprint_from_id_uncommon() -> void:
 	# Arrange
 	var test_blueprint := ItemBlueprint.new()
-	test_blueprint.id = "sword_mythic_1"
-	test_blueprint.name = "Test Mythic Sword"
+	test_blueprint.id = "sword_uncommon_1"
+	test_blueprint.name = "Test Uncommon Sword"
 	test_blueprint.texture = PlaceholderTexture2D.new()
 
 	var test_pool := ItemPool.new()
-	test_pool.mythic = [test_blueprint]
+	test_pool.uncommon = [test_blueprint]
 
 	sut.boots = ItemPool.new()
 	sut.chestplates = ItemPool.new()
@@ -160,12 +160,12 @@ func test_get_blueprint_from_id_mythic() -> void:
 	sut.swords = test_pool
 
 	# Act
-	var result: ItemBlueprint = sut.get_blueprint_from_id("sword_mythic_1")
+	var result: ItemBlueprint = sut.get_blueprint_from_id("sword_uncommon_1")
 
 	# Assert
 	assert_not_null(result)
-	assert_eq(result.id, "sword_mythic_1")
-	assert_eq(result.name, "Test Mythic Sword")
+	assert_eq(result.id, "sword_uncommon_1")
+	assert_eq(result.name, "Test Uncommon Sword")
 	assert_eq(result.texture.get_class(), "PlaceholderTexture2D")
 
 
@@ -173,11 +173,12 @@ func test_get_blueprint_from_id_not_found() -> void:
 	# Arrange
 	var test_pool := ItemPool.new()
 	test_pool.normal = []
-	test_pool.rare = []
+	test_pool.common = []
+	test_pool.uncommon = []
 	test_pool.magic = []
-	test_pool.epic = []
+	test_pool.rare = []
 	test_pool.legendary = []
-	test_pool.mythic = []
+	test_pool.unique = []
 
 	sut.boots = ItemPool.new()
 	sut.chestplates = ItemPool.new()

@@ -10,12 +10,12 @@ extends Resource
 
 
 func _init(
-	_statistic: ItemStatistics.ItemStatistics,
-	_base_value: float,
-	_affix_type: AffixType.AffixType,
-	_affix_role: AffixType.AffixRole,
-	_scaling_type: AffixScaling.ScalingType,
-	_allowed_item_types: Array[ItemType.ItemType]
+	_statistic: ItemStatistics.ItemStatistics = ItemStatistics.ItemStatistics.ATTACK_ADD,
+	_base_value: float = 0.0,
+	_affix_type: AffixType.AffixType = AffixType.AffixType.PREFIX,
+	_affix_role: AffixType.AffixRole = AffixType.AffixRole.OFFENSIVE,
+	_scaling_type: AffixScaling.ScalingType = AffixScaling.ScalingType.LINEAR,
+	_allowed_item_types: Array[ItemType.ItemType] = []
 ) -> void:
 	statistic = _statistic
 	base_value = _base_value

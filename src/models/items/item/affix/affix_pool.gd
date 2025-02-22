@@ -18,19 +18,29 @@ func add_affix(affix: ItemAffix) -> void:
 			suffixes.append(affix)
 
 
-func get_available_affixes(
-	affix_type: AffixType.AffixType, item_type: ItemType.ItemType
-) -> Array[ItemAffix]:
-	var pool: Array[ItemAffix] = prefixes if affix_type == AffixType.AffixType.PREFIX else suffixes
-	return pool.filter(
+func get_available_prefixes(item_type: ItemType.ItemType) -> Array[ItemAffix]:
+	return prefixes.filter(
 		func(affix: ItemAffix) -> bool: return affix.can_roll_on_item_type(item_type)
 	)
 
 
-func get_available_affixes_by_role(
-	affix_type: AffixType.AffixType, item_type: ItemType.ItemType, role: AffixType.AffixRole
+func get_available_suffixes(item_type: ItemType.ItemType) -> Array[ItemAffix]:
+	return suffixes.filter(
+		func(affix: ItemAffix) -> bool: return affix.can_roll_on_item_type(item_type)
+	)
+
+
+func get_available_prefixes_by_role(
+	item_type: ItemType.ItemType, role: AffixType.AffixRole
 ) -> Array[ItemAffix]:
-	var available := get_available_affixes(affix_type, item_type)
+	var available := get_available_prefixes(item_type)
+	return available.filter(func(affix: ItemAffix) -> bool: return affix.affix_role == role)
+
+
+func get_available_suffixes_by_role(
+	item_type: ItemType.ItemType, role: AffixType.AffixRole
+) -> Array[ItemAffix]:
+	var available := get_available_suffixes(item_type)
 	return available.filter(func(affix: ItemAffix) -> bool: return affix.affix_role == role)
 
 

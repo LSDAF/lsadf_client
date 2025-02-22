@@ -227,11 +227,11 @@ func test_get_available_affixes_by_role_returns_correct_affixes() -> void:
 	sut.add_affix(flat_hp)
 
 	# Act
-	var offensive_affixes := sut.get_available_affixes_by_role(
-		AffixType.AffixType.PREFIX, ItemType.ItemType.GLOVES, AffixType.AffixRole.OFFENSIVE
+	var offensive_affixes := sut.get_available_prefixes_by_role(
+		ItemType.ItemType.GLOVES, AffixType.AffixRole.OFFENSIVE
 	)
-	var defensive_affixes := sut.get_available_affixes_by_role(
-		AffixType.AffixType.PREFIX, ItemType.ItemType.BOOTS, AffixType.AffixRole.DEFENSIVE
+	var defensive_affixes := sut.get_available_prefixes_by_role(
+		ItemType.ItemType.BOOTS, AffixType.AffixRole.DEFENSIVE
 	)
 
 	# Assert

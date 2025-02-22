@@ -10,4 +10,4 @@ level = 0
 type = 5
 name = "Epic Sword 2"
 texture = ExtResource("2_pd3bs")
-id = "sword_epic_2"
+id = "swords_unique_2"

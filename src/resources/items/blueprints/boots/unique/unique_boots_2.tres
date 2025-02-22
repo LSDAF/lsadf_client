@@ -10,4 +10,4 @@ level = 0
 type = 0
 name = "Mythic Boots 2"
 texture = ExtResource("1_dv781")
-id = "boots_mythic_2"
+id = "boots_unique_2"

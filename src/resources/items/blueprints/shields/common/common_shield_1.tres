@@ -10,4 +10,4 @@ level = 0
 type = 4
 name = "Mythic Shield 1"
 texture = ExtResource("2_iqywy")
-id = "shield_mythic_1"
+id = "shields_common_1"

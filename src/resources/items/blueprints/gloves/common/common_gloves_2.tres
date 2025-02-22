@@ -10,4 +10,4 @@ level = 0
 type = 2
 name = "Epic Gloves 2"
 texture = ExtResource("2_mmqpg")
-id = "gloves_epic_2"
+id = "gloves_common_2"

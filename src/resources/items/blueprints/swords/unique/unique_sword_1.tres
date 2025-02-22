@@ -10,4 +10,4 @@ level = 0
 type = 5
 name = "Epic Sword 1"
 texture = ExtResource("2_aotix")
-id = "sword_epic_1"
+id = "swords_unique_1"

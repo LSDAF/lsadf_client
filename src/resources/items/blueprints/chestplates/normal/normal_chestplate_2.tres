@@ -10,4 +10,4 @@ level = 0
 type = 1
 name = "Chestplate 2"
 texture = ExtResource("2_djk41")
-id = "chestplate_normal_2"
+id = "chestplates_normal_2"

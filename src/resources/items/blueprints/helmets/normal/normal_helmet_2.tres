@@ -10,4 +10,4 @@ level = 0
 type = 3
 name = "Helmet 2"
 texture = ExtResource("2_odhxn")
-id = "helmet_normal_2"
+id = "helmets_normal_2"

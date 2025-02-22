@@ -10,4 +10,4 @@ level = 0
 type = 5
 name = "Rare Sword 1"
 texture = ExtResource("2_u35ta")
-id = "sword_rare_1"
+id = "swords_rare_1"

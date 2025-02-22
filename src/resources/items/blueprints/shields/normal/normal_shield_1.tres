@@ -10,4 +10,4 @@ level = 0
 type = 4
 name = "Shield 1"
 texture = ExtResource("2_tp71b")
-id = "shield_normal_1"
+id = "shields_normal_1"

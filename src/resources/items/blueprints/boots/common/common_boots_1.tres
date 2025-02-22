@@ -10,4 +10,4 @@ level = 0
 type = 0
 name = "Common Boots 1"
 texture = ExtResource("2_5r1lk")
-id = ""
+id = "boots_common_1"

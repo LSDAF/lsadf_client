@@ -10,4 +10,4 @@ level = 0
 type = 1
 name = "Rare Chestplate 1"
 texture = ExtResource("2_0kmxf")
-id = "chestplate_rare_1"
+id = "chestplates_rare_1"

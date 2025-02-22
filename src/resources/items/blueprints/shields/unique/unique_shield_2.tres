@@ -10,4 +10,4 @@ level = 0
 type = 4
 name = "Epic Shield 2"
 texture = ExtResource("2_o400g")
-id = "shield_epic_2"
+id = "shields_unique_2"

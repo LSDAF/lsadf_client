@@ -10,4 +10,4 @@ level = 0
 type = 1
 name = "Magic Chestplate 2"
 texture = ExtResource("2_ucjp3")
-id = "chestplate_magic_2"
+id = "chestplates_magic_2"

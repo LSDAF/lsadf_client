@@ -10,4 +10,4 @@ level = 0
 type = 3
 name = "Mythic Helmet 1"
 texture = ExtResource("2_bn2hp")
-id = "helmet_mythic_1"
+id = "helmets_common_1"

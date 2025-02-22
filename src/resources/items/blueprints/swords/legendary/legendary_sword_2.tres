@@ -10,4 +10,4 @@ level = 0
 type = 5
 name = "Legendary Sword 2"
 texture = ExtResource("2_5q55d")
-id = "sword_legendary_2"
+id = "swords_legendary_2"

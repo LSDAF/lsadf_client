@@ -4,7 +4,8 @@
 
 [resource]
 script = ExtResource("1_2j2i6")
-range_min_mulitplier = 0.0
-range_max_mulitplier = 0.0
-prefix_number = 0
-suffix_number = 0
+range_min_mulitplier = 1.5
+range_max_mulitplier = 2.0
+min_prefix_number = 2
+min_suffix_number = 2
+total_affix_number = 4

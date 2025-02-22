@@ -6,5 +6,6 @@
 script = ExtResource("1_k4puv")
 range_min_mulitplier = 0.0
 range_max_mulitplier = 0.0
-prefix_number = 1
-suffix_number = 1
+min_prefix_number = 0
+min_suffix_number = 0
+total_affix_number = 1

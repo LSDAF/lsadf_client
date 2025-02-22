@@ -135,7 +135,8 @@ echo "Checking for duplicate sprite paths..."
 for i in "${!all_sprites[@]}"; do
     # Only check against higher indices to avoid counting duplicates twice
     for j in $(seq $((i + 1)) $((${#all_sprites[@]} - 1))); do
-        if [ "${all_sprites[i]}" = "${all_sprites[j]}" ]; then
+        # Only compare if both sprites are non-empty and from different files
+        if [ -n "${all_sprites[i]}" ] && [ -n "${all_sprites[j]}" ] && [ "${sprite_files[i]}" != "${sprite_files[j]}" ] && [ "${all_sprites[i]}" = "${all_sprites[j]}" ]; then
             error_messages+=("    ❌ Duplicate sprite path found in:")
             error_messages+=("      - ${sprite_files[i]} -> ${all_sprites[i]}")
             error_messages+=("      - ${sprite_files[j]} -> ${all_sprites[j]}")

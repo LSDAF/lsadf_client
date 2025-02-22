@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://du1yiy20l36da"]
 
-[ext_resource type="Script" path="res://src/elements/hud/inventory_menu/inventory_menu.gd" id="1_5bvax"]
+[ext_resource type="Script" uid="uid://dkxea2m8lwp5v" path="res://src/elements/hud/inventory_menu/inventory_menu.gd" id="1_5bvax"]
 [ext_resource type="PackedScene" uid="uid://b2arfnoe585sm" path="res://src/elements/hud/inventory_menu/inventory_item/inventory_item.tscn" id="2_d5uob"]
 [ext_resource type="PackedScene" uid="uid://dilg0e5h66qys" path="res://src/elements/hud/inventory_menu/item_details_menu/item_details_menu.tscn" id="3_rvolm"]
 [ext_resource type="PackedScene" uid="uid://7ax2al4pms1y" path="res://src/elements/hud/inventory_menu/equipped_items/equipped_items.tscn" id="4_rj5ns"]

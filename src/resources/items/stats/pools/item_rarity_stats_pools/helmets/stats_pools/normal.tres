@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="ItemStatsPool" load_steps=7 format=3 uid="uid://bw3qo7omtvdnp"]
 
-[ext_resource type="Script" path="res://src/models/items/item_blueprint/stats/item_stat_blueprint.gd" id="2_0ns78"]
+[ext_resource type="Script" uid="uid://cm0rqpauldcgk" path="res://src/models/items/item_blueprint/stats/item_stat_blueprint.gd" id="2_0ns78"]
 [ext_resource type="Resource" uid="uid://dsx7nyutj0qvy" path="res://src/resources/items/stats/resistance_add.tres" id="4_3g5b7"]
 [ext_resource type="Resource" uid="uid://dfae63sinpw4f" path="res://src/resources/items/stats/resistance_mult.tres" id="5_sbrsl"]
 [ext_resource type="Resource" uid="uid://bg6ewikocejtl" path="res://src/resources/items/stats/health_add.tres" id="6_njs55"]
 [ext_resource type="Resource" uid="uid://ddyvx7l3od5e3" path="res://src/resources/items/stats/health_mult.tres" id="7_nffcm"]
-[ext_resource type="Script" path="res://src/models/items/item_blueprint/stats/pools/item_stats_pool.gd" id="8_lxnaw"]
+[ext_resource type="Script" uid="uid://b0otd31f4n6u3" path="res://src/models/items/item_blueprint/stats/pools/item_stats_pool.gd" id="8_lxnaw"]
 
 [resource]
 script = ExtResource("8_lxnaw")

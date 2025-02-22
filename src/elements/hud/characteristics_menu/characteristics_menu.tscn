@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://cvlpyerw0cjjq"]
 
 [ext_resource type="PackedScene" uid="uid://bdgi2a1ok72ij" path="res://src/elements/hud/characteristics_menu/characteristics_menu_item/characteristic_menu_item.tscn" id="1_7c138"]
-[ext_resource type="Script" path="res://src/elements/hud/characteristics_menu/characteristics_menu.gd" id="1_7kkxu"]
+[ext_resource type="Script" uid="uid://d4d70p3mxqxql" path="res://src/elements/hud/characteristics_menu/characteristics_menu.gd" id="1_7kkxu"]
 [ext_resource type="Resource" uid="uid://dbxfgb5kqnunr" path="res://src/resources/characteristics/attack.tres" id="2_obsgu"]
 [ext_resource type="Resource" uid="uid://bbxu7eidptypv" path="res://src/resources/characteristics/health.tres" id="3_p0s3h"]
 [ext_resource type="Resource" uid="uid://dq3yp50svw41e" path="res://src/resources/characteristics/crit_chance.tres" id="5_vao70"]

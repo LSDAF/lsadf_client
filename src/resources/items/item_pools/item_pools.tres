@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ItemPools" load_steps=8 format=3 uid="uid://bpf8eg5y2yd34"]
 
 [ext_resource type="Resource" uid="uid://ydwwgb42h6tw" path="res://src/resources/items/item_pools/pools/boots.tres" id="1_3g1yh"]
-[ext_resource type="Script" path="res://src/models/items/item_blueprint/pools/item_pools.gd" id="1_q01gd"]
+[ext_resource type="Script" uid="uid://dj2sxjxlxu8r3" path="res://src/models/items/item_blueprint/pools/item_pools.gd" id="1_q01gd"]
 [ext_resource type="Resource" uid="uid://d22pht4qhcjmn" path="res://src/resources/items/item_pools/pools/swords.tres" id="2_14nrd"]
 [ext_resource type="Resource" uid="uid://bggaam86veamm" path="res://src/resources/items/item_pools/pools/chestplates.tres" id="2_qjiv5"]
 [ext_resource type="Resource" uid="uid://dkahf6qj1k3af" path="res://src/resources/items/item_pools/pools/gloves.tres" id="3_fhfua"]

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="StageQuest" load_steps=2 format=3 uid="uid://djqpipuuxwhtc"]
 
-[ext_resource type="Script" path="res://src/models/quests/quests/stage_quest.gd" id="1_1s51d"]
+[ext_resource type="Script" uid="uid://b0q2p4n6d0ril" path="res://src/models/quests/quests/stage_quest.gd" id="1_1s51d"]
 
 [resource]
 script = ExtResource("1_1s51d")

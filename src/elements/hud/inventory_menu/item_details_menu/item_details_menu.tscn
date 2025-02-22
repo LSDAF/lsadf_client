@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dilg0e5h66qys"]
 
-[ext_resource type="Script" path="res://src/elements/hud/inventory_menu/item_details_menu/item_details_menu.gd" id="1_jvtpm"]
+[ext_resource type="Script" uid="uid://crovbwvvi6oaj" path="res://src/elements/hud/inventory_menu/item_details_menu/item_details_menu.gd" id="1_jvtpm"]
 [ext_resource type="Texture2D" uid="uid://dl0fyacx1bv8i" path="res://asset/items/currencies/amethyst.png" id="2_w28rc"]
 [ext_resource type="Texture2D" uid="uid://dsmvolo2qgwu" path="res://asset/items/items/Weapon_Singles/Copper/Copper_Weapon2.png" id="2_yq722"]
 

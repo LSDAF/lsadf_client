@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://sv2hctgcy3li"]
 
 [ext_resource type="Texture2D" uid="uid://buut3gtyqb7oc" path="res://asset/ui/wood/UI_Wood_Flat.png" id="1_1rwln"]
-[ext_resource type="Script" path="res://src/elements/launcher/launcher.gd" id="1_72agk"]
+[ext_resource type="Script" uid="uid://d5uusvntilp" path="res://src/elements/launcher/launcher.gd" id="1_72agk"]
 [ext_resource type="PackedScene" uid="uid://fwvt5ili38r3" path="res://src/elements/launcher/game_save_button.tscn" id="2_vepi3"]
 [ext_resource type="PackedScene" uid="uid://c1einsb6nyd1r" path="res://src/elements/launcher/login_register/login_register.tscn" id="4_j8w3q"]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b3trj3p71tnns"]
 
-[ext_resource type="Script" path="res://src/elements/hud/settings_menu/settings_menu.gd" id="1_wopc2"]
+[ext_resource type="Script" uid="uid://d0hen4oh83cts" path="res://src/elements/hud/settings_menu/settings_menu.gd" id="1_wopc2"]
 [ext_resource type="PackedScene" uid="uid://vey8u06w36cp" path="res://src/elements/hud/settings_menu/nickname_menu/nickname_menu.tscn" id="2_3b05r"]
 
 [node name="SettingsMenu" type="Control"]

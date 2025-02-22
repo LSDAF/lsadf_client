@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ItemBlueprint" load_steps=3 format=3 uid="uid://57ii3gnt2w1"]
 
-[ext_resource type="Script" path="res://src/models/items/item_blueprint/item_blueprint.gd" id="2_dkkfm"]
+[ext_resource type="Script" uid="uid://bby5vxbm2gokx" path="res://src/models/items/item_blueprint/item_blueprint.gd" id="2_dkkfm"]
 [ext_resource type="Texture2D" uid="uid://5xntjhmp6rqg" path="res://asset/items/items/Weapon_Singles/Fateful/Fateful_Shield2.png" id="2_gof3e"]
 
 [resource]

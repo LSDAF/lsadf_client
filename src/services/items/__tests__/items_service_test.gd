@@ -514,3 +514,74 @@ func test_roll_stat_value(params: Array = use_parameters(test_roll_stat_value_pa
 
 	if rolled_stat_value.base_value < item_stat_blueprint.base_value_max:
 		assert_eq(fmod(rolled_stat_value.base_value, item_stat_blueprint.base_value_step), 0.0)
+
+
+func test_create_affix_prefix() -> void:
+	# Arrange
+	var item_type := ItemType.ItemType.SWORD
+	var item_rarity := ItemRarity.ItemRarity.NORMAL
+
+	# Create a test affix
+	var test_affix := ItemAffix.new(
+		ItemStatistics.ItemStatistics.ATTACK_ADD,
+		10.0,
+		AffixType.AffixType.PREFIX,
+		AffixType.AffixRole.OFFENSIVE,
+		AffixScaling.ScalingType.LINEAR,
+		[item_type]
+	)
+
+	# Create affix pool with test affix
+	var affix_pool := AffixPool.new()
+	affix_pool.add_affix(test_affix)
+
+	# Act
+	var affix := sut._create_affix(true, item_type, item_rarity, affix_pool)
+
+	# Assert
+	assert_not_null(affix)
+	assert_eq(affix.affix_type, AffixType.AffixType.PREFIX)
+	assert_true(affix.can_roll_on_item_type(item_type))
+
+
+func test_create_affix_suffix() -> void:
+	# Arrange
+	var item_type := ItemType.ItemType.SWORD
+	var item_rarity := ItemRarity.ItemRarity.NORMAL
+
+	# Create a test affix
+	var test_affix := ItemAffix.new(
+		ItemStatistics.ItemStatistics.ATTACK_ADD,
+		10.0,
+		AffixType.AffixType.SUFFIX,
+		AffixType.AffixRole.OFFENSIVE,
+		AffixScaling.ScalingType.LINEAR,
+		[item_type]
+	)
+
+	# Create affix pool with test affix
+	var affix_pool := AffixPool.new()
+	affix_pool.add_affix(test_affix)
+
+	# Act
+	var affix := sut._create_affix(false, item_type, item_rarity, affix_pool)
+
+	# Assert
+	assert_not_null(affix)
+	assert_eq(affix.affix_type, AffixType.AffixType.SUFFIX)
+	assert_true(affix.can_roll_on_item_type(item_type))
+
+
+func test_create_affix_with_empty_pool_returns_null() -> void:
+	# Arrange
+	var item_type := ItemType.ItemType.SWORD
+	var item_rarity := ItemRarity.ItemRarity.NORMAL
+
+	# Create empty affix pool
+	var affix_pool := AffixPool.new()
+
+	# Act
+	var affix := sut._create_affix(true, item_type, item_rarity, affix_pool)
+
+	# Assert
+	assert_null(affix)

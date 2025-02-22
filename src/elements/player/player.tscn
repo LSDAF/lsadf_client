@@ -1,6 +1,6 @@
 [gd_scene load_steps=24 format=3 uid="uid://djnl2hbwe8of5"]
 
-[ext_resource type="Script" path="res://src/elements/player/player.gd" id="1_3wmpm"]
+[ext_resource type="Script" uid="uid://dx0j1uheq2fl5" path="res://src/elements/player/player.gd" id="1_3wmpm"]
 [ext_resource type="Texture2D" uid="uid://cqv24w87hco5c" path="res://asset/__banks__to_be_removed/mystic_woods_free_2.2/sprites/characters/player.png" id="2_lcj3a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bfh03"]

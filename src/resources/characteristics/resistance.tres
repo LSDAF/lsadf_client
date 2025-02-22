@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Characteristic" load_steps=3 format=3 uid="uid://bs527hme7vlc8"]
 
 [ext_resource type="Resource" uid="uid://o8gmt1npi6y1" path="res://src/resources/scalers/costs/resistance_cost_scaler.tres" id="1_pr38w"]
-[ext_resource type="Script" path="res://src/models/characteristic/characteristic.gd" id="2_o4u80"]
+[ext_resource type="Script" uid="uid://doshqlqhsrqs0" path="res://src/models/characteristic/characteristic.gd" id="2_o4u80"]
 
 [resource]
 script = ExtResource("2_o4u80")

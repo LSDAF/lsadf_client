@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://b2arfnoe585sm"]
 
-[ext_resource type="Script" path="res://src/elements/hud/inventory_menu/inventory_item/inventory_item.gd" id="1_pftji"]
+[ext_resource type="Script" uid="uid://ccvvyqmqn1o7l" path="res://src/elements/hud/inventory_menu/inventory_item/inventory_item.gd" id="1_pftji"]
 [ext_resource type="Texture2D" uid="uid://dtc5j5acibygw" path="res://asset/ui/wood/Shadow/UI_Wood_A_NoBorder.png" id="2_hm3w1"]
 [ext_resource type="Texture2D" uid="uid://2ba3docwbyc4" path="res://asset/ui/selection_box_item.png" id="3_234bb"]
 [ext_resource type="Texture2D" uid="uid://dsmvolo2qgwu" path="res://asset/items/items/Weapon_Singles/Copper/Copper_Weapon2.png" id="4_w5ilh"]

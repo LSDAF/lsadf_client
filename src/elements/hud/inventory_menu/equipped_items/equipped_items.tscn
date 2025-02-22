@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://7ax2al4pms1y"]
 
-[ext_resource type="Script" path="res://src/elements/hud/inventory_menu/equipped_items/equipped_items.gd" id="1_je4kx"]
+[ext_resource type="Script" uid="uid://bk6m5cm74vx0b" path="res://src/elements/hud/inventory_menu/equipped_items/equipped_items.gd" id="1_je4kx"]
 [ext_resource type="PackedScene" uid="uid://b2arfnoe585sm" path="res://src/elements/hud/inventory_menu/inventory_item/inventory_item.tscn" id="2_c6uyl"]
 [ext_resource type="PackedScene" uid="uid://ud4ehh83xpng" path="res://src/elements/hud/inventory_menu/equipped_items/empty_equipped_item/empty_equipped_item.tscn" id="3_0vca8"]
 

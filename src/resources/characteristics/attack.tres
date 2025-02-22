@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Characteristic" load_steps=3 format=3 uid="uid://dbxfgb5kqnunr"]
 
-[ext_resource type="Script" path="res://src/models/characteristic/characteristic.gd" id="1_rxsh6"]
+[ext_resource type="Script" uid="uid://doshqlqhsrqs0" path="res://src/models/characteristic/characteristic.gd" id="1_rxsh6"]
 [ext_resource type="Resource" uid="uid://dcfhf3gtasjex" path="res://src/resources/scalers/costs/attack_cost_scaler.tres" id="1_sspve"]
 
 [resource]

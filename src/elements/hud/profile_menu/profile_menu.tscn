@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cepdmakkbod5u"]
 
-[ext_resource type="Script" path="res://src/elements/hud/profile_menu/profile_menu.gd" id="1_qkj0f"]
+[ext_resource type="Script" uid="uid://bgb03oqjg1xse" path="res://src/elements/hud/profile_menu/profile_menu.gd" id="1_qkj0f"]
 
 [node name="ProfileMenu" type="Control"]
 layout_mode = 3

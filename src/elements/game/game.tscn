@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://crxr0dj0kh4x0"]
 
-[ext_resource type="Script" path="res://src/elements/game/game.gd" id="1_x2aq4"]
+[ext_resource type="Script" uid="uid://uqefua6exvjy" path="res://src/elements/game/game.gd" id="1_x2aq4"]
 [ext_resource type="PackedScene" uid="uid://dy2d32en3nu8u" path="res://src/elements/game/parallax/parallax.tscn" id="3_7p3p6"]
 [ext_resource type="PackedScene" uid="uid://djnl2hbwe8of5" path="res://src/elements/player/player.tscn" id="4_lnc1r"]
-[ext_resource type="Script" path="res://src/elements/game/mob_spawner.gd" id="5_4ng5o"]
+[ext_resource type="Script" uid="uid://67anyh05stg1" path="res://src/elements/game/mob_spawner.gd" id="5_4ng5o"]
 [ext_resource type="PackedScene" uid="uid://d2ntybb3rn0ni" path="res://src/elements/mobs/boss/boss.tscn" id="6_6w02d"]
 [ext_resource type="PackedScene" uid="uid://bxg3qpsweykjl" path="res://src/elements/mobs/mob/mob.tscn" id="6_uqgv6"]
 

@@ -4,6 +4,8 @@ var client_id: String
 var blueprint_id: String
 var main_stat: ItemStat
 var additional_stats: Array[ItemStat]
+var prefixes: Array[ItemAffix] = []
+var suffixes: Array[ItemAffix] = []
 var rarity: ItemRarity.ItemRarity
 var level: int
 var type: ItemType.ItemType

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://n6lghwm2uilj"]
 
-[ext_resource type="Script" path="res://src/elements/components/toast/toaster.gd" id="1_4tbjb"]
+[ext_resource type="Script" uid="uid://bes6o1cnshrc5" path="res://src/elements/components/toast/toaster.gd" id="1_4tbjb"]
 [ext_resource type="PackedScene" uid="uid://bi1ctlw5p8y7o" path="res://src/elements/components/toast/toast.tscn" id="1_werhg"]
 
 [node name="Toaster" type="CenterContainer"]

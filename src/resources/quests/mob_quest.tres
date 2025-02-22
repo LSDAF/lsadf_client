@@ -1,9 +1,6 @@
 [gd_resource type="Resource" script_class="MobQuest" load_steps=2 format=3 uid="uid://ch6b6sp6dmj88"]
 
-[ext_resource type="Script" path="res://src/models/quests/quests/mob_quest.gd" id="1_h5yu4"]
+[ext_resource type="Script" uid="uid://cmfair7iejnv8" path="res://src/models/quests/quests/mob_quest.gd" id="1_h5yu4"]
 
 [resource]
 script = ExtResource("1_h5yu4")
-nb_kills = 10
-name = "Kill mobs"
-reward = 3000

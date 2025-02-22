@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ItemBlueprint" load_steps=3 format=3 uid="uid://dnn4juf41uwnf"]
 
-[ext_resource type="Script" path="res://src/models/items/item_blueprint/item_blueprint.gd" id="1_ns0p2"]
+[ext_resource type="Script" uid="uid://bby5vxbm2gokx" path="res://src/models/items/item_blueprint/item_blueprint.gd" id="1_ns0p2"]
 [ext_resource type="Texture2D" uid="uid://bvkutlvu54f61" path="res://asset/items/items/Armor_Singles/Copper/Copper_Helmet7.png" id="2_odhxn"]
 
 [resource]

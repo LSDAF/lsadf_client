@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ItemPool" load_steps=17 format=3 uid="uid://ydwwgb42h6tw"]
 
-[ext_resource type="Script" path="res://src/models/items/item_blueprint/item_blueprint.gd" id="1_geplt"]
+[ext_resource type="Script" uid="uid://bby5vxbm2gokx" path="res://src/models/items/item_blueprint/item_blueprint.gd" id="1_geplt"]
 [ext_resource type="Resource" uid="uid://d4f2d6pvquny1" path="res://src/resources/items/blueprints/boots/common/common_boots_1.tres" id="2_ayom8"]
 [ext_resource type="Resource" uid="uid://bd4g415gjviu" path="res://src/resources/items/blueprints/boots/normal/normal_boots_1.tres" id="2_uu5mg"]
 [ext_resource type="Resource" uid="uid://bd8g1rgbtggha" path="res://src/resources/items/blueprints/boots/normal/normal_boots_2.tres" id="3_a1tg0"]
@@ -14,7 +14,7 @@
 [ext_resource type="Resource" uid="uid://byn47ttx4wmwu" path="res://src/resources/items/blueprints/boots/unique/unique_boots_1.tres" id="12_myboot"]
 [ext_resource type="Resource" uid="uid://c20de2xeaj58l" path="res://src/resources/items/blueprints/boots/uncommon/uncommon_boots_1.tres" id="13_ecwye"]
 [ext_resource type="Resource" uid="uid://da863fecv7j0c" path="res://src/resources/items/blueprints/boots/unique/unique_boots_2.tres" id="13_myboot"]
-[ext_resource type="Script" path="res://src/models/items/item_blueprint/pools/item_pool.gd" id="14_31ap2"]
+[ext_resource type="Script" uid="uid://b2bghee2rrova" path="res://src/models/items/item_blueprint/pools/item_pool.gd" id="14_31ap2"]
 [ext_resource type="Resource" uid="uid://cgfjqa142l7hl" path="res://src/resources/items/blueprints/boots/uncommon/uncommon_boots_2.tres" id="14_w3olo"]
 
 [resource]

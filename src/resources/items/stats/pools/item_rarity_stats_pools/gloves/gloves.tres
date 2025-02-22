@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ItemRarityStatsPools" load_steps=3 format=3 uid="uid://c7g03j8d4ajjb"]
 
 [ext_resource type="Resource" uid="uid://qk26kvrlq6h5" path="res://src/resources/items/stats/pools/item_rarity_stats_pools/gloves/stats_pools/normal.tres" id="1_3wgcy"]
-[ext_resource type="Script" path="res://src/models/items/item_blueprint/stats/pools/item_rarity_stats_pools.gd" id="2_c2hnp"]
+[ext_resource type="Script" uid="uid://s7njfngrm5x8" path="res://src/models/items/item_blueprint/stats/pools/item_rarity_stats_pools.gd" id="2_c2hnp"]
 
 [resource]
 script = ExtResource("2_c2hnp")

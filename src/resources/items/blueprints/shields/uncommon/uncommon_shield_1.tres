@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ItemBlueprint" load_steps=3 format=3 uid="uid://be3iqjbh2tdt2"]
 
-[ext_resource type="Script" path="res://src/models/items/item_blueprint/item_blueprint.gd" id="1_ypaov"]
+[ext_resource type="Script" uid="uid://bby5vxbm2gokx" path="res://src/models/items/item_blueprint/item_blueprint.gd" id="1_ypaov"]
 [ext_resource type="Texture2D" uid="uid://xro57cs3rr17" path="res://asset/items/items/Weapon_Singles/Cobalt/Cobalt_Shield1.png" id="2_wmfb4"]
 
 [resource]

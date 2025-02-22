@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bhmips8pptbi8"]
 
-[ext_resource type="Script" path="res://src/elements/mobs/damage_taken/damage_taken_label.gd" id="1_sk6u0"]
+[ext_resource type="Script" uid="uid://cvs3j4ae7ygal" path="res://src/elements/mobs/damage_taken/damage_taken_label.gd" id="1_sk6u0"]
 
 [node name="DamageTakenLabel" type="Label"]
 offset_left = -20.0

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ItemPool" load_steps=17 format=3 uid="uid://dkahf6qj1k3af"]
 
-[ext_resource type="Script" path="res://src/models/items/item_blueprint/item_blueprint.gd" id="1_sen4v"]
+[ext_resource type="Script" uid="uid://bby5vxbm2gokx" path="res://src/models/items/item_blueprint/item_blueprint.gd" id="1_sen4v"]
 [ext_resource type="Resource" uid="uid://d30ulf1ntwwcy" path="res://src/resources/items/blueprints/gloves/normal/normal_gloves_1.tres" id="2_5wfbj"]
 [ext_resource type="Resource" uid="uid://c5x3uyeinylsj" path="res://src/resources/items/blueprints/gloves/normal/normal_gloves_2.tres" id="3_mdab7"]
 [ext_resource type="Resource" uid="uid://ckgge06ee1s7b" path="res://src/resources/items/blueprints/gloves/rare/rare_gloves_1.tres" id="4_rglove"]
@@ -14,7 +14,7 @@
 [ext_resource type="Resource" uid="uid://cvm0wjwjua3l7" path="res://src/resources/items/blueprints/gloves/unique/unique_gloves_1.tres" id="12_myglove"]
 [ext_resource type="Resource" uid="uid://ccpvw4m3i4u0r" path="res://src/resources/items/blueprints/gloves/uncommon/uncommon_gloves_1.tres" id="13_am7af"]
 [ext_resource type="Resource" uid="uid://bimygscpt2m7u" path="res://src/resources/items/blueprints/gloves/unique/unique_gloves_2.tres" id="13_myglove"]
-[ext_resource type="Script" path="res://src/models/items/item_blueprint/pools/item_pool.gd" id="14_5qtw3"]
+[ext_resource type="Script" uid="uid://b2bghee2rrova" path="res://src/models/items/item_blueprint/pools/item_pool.gd" id="14_5qtw3"]
 [ext_resource type="Resource" uid="uid://dyja646i2ryny" path="res://src/resources/items/blueprints/gloves/uncommon/uncommon_gloves_2.tres" id="14_elei8"]
 
 [resource]

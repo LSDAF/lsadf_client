@@ -38,7 +38,12 @@ func before_each() -> void:
 		)
 	)
 
-	sut = preload("res://src/services/items/items_service.gd").new(game_save_service_partial_double)
+	var affix_registry := AffixRegistry.new()
+	var affix_pool := AffixPool.new()
+
+	sut = preload("res://src/services/items/items_service.gd").new(
+		game_save_service_partial_double, affix_registry, affix_pool
+	)
 
 
 func test_create_item() -> void:
@@ -55,6 +60,12 @@ func test_create_item() -> void:
 	assert_not_null(item.client_id)
 	assert_not_null(item.blueprint_id)
 	assert_ne(item.blueprint_id, "")
+
+	# Verify affixes
+	var rarity_spec := sut.rarity_specs.get_rarity_spec(item_rarity)
+	var affix_counts := sut._get_affix_counts(rarity_spec)
+	assert_eq(item.prefixes.size(), affix_counts.prefix_count)
+	assert_eq(item.suffixes.size(), affix_counts.suffix_count)
 
 
 func test_get_additional_stats() -> void:

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemAffix" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://src/models/items/item/affix/item_affix.gd" id="1_rxsh6"]
+
+[resource]
+script = ExtResource("1_rxsh6")
+statistic = 13  # ATTACK_SPEED
+base_value = 3.0
+affix_type = 1  # SUFFIX
+affix_role = 0  # OFFENSIVE
+scaling_type = 1  # SQRT
+allowed_item_types = [2, 5]  # GLOVES, SWORD

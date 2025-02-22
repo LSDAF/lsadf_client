@@ -190,3 +190,27 @@ func _roll_stat_value(item_stat_blueprint: ItemStatBlueprint) -> ItemStat:
 	)
 
 	return item_stat
+
+
+## Returns the number of prefixes and suffixes for an item based on its rarity spec
+## The result ensures:
+## 1. At least min_prefix_number prefixes
+## 2. At least min_suffix_number suffixes
+## 3. Remaining slots (if any) are randomly distributed
+func _get_affix_counts(rarity_spec: RaritySpec) -> Dictionary:
+	# Start with minimum requirements
+	var prefix_count := rarity_spec.min_prefix_number
+	var suffix_count := rarity_spec.min_suffix_number
+
+	# Calculate remaining slots
+	var remaining_slots := rarity_spec.total_affix_number - prefix_count - suffix_count
+
+	# Randomly distribute remaining slots
+	while remaining_slots > 0:
+		if randi() % 2 == 0:
+			prefix_count += 1
+		else:
+			suffix_count += 1
+		remaining_slots -= 1
+
+	return {"prefix_count": prefix_count, "suffix_count": suffix_count}

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ItemBlueprint" load_steps=3 format=3 uid="uid://bl80qwbhur6pr"]
 
 [ext_resource type="Script" path="res://src/models/items/item_blueprint/item_blueprint.gd" id="1_s1jb0"]
-[ext_resource type="Texture2D" path="res://asset/items/items/Weapon_Singles/Copper/Copper_Shield3.png" id="2_n64ju"]
+[ext_resource type="Texture2D" uid="uid://dhkuhuxprnbyk" path="res://asset/items/items/Weapon_Singles/Copper/Copper_Shield3.png" id="2_n64ju"]
 
 [resource]
 script = ExtResource("1_s1jb0")

@@ -13,7 +13,7 @@
 [ext_resource type="Resource" uid="uid://0q20uk7kxpia" path="res://src/resources/items/blueprints/chestplates/legendary/legendary_chestplate_2.tres" id="11_lchest"]
 [ext_resource type="Resource" uid="uid://rpqayy74ubef" path="res://src/resources/items/blueprints/chestplates/common/common_chestplate_1.tres" id="12_mychest"]
 [ext_resource type="Resource" uid="uid://c304787i5dw58" path="res://src/resources/items/blueprints/chestplates/common/common_chestplate_2.tres" id="13_mychest"]
-[ext_resource type="Resource" uid="uid://ym6tvs8eoj8" path="res://src/resources/items/blueprints/chestplates/uncommon/uncommon_chestplates_1.tres" id="13_vwp1m"]
+[ext_resource type="Resource" uid="uid://ym6tvs8eoj8" path="res://src/resources/items/blueprints/chestplates/uncommon/uncommon_chestplate_1.tres" id="13_vwp1m"]
 [ext_resource type="Resource" uid="uid://bx7sglf626ohk" path="res://src/resources/items/blueprints/chestplates/uncommon/uncommon_chestplate_2.tres" id="14_10lr4"]
 [ext_resource type="Script" path="res://src/models/items/item_blueprint/pools/item_pool.gd" id="14_ps3kb"]
 

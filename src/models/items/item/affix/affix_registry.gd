@@ -19,7 +19,7 @@ func _init() -> void:
 
 
 func _load_all_affixes() -> void:
-	for category in AFFIX_PATHS:
+	for category: String in AFFIX_PATHS:
 		var dir := DirAccess.open(AFFIX_PATHS[category])
 		if dir:
 			dir.list_dir_begin()
@@ -40,13 +40,15 @@ func get_all_affixes() -> Array[ItemAffix]:
 
 ## Returns all affixes that can roll on the given item type
 func get_affixes_for_item_type(item_type: ItemType.ItemType) -> Array[ItemAffix]:
-	return _affixes.filter(func(affix): return affix.can_roll_on_item_type(item_type))
+	return _affixes.filter(
+		func(affix: ItemAffix) -> bool: return affix.can_roll_on_item_type(item_type)
+	)
 
 
 ## Returns all prefix affixes that can roll on the given item type
 func get_prefixes_for_item_type(item_type: ItemType.ItemType) -> Array[ItemAffix]:
 	return _affixes.filter(
-		func(affix):
+		func(affix: ItemAffix) -> bool:
 			return (
 				affix.can_roll_on_item_type(item_type)
 				and affix.affix_type == AffixType.AffixType.PREFIX
@@ -57,7 +59,7 @@ func get_prefixes_for_item_type(item_type: ItemType.ItemType) -> Array[ItemAffix
 ## Returns all suffix affixes that can roll on the given item type
 func get_suffixes_for_item_type(item_type: ItemType.ItemType) -> Array[ItemAffix]:
 	return _affixes.filter(
-		func(affix):
+		func(affix: ItemAffix) -> bool:
 			return (
 				affix.can_roll_on_item_type(item_type)
 				and affix.affix_type == AffixType.AffixType.SUFFIX
@@ -70,5 +72,6 @@ func get_affixes_by_role(
 	item_type: ItemType.ItemType, role: AffixType.AffixRole
 ) -> Array[ItemAffix]:
 	return _affixes.filter(
-		func(affix): return affix.can_roll_on_item_type(item_type) and affix.affix_role == role
+		func(affix: ItemAffix) -> bool:
+			return affix.can_roll_on_item_type(item_type) and affix.affix_role == role
 	)

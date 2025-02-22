@@ -1,59 +1,95 @@
 extends GutTest
 
 var sut: AffixRegistry
+var mock_affixes: Array[ItemAffix]
 
 
 func before_each() -> void:
+	mock_affixes = [
+		ItemAffix.new(
+			ItemStatistics.ItemStatistics.ATTACK_ADD,
+			10.0,
+			AffixType.AffixType.PREFIX,
+			AffixType.AffixRole.OFFENSIVE,
+			AffixScaling.ScalingType.LINEAR,
+			[ItemType.ItemType.GLOVES, ItemType.ItemType.SWORD]
+		),
+		ItemAffix.new(
+			ItemStatistics.ItemStatistics.HEALTH_ADD,
+			50.0,
+			AffixType.AffixType.PREFIX,
+			AffixType.AffixRole.DEFENSIVE,
+			AffixScaling.ScalingType.LINEAR,
+			[ItemType.ItemType.CHESTPLATE, ItemType.ItemType.HELMET]
+		),
+		ItemAffix.new(
+			ItemStatistics.ItemStatistics.CRIT_DAMAGE,
+			10.0,
+			AffixType.AffixType.SUFFIX,
+			AffixType.AffixRole.OFFENSIVE,
+			AffixScaling.ScalingType.EXPONENTIAL,
+			[ItemType.ItemType.GLOVES, ItemType.ItemType.SWORD]
+		),
+	]
 	sut = AffixRegistry.new()
+	# Override the affixes array with our mock data
+	sut._affixes = mock_affixes
 
 
-func test_get_all_affixes_returns_empty_array_when_no_affixes_found() -> void:
+func test_get_all_affixes_returns_all_affixes() -> void:
 	# Arrange
-	# Nothing to arrange, using empty directory
+	# Using mock affixes from before_each
 
 	# Act
 	var result := sut.get_all_affixes()
 
 	# Assert
-	assert_eq(result.size(), 0)
+	assert_eq(result.size(), 3)
+	assert_has(result, mock_affixes[0])
+	assert_has(result, mock_affixes[1])
+	assert_has(result, mock_affixes[2])
 
 
-func test_get_affixes_for_item_type_returns_empty_array_when_no_affixes_found() -> void:
+func test_get_affixes_for_item_type_returns_correct_affixes() -> void:
 	# Arrange
-	# Nothing to arrange, using empty directory
+	# Using mock affixes from before_each
 
 	# Act
 	var result := sut.get_affixes_for_item_type(ItemType.ItemType.SWORD)
 
 	# Assert
-	assert_eq(result.size(), 0)
+	assert_eq(result.size(), 2)
+	assert_has(result, mock_affixes[0])
+	assert_has(result, mock_affixes[2])
 
 
-func test_get_prefixes_for_item_type_returns_empty_array_when_no_affixes_found() -> void:
+func test_get_prefixes_for_item_type_returns_correct_affixes() -> void:
 	# Arrange
-	# Nothing to arrange, using empty directory
+	# Using mock affixes from before_each
 
 	# Act
 	var result := sut.get_prefixes_for_item_type(ItemType.ItemType.SWORD)
 
 	# Assert
-	assert_eq(result.size(), 0)
+	assert_eq(result.size(), 1)
+	assert_has(result, mock_affixes[0])
 
 
-func test_get_suffixes_for_item_type_returns_empty_array_when_no_affixes_found() -> void:
+func test_get_suffixes_for_item_type_returns_correct_affixes() -> void:
 	# Arrange
-	# Nothing to arrange, using empty directory
+	# Using mock affixes from before_each
 
 	# Act
 	var result := sut.get_suffixes_for_item_type(ItemType.ItemType.SWORD)
 
 	# Assert
-	assert_eq(result.size(), 0)
+	assert_eq(result.size(), 1)
+	assert_has(result, mock_affixes[2])
 
 
 func test_get_affixes_by_role_returns_empty_array_when_no_affixes_found() -> void:
 	# Arrange
-	# Nothing to arrange, using empty directory
+	sut._affixes = []
 
 	# Act
 	var result := sut.get_affixes_by_role(ItemType.ItemType.SWORD, AffixType.AffixRole.OFFENSIVE)

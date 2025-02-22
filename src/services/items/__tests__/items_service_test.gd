@@ -99,7 +99,7 @@ func test_get_main_stat() -> void:
 
 
 # Parameters
-# [item_type, item_rarity]
+# [item_type, item_rarity, expected_type, expected_rarity]
 var test_get_random_blueprint_from_pools_parameters := [
 	# Normal rarity cases
 	[

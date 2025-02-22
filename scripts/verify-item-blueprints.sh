@@ -24,7 +24,7 @@ declare -a unique_sprite_paths
 
 # Item types
 types=("boots" "chestplates" "gloves" "helmets" "shields" "swords")
-rarities=("normal" "magic" "rare" "epic" "legendary" "mythic")
+rarities=('normal' 'common' 'uncommon' 'magic' 'rare' 'legendary' 'unique')
 
 # Arrays to store all IDs, names, and texture rects for uniqueness check
 declare -a all_ids
@@ -52,25 +52,25 @@ for type in "${types[@]}"; do
             if [ -f "$file" ]; then
                 # Get the full file content
                 content=$(cat "$file")
-                
+
                 # Extract ID and name from [resource] section
                 resource_content=$(echo "$content" | sed -n '/\[resource\]/,/^$/p')
                 id=$(echo "$resource_content" | grep 'id = ' | cut -d'"' -f2)
                 name=$(echo "$resource_content" | grep 'name = ' | cut -d'"' -f2)
-                
+
                 # Check for Texture2D line and extract path
                 if ! echo "$content" | grep -q 'Texture2D.*path='; then
                     error_messages+=("    ❌ No Texture2D found in: $file")
                     ((sprite_duplicates++))
                 else
                     sprite_path=$(echo "$content" | grep 'Texture2D.*path=' | grep -o 'path="[^"]*"' | cut -d'"' -f2)
-                    
+
                     # Store values
                     all_ids+=("$id")
                     all_names+=("$name")
                     all_sprites+=("$sprite_path")
                     sprite_files+=("$file")
-                    
+
                     # Check if sprite_path is already in unique_sprite_paths
                     is_unique=1
                     for unique_path in "${unique_sprite_paths[@]}"; do

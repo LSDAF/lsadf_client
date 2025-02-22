@@ -12,11 +12,22 @@ capitalize() {
     echo "$(tr '[:lower:]' '[:upper:]' <<< ${word:0:1})${word:1}"
 }
 
-# Function to extract type from path
+# Function to extract type from path and ensure correct pluralization
 get_type() {
     local path="$1"
     # Get the item type from the path (e.g., boots, weapons, etc.)
-    echo "$path" | grep -o '/blueprints/[^/]*/' | sed 's|/blueprints/||;s|/||g' | tr '[:upper:]' '[:lower:]'
+    local type=$(echo "$path" | grep -o '/blueprints/[^/]*/' | sed 's|/blueprints/||;s|/||g' | tr '[:upper:]' '[:lower:]')
+    
+    # Only boots and gloves should be plural, make other types singular
+    case "$type" in
+        "boots"|"gloves")
+            echo "$type"
+            ;;
+        *)
+            # Remove trailing 's' if present
+            echo "$type" | sed 's/s$//'
+            ;;
+    esac
 }
 
 # Function to extract number from filename

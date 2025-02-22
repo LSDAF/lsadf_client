@@ -1,25 +1,28 @@
-[gd_resource type="Resource" script_class="ItemPool" load_steps=15 format=3 uid="uid://ydwwgb42h6tw"]
+[gd_resource type="Resource" script_class="ItemPool" load_steps=17 format=3 uid="uid://ydwwgb42h6tw"]
 
 [ext_resource type="Script" path="res://src/models/items/item_blueprint/item_blueprint.gd" id="1_geplt"]
+[ext_resource type="Resource" uid="uid://d4f2d6pvquny1" path="res://src/resources/items/blueprints/boots/common/common_boots_1.tres" id="2_ayom8"]
 [ext_resource type="Resource" uid="uid://bd4g415gjviu" path="res://src/resources/items/blueprints/boots/normal/normal_boots_1.tres" id="2_uu5mg"]
 [ext_resource type="Resource" uid="uid://bd8g1rgbtggha" path="res://src/resources/items/blueprints/boots/normal/normal_boots_2.tres" id="3_a1tg0"]
+[ext_resource type="Resource" uid="uid://dak56h21s0jhs" path="res://src/resources/items/blueprints/boots/common/common_boots_2.tres" id="3_bc54x"]
 [ext_resource type="Resource" uid="uid://cug3la7af0xtl" path="res://src/resources/items/blueprints/boots/rare/rare_boots_1.tres" id="4_rboot"]
 [ext_resource type="Resource" uid="uid://lyadc78ra3q4" path="res://src/resources/items/blueprints/boots/rare/rare_boots_2.tres" id="5_rboot"]
 [ext_resource type="Resource" uid="uid://dvw4g62a3e150" path="res://src/resources/items/blueprints/boots/magic/magic_boots_1.tres" id="6_mboot"]
 [ext_resource type="Resource" uid="uid://cnsl1ovyhpaus" path="res://src/resources/items/blueprints/boots/magic/magic_boots_2.tres" id="7_mboot"]
-[ext_resource type="Resource" path="res://src/resources/items/blueprints/boots/epic/epic_boots_1.tres" id="8_eboot"]
-[ext_resource type="Resource" path="res://src/resources/items/blueprints/boots/epic/epic_boots_2.tres" id="9_eboot"]
 [ext_resource type="Resource" uid="uid://dpq56mkn1j0ck" path="res://src/resources/items/blueprints/boots/legendary/legendary_boots_1.tres" id="10_lboot"]
 [ext_resource type="Resource" uid="uid://db13fbki810ns" path="res://src/resources/items/blueprints/boots/legendary/legendary_boots_2.tres" id="11_lboot"]
 [ext_resource type="Resource" uid="uid://byn47ttx4wmwu" path="res://src/resources/items/blueprints/boots/unique/unique_boots_1.tres" id="12_myboot"]
+[ext_resource type="Resource" uid="uid://c20de2xeaj58l" path="res://src/resources/items/blueprints/boots/uncommon/uncommon_boots_1.tres" id="13_ecwye"]
 [ext_resource type="Resource" uid="uid://da863fecv7j0c" path="res://src/resources/items/blueprints/boots/unique/unique_boots_2.tres" id="13_myboot"]
 [ext_resource type="Script" path="res://src/models/items/item_blueprint/pools/item_pool.gd" id="14_31ap2"]
+[ext_resource type="Resource" uid="uid://cgfjqa142l7hl" path="res://src/resources/items/blueprints/boots/uncommon/uncommon_boots_2.tres" id="14_w3olo"]
 
 [resource]
 script = ExtResource("14_31ap2")
 normal = Array[ExtResource("1_geplt")]([ExtResource("2_uu5mg"), ExtResource("3_a1tg0")])
-rare = Array[ExtResource("1_geplt")]([ExtResource("4_rboot"), ExtResource("5_rboot")])
+common = Array[ExtResource("1_geplt")]([ExtResource("2_ayom8"), ExtResource("3_bc54x")])
+uncommon = Array[ExtResource("1_geplt")]([ExtResource("13_ecwye"), ExtResource("14_w3olo")])
 magic = Array[ExtResource("1_geplt")]([ExtResource("6_mboot"), ExtResource("7_mboot")])
-epic = Array[ExtResource("1_geplt")]([ExtResource("8_eboot"), ExtResource("9_eboot")])
+rare = Array[ExtResource("1_geplt")]([ExtResource("4_rboot"), ExtResource("5_rboot")])
 legendary = Array[ExtResource("1_geplt")]([ExtResource("10_lboot"), ExtResource("11_lboot")])
-mythic = Array[ExtResource("1_geplt")]([ExtResource("12_myboot"), ExtResource("13_myboot")])
+unique = Array[ExtResource("1_geplt")]([ExtResource("12_myboot"), ExtResource("13_myboot")])

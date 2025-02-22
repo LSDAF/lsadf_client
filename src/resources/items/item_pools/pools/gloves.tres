@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemPool" load_steps=15 format=3 uid="uid://dkahf6qj1k3af"]
+[gd_resource type="Resource" script_class="ItemPool" load_steps=17 format=3 uid="uid://dkahf6qj1k3af"]
 
 [ext_resource type="Script" path="res://src/models/items/item_blueprint/item_blueprint.gd" id="1_sen4v"]
 [ext_resource type="Resource" uid="uid://d30ulf1ntwwcy" path="res://src/resources/items/blueprints/gloves/normal/normal_gloves_1.tres" id="2_5wfbj"]
@@ -12,14 +12,17 @@
 [ext_resource type="Resource" uid="uid://be3hr12y6abon" path="res://src/resources/items/blueprints/gloves/legendary/legendary_gloves_1.tres" id="10_lglove"]
 [ext_resource type="Resource" uid="uid://ofdeemmbp7qp" path="res://src/resources/items/blueprints/gloves/legendary/legendary_gloves_2.tres" id="11_lglove"]
 [ext_resource type="Resource" uid="uid://cvm0wjwjua3l7" path="res://src/resources/items/blueprints/gloves/unique/unique_gloves_1.tres" id="12_myglove"]
+[ext_resource type="Resource" uid="uid://ccpvw4m3i4u0r" path="res://src/resources/items/blueprints/gloves/uncommon/uncommon_gloves_1.tres" id="13_am7af"]
 [ext_resource type="Resource" uid="uid://bimygscpt2m7u" path="res://src/resources/items/blueprints/gloves/unique/unique_gloves_2.tres" id="13_myglove"]
 [ext_resource type="Script" path="res://src/models/items/item_blueprint/pools/item_pool.gd" id="14_5qtw3"]
+[ext_resource type="Resource" uid="uid://dyja646i2ryny" path="res://src/resources/items/blueprints/gloves/uncommon/uncommon_gloves_2.tres" id="14_elei8"]
 
 [resource]
 script = ExtResource("14_5qtw3")
 normal = Array[ExtResource("1_sen4v")]([ExtResource("2_5wfbj"), ExtResource("3_mdab7")])
-rare = Array[ExtResource("1_sen4v")]([ExtResource("4_rglove"), ExtResource("5_rglove")])
+common = Array[ExtResource("1_sen4v")]([ExtResource("8_eglove"), ExtResource("9_eglove")])
+uncommon = Array[ExtResource("1_sen4v")]([ExtResource("13_am7af"), ExtResource("14_elei8")])
 magic = Array[ExtResource("1_sen4v")]([ExtResource("6_mglove"), ExtResource("7_mglove")])
-epic = Array[ExtResource("1_sen4v")]([ExtResource("8_eglove"), ExtResource("9_eglove")])
+rare = Array[ExtResource("1_sen4v")]([ExtResource("4_rglove"), ExtResource("5_rglove")])
 legendary = Array[ExtResource("1_sen4v")]([ExtResource("10_lglove"), ExtResource("11_lglove")])
-mythic = Array[ExtResource("1_sen4v")]([ExtResource("12_myglove"), ExtResource("13_myglove")])
+unique = Array[ExtResource("1_sen4v")]([ExtResource("12_myglove"), ExtResource("13_myglove")])

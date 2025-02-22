@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemPool" load_steps=15 format=3 uid="uid://bggaam86veamm"]
+[gd_resource type="Resource" script_class="ItemPool" load_steps=17 format=3 uid="uid://bggaam86veamm"]
 
 [ext_resource type="Script" path="res://src/models/items/item_blueprint/item_blueprint.gd" id="1_laioh"]
 [ext_resource type="Resource" uid="uid://c1uxrc8m5qwl1" path="res://src/resources/items/blueprints/chestplates/normal/normal_chestplate_1.tres" id="2_681m5"]
@@ -13,13 +13,16 @@
 [ext_resource type="Resource" uid="uid://0q20uk7kxpia" path="res://src/resources/items/blueprints/chestplates/legendary/legendary_chestplate_2.tres" id="11_lchest"]
 [ext_resource type="Resource" uid="uid://rpqayy74ubef" path="res://src/resources/items/blueprints/chestplates/common/common_chestplate_1.tres" id="12_mychest"]
 [ext_resource type="Resource" uid="uid://c304787i5dw58" path="res://src/resources/items/blueprints/chestplates/common/common_chestplate_2.tres" id="13_mychest"]
+[ext_resource type="Resource" uid="uid://ym6tvs8eoj8" path="res://src/resources/items/blueprints/chestplates/uncommon/uncommon_chestplates_1.tres" id="13_vwp1m"]
+[ext_resource type="Resource" uid="uid://bx7sglf626ohk" path="res://src/resources/items/blueprints/chestplates/uncommon/uncommon_chestplate_2.tres" id="14_10lr4"]
 [ext_resource type="Script" path="res://src/models/items/item_blueprint/pools/item_pool.gd" id="14_ps3kb"]
 
 [resource]
 script = ExtResource("14_ps3kb")
 normal = Array[ExtResource("1_laioh")]([ExtResource("2_681m5"), ExtResource("3_t1ty8")])
-rare = Array[ExtResource("1_laioh")]([ExtResource("4_rchest"), ExtResource("5_rchest")])
+common = Array[ExtResource("1_laioh")]([ExtResource("12_mychest"), ExtResource("13_mychest")])
+uncommon = Array[ExtResource("1_laioh")]([ExtResource("13_vwp1m"), ExtResource("14_10lr4")])
 magic = Array[ExtResource("1_laioh")]([ExtResource("6_mchest"), ExtResource("7_mchest")])
-epic = Array[ExtResource("1_laioh")]([ExtResource("8_echest"), ExtResource("9_echest")])
+rare = Array[ExtResource("1_laioh")]([ExtResource("4_rchest"), ExtResource("5_rchest")])
 legendary = Array[ExtResource("1_laioh")]([ExtResource("10_lchest"), ExtResource("11_lchest")])
-mythic = Array[ExtResource("1_laioh")]([ExtResource("12_mychest"), ExtResource("13_mychest")])
+unique = Array[ExtResource("1_laioh")]([ExtResource("8_echest"), ExtResource("9_echest")])

@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="RaritySpecs" load_steps=8 format=3 uid="uid://dguwh3f3u5f17"]
 
 [ext_resource type="Script" path="res://src/models/items/item/rarity_specs/rarity_specs.gd" id="1_43s1f"]
-[ext_resource type="Resource" uid="uid://dxvseex3j17cx" path="res://src/resources/items/rarity_specs/rarity_specs/epic_rarity_spec.tres" id="1_tm2gq"]
+[ext_resource type="Resource" uid="uid://dxvseex3j17cx" path="res://src/resources/items/rarity_specs/rarity_specs/common_rarity_spec.tres" id="1_tm2gq"]
 [ext_resource type="Resource" uid="uid://bdbvjye3weip7" path="res://src/resources/items/rarity_specs/rarity_specs/legendary_rarity_spec.tres" id="2_4t87s"]
 [ext_resource type="Resource" uid="uid://c0k87ek1wbmsr" path="res://src/resources/items/rarity_specs/rarity_specs/magic_rarity_spec.tres" id="3_hwgab"]
-[ext_resource type="Resource" uid="uid://dtsb8f8i5c7dk" path="res://src/resources/items/rarity_specs/rarity_specs/mythic_rarity_spec.tres" id="4_ytfpw"]
+[ext_resource type="Resource" uid="uid://dtsb8f8i5c7dk" path="res://src/resources/items/rarity_specs/rarity_specs/unique_rarity_spec.tres" id="4_ytfpw"]
 [ext_resource type="Resource" uid="uid://ds518ywjdw8rm" path="res://src/resources/items/rarity_specs/rarity_specs/normal_rarity_spec.tres" id="5_bi2lq"]
 [ext_resource type="Resource" uid="uid://ctnndeb2lbe52" path="res://src/resources/items/rarity_specs/rarity_specs/rare_rarity_spec.tres" id="6_0eyj2"]
 

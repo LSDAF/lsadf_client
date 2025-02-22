@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemPool" load_steps=15 format=3 uid="uid://dshfo8sgwcbsa"]
+[gd_resource type="Resource" script_class="ItemPool" load_steps=17 format=3 uid="uid://dshfo8sgwcbsa"]
 
 [ext_resource type="Script" path="res://src/models/items/item_blueprint/item_blueprint.gd" id="1_0i8xj"]
 [ext_resource type="Resource" uid="uid://dfyvijqw7fbt0" path="res://src/resources/items/blueprints/helmets/normal/normal_helmet_1.tres" id="2_d0kxv"]
@@ -12,14 +12,17 @@
 [ext_resource type="Resource" uid="uid://b80bdib2xej5f" path="res://src/resources/items/blueprints/helmets/legendary/legendary_helmet_1.tres" id="10_lhelm"]
 [ext_resource type="Resource" uid="uid://dab054jpmqaxg" path="res://src/resources/items/blueprints/helmets/legendary/legendary_helmet_2.tres" id="11_lhelm"]
 [ext_resource type="Resource" uid="uid://bay8ds2qnefme" path="res://src/resources/items/blueprints/helmets/common/common_helmet_1.tres" id="12_myhelm"]
+[ext_resource type="Resource" uid="uid://c8gamhosiujlx" path="res://src/resources/items/blueprints/helmets/uncommon/uncommon_helmet_1.tres" id="13_5ke30"]
 [ext_resource type="Resource" uid="uid://247jaa4epl03" path="res://src/resources/items/blueprints/helmets/common/common_helmet_2.tres" id="13_myhelm"]
+[ext_resource type="Resource" uid="uid://dyhb0xbvi17rs" path="res://src/resources/items/blueprints/helmets/uncommon/uncommon_helmet_2.tres" id="14_cbjoy"]
 [ext_resource type="Script" path="res://src/models/items/item_blueprint/pools/item_pool.gd" id="14_yn70a"]
 
 [resource]
 script = ExtResource("14_yn70a")
 normal = Array[ExtResource("1_0i8xj")]([ExtResource("2_d0kxv"), ExtResource("3_umg6s")])
-rare = Array[ExtResource("1_0i8xj")]([ExtResource("4_rhelm"), ExtResource("5_rhelm")])
+common = Array[ExtResource("1_0i8xj")]([ExtResource("12_myhelm"), ExtResource("13_myhelm")])
+uncommon = Array[ExtResource("1_0i8xj")]([ExtResource("13_5ke30"), ExtResource("14_cbjoy")])
 magic = Array[ExtResource("1_0i8xj")]([ExtResource("6_mhelm"), ExtResource("7_mhelm")])
-epic = Array[ExtResource("1_0i8xj")]([ExtResource("8_ehelm"), ExtResource("9_ehelm")])
+rare = Array[ExtResource("1_0i8xj")]([ExtResource("4_rhelm"), ExtResource("5_rhelm")])
 legendary = Array[ExtResource("1_0i8xj")]([ExtResource("10_lhelm"), ExtResource("11_lhelm")])
-mythic = Array[ExtResource("1_0i8xj")]([ExtResource("12_myhelm"), ExtResource("13_myhelm")])
+unique = Array[ExtResource("1_0i8xj")]([ExtResource("8_ehelm"), ExtResource("9_ehelm")])

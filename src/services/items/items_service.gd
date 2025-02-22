@@ -214,3 +214,40 @@ func _get_affix_counts(rarity_spec: RaritySpec) -> Dictionary:
 		remaining_slots -= 1
 
 	return {"prefix_count": prefix_count, "suffix_count": suffix_count}
+
+
+## Creates an ItemAffix based on the given parameters
+## The affix will be randomly selected from the available pool based on type and rarity
+func _create_affix(
+	is_prefix: bool,
+	item_type: ItemType.ItemType,
+	item_rarity: ItemRarity.ItemRarity,
+	affix_pool: AffixPool
+) -> ItemAffix:
+	# Get available affixes based on type
+	var available_affixes: Array[ItemAffix] = (
+		affix_pool.get_available_prefixes(item_type)
+		if is_prefix
+		else affix_pool.get_available_suffixes(item_type)
+	)
+
+	# Pick a random affix from the pool
+	if available_affixes.is_empty():
+		push_error(
+			"No available affixes found for type %s and rarity %s" % [item_type, item_rarity]
+		)
+		return null
+
+	var chosen_affix := available_affixes[randi() % available_affixes.size()]
+
+	# Create a new instance with the same properties
+	var new_affix := ItemAffix.new(
+		chosen_affix.statistic,
+		chosen_affix.base_value,
+		chosen_affix.affix_type,
+		chosen_affix.affix_role,
+		chosen_affix.scaling_type,
+		chosen_affix.allowed_item_types
+	)
+
+	return new_affix

@@ -8,6 +8,6 @@ script = ExtResource("2_dkkfm")
 rarity = 6
 level = 0
 type = 3
-name = "Epic Helmet 2"
+name = "Unique Helmets 2"
 texture = ExtResource("2_lhfnu")
 id = "helmets_unique_2"

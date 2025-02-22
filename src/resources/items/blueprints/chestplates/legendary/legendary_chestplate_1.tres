@@ -8,6 +8,6 @@ script = ExtResource("2_dkkfm")
 rarity = 5
 level = 0
 type = 1
-name = "Legendary Chestplate 1"
+name = "Legendary Chestplates 1"
 texture = ExtResource("2_chep3")
 id = "chestplates_legendary_1"

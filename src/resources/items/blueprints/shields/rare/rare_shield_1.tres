@@ -8,6 +8,6 @@ script = ExtResource("1_r6wuy")
 rarity = 4
 level = 0
 type = 4
-name = "Rare Shield 1"
+name = "Rare Shields 1"
 texture = ExtResource("2_ka4rv")
 id = "shields_rare_1"

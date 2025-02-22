@@ -8,6 +8,6 @@ script = ExtResource("1_nmgt5")
 rarity = 0
 level = 0
 type = 2
-name = "Gloves"
+name = "Normal Gloves 2"
 texture = ExtResource("2_785bk")
 id = "gloves_normal_2"

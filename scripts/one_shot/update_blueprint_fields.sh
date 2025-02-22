@@ -6,6 +6,12 @@ get_rarity_name() {
     echo "$rarity_dir" | tr '[:upper:]' '[:lower:]'
 }
 
+# Function to capitalize first letter
+capitalize() {
+    local word="$1"
+    echo "$(tr '[:lower:]' '[:upper:]' <<< ${word:0:1})${word:1}"
+}
+
 # Function to extract type from path
 get_type() {
     local path="$1"
@@ -26,16 +32,28 @@ find "$(pwd)/src/resources/items/blueprints" -type f -name "*.tres" | while read
     rarity=$(get_rarity_name "$(basename "$(dirname "$file")")")
     number=$(get_number "$(basename "$file")")
     
-    # Create new ID
+    # Create new ID (snake_case)
     new_id="${type}_${rarity}_${number}"
     
+    # Create new name (Title Case)
+    capitalized_type=$(capitalize "$type")
+    capitalized_rarity=$(capitalize "$rarity")
+    new_name="$capitalized_rarity $capitalized_type $number"
+    
     # Update the file
-    # First, check if id field exists and is empty or has a different value
+    # First, check if id field exists and update it
     if grep -q '^id = ' "$file"; then
-        # Replace existing id line with new id
         sed -i '' "s|^id = .*|id = \"$new_id\"|" "$file"
         echo "Updated $file with id: $new_id"
     else
         echo "Warning: Could not find id field in $file"
+    fi
+    
+    # Then check if name field exists and update it
+    if grep -q '^name = ' "$file"; then
+        sed -i '' "s|^name = .*|name = \"$new_name\"|" "$file"
+        echo "Updated $file with name: $new_name"
+    else
+        echo "Warning: Could not find name field in $file"
     fi
 done

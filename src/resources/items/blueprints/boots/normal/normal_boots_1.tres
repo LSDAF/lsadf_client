@@ -8,6 +8,6 @@ script = ExtResource("1_fcv54")
 rarity = 0
 level = 0
 type = 0
-name = "Boots 1"
+name = "Normal Boots 1"
 texture = ExtResource("2_x3bkw")
 id = "boots_normal_1"

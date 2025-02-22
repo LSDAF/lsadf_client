@@ -8,6 +8,6 @@ script = ExtResource("2_dkkfm")
 rarity = 6
 level = 0
 type = 0
-name = "Mythic Boots 2"
+name = "Unique Boots 2"
 texture = ExtResource("1_dv781")
 id = "boots_unique_2"

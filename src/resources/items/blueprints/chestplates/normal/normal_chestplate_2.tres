@@ -8,6 +8,6 @@ script = ExtResource("1_qr45w")
 rarity = 0
 level = 0
 type = 1
-name = "Chestplate 2"
+name = "Normal Chestplates 2"
 texture = ExtResource("2_djk41")
 id = "chestplates_normal_2"

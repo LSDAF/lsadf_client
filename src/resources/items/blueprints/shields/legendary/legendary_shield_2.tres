@@ -8,6 +8,6 @@ script = ExtResource("2_dkkfm")
 rarity = 5
 level = 0
 type = 4
-name = "Legendary Shield 2"
+name = "Legendary Shields 2"
 texture = ExtResource("2_25f48")
 id = "shields_legendary_2"

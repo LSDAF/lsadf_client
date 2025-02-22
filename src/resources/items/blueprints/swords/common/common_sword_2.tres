@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ItemBlueprint" load_steps=3 format=3 uid="uid://cj7dnmdbk23h7"]
 
-[ext_resource type="Texture2D" uid="uid://c8qe2lcp2gfbm" path="res://asset/items/items/Weapon_Singles/Angelic/Angelic_Weapon17.png" id="1_kk7gn"]
 [ext_resource type="Script" path="res://src/models/items/item_blueprint/item_blueprint.gd" id="2_dkkfm"]
+[ext_resource type="Texture2D" uid="uid://cw4hw8ejtiwhl" path="res://asset/items/items/Weapon_Singles/Iron/Iron_Weapon6.png" id="2_qt40d"]
 
 [resource]
 script = ExtResource("2_dkkfm")
@@ -9,5 +9,5 @@ rarity = 1
 level = 0
 type = 5
 name = "Mythic Sword 2"
-texture = ExtResource("1_kk7gn")
+texture = ExtResource("2_qt40d")
 id = "sword_mythic_2"

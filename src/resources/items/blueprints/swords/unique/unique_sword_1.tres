@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ItemBlueprint" load_steps=3 format=3 uid="uid://q46rg2sx6f5h"]
 
-[ext_resource type="Texture2D" uid="uid://b5ufdenbkfhm0" path="res://asset/items/items/Weapon_Singles/Silver/Silver_Weapon14.png" id="1_xepzq"]
+[ext_resource type="Texture2D" uid="uid://dhsdw4a78d114" path="res://asset/items/items/Weapon_Singles/Angelic/Angelic_Weapon16.png" id="2_aotix"]
 [ext_resource type="Script" path="res://src/models/items/item_blueprint/item_blueprint.gd" id="2_dkkfm"]
 
 [resource]
@@ -9,5 +9,5 @@ rarity = 6
 level = 0
 type = 5
 name = "Epic Sword 1"
-texture = ExtResource("1_xepzq")
+texture = ExtResource("2_aotix")
 id = "sword_epic_1"

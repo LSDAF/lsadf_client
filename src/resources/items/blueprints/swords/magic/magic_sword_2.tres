@@ -1,9 +1,7 @@
 [gd_resource type="Resource" script_class="ItemBlueprint" load_steps=3 format=3 uid="uid://cfx06fi6n0nlc"]
 
+[ext_resource type="Texture2D" uid="uid://cyodht4l3ftm4" path="res://asset/items/items/Weapon_Singles/Fateful/Fateful_Weapon16.png" id="2_3gflw"]
 [ext_resource type="Script" path="res://src/models/items/item_blueprint/item_blueprint.gd" id="2_dkkfm"]
-
-[sub_resource type="Resource" id="Resource_ymphd"]
-metadata/__load_path__ = "res://asset/items/items/Weapon_Singles/Cobalt/Cobalt_Weapon9.png"
 
 [resource]
 script = ExtResource("2_dkkfm")
@@ -11,5 +9,5 @@ rarity = 3
 level = 0
 type = 5
 name = "Magic Sword 2"
-texture = SubResource("Resource_ymphd")
+texture = ExtResource("2_3gflw")
 id = "sword_magic_2"

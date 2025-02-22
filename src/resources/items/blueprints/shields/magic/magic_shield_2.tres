@@ -1,9 +1,7 @@
 [gd_resource type="Resource" script_class="ItemBlueprint" load_steps=3 format=3 uid="uid://s8bcvf2e2e3d"]
 
+[ext_resource type="Texture2D" uid="uid://cunlmvtlum76d" path="res://asset/items/items/Weapon_Singles/Fateful/Fateful_Shield4.png" id="2_75idq"]
 [ext_resource type="Script" path="res://src/models/items/item_blueprint/item_blueprint.gd" id="2_dkkfm"]
-
-[sub_resource type="Resource" id="Resource_hhio5"]
-metadata/__load_path__ = "res://asset/items/items/Weapon_Singles/Cobalt/Cobalt_Shield3.png"
 
 [resource]
 script = ExtResource("2_dkkfm")
@@ -11,5 +9,5 @@ rarity = 3
 level = 0
 type = 4
 name = "Magic Shield 2"
-texture = SubResource("Resource_hhio5")
+texture = ExtResource("2_75idq")
 id = "shield_magic_2"

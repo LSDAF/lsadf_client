@@ -1,9 +1,7 @@
 [gd_resource type="Resource" script_class="ItemBlueprint" load_steps=3 format=3 uid="uid://dgnjk26dbi6gj"]
 
+[ext_resource type="Texture2D" uid="uid://cfnr5frcpm6s6" path="res://asset/items/items/Weapon_Singles/Platinum/Platinum_Weapon17.png" id="2_5q55d"]
 [ext_resource type="Script" path="res://src/models/items/item_blueprint/item_blueprint.gd" id="2_dkkfm"]
-
-[sub_resource type="Resource" id="Resource_xt4qp"]
-metadata/__load_path__ = "res://asset/items/items/Weapon_Singles/Platinum/Platinum_Weapon17.png"
 
 [resource]
 script = ExtResource("2_dkkfm")
@@ -11,5 +9,5 @@ rarity = 5
 level = 0
 type = 5
 name = "Legendary Sword 2"
-texture = SubResource("Resource_xt4qp")
+texture = ExtResource("2_5q55d")
 id = "sword_legendary_2"

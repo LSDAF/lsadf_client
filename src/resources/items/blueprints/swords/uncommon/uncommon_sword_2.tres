@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="ItemBlueprint" load_steps=2 format=3 uid="uid://y1s5tafxiyjp"]
+[gd_resource type="Resource" script_class="ItemBlueprint" load_steps=3 format=3 uid="uid://y1s5tafxiyjp"]
 
 [ext_resource type="Script" path="res://src/models/items/item_blueprint/item_blueprint.gd" id="1_3k476"]
+[ext_resource type="Texture2D" uid="uid://bdbghtxpfpkhp" path="res://asset/items/items/Weapon_Singles/Cobalt/Cobalt_Weapon9.png" id="2_38c0l"]
 
 [resource]
 script = ExtResource("1_3k476")
@@ -8,4 +9,5 @@ rarity = 2
 level = 0
 type = 5
 name = ""
+texture = ExtResource("2_38c0l")
 id = ""

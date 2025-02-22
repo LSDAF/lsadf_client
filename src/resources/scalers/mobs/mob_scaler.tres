@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="MobScaler" load_steps=2 format=3 uid="uid://dsw42wgdo4a45"]
 
-[ext_resource type="Script" path="res://src/models/scalers/mob_scaler.gd" id="1_rs243"]
+[ext_resource type="Script" path="res://src/models/scalers/custom/mob_scaler.gd" id="1_rs243"]
 
 [resource]
 script = ExtResource("1_rs243")

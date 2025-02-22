@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="CostScaler" load_steps=2 format=3 uid="uid://dcytlscdlfaqa"]
 
-[ext_resource type="Script" path="res://src/models/scalers/cost_scaler.gd" id="1_qvp7t"]
+[ext_resource type="Script" path="res://src/models/scalers/custom/cost_scaler.gd" id="1_qvp7t"]
 
 [resource]
 script = ExtResource("1_qvp7t")

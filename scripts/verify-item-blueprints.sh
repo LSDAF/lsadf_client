@@ -32,6 +32,9 @@ declare -a all_names
 declare -a all_rects
 declare -a rect_files
 
+# Debug: Add processed files array to track duplicates
+declare -a processed_files
+
 echo "Checking all blueprints..."
 echo ""
 
@@ -108,19 +111,20 @@ done
 echo ""
 echo "Checking for duplicate names..."
 
-# Debug: Print all names
-echo "All names:"
+# Debug: Print all names with indices
+echo "All names with indices:"
 for i in "${!all_names[@]}"; do
-    echo "${sprite_files[i]} -> ${all_names[i]}"
+    echo "[$i] ${sprite_files[i]} -> ${all_names[i]}"
 done
 
+# Create associative array to track unique names
+declare -a name_to_file
 for i in "${!all_names[@]}"; do
-    # Only check against higher indices to avoid showing duplicates twice
-    for j in $(seq $((i + 1)) $((${#all_names[@]} - 1))); do
-        if [ "${all_names[i]}" = "${all_names[j]}" ]; then
+    for j in "${!all_names[@]}"; do
+        if [ "$i" != "$j" ] && [ "${all_names[$i]}" = "${all_names[$j]}" ]; then
             error_messages+=("    ❌ Duplicate name found in:")
-            error_messages+=("      - ${sprite_files[i]} -> ${all_names[i]}")
-            error_messages+=("      - ${sprite_files[j]} -> ${all_names[j]}")
+            error_messages+=("      - ${sprite_files[$i]} -> ${all_names[$i]}")
+            error_messages+=("      - ${sprite_files[$j]} -> ${all_names[$j]}")
             name_duplicates=1
         fi
     done

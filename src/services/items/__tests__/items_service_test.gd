@@ -398,6 +398,52 @@ func test_get_random_blueprint_from_pools(
 	assert_eq(item_blueprint.rarity, expected_rarity)
 
 
+func test_get_affix_counts() -> void:
+	# Arrange
+	var rarity_spec := RaritySpec.new()
+	rarity_spec.min_prefix_number = 1
+	rarity_spec.min_suffix_number = 2
+	rarity_spec.total_affix_number = 5
+
+	# Act
+	var counts := sut._get_affix_counts(rarity_spec)
+
+	# Assert
+	assert_eq(counts.prefix_count + counts.suffix_count, rarity_spec.total_affix_number)
+	assert_true(counts.prefix_count >= rarity_spec.min_prefix_number)
+	assert_true(counts.suffix_count >= rarity_spec.min_suffix_number)
+
+
+func test_get_affix_counts_with_no_remaining_slots() -> void:
+	# Arrange
+	var rarity_spec := RaritySpec.new()
+	rarity_spec.min_prefix_number = 2
+	rarity_spec.min_suffix_number = 3
+	rarity_spec.total_affix_number = 5
+
+	# Act
+	var counts := sut._get_affix_counts(rarity_spec)
+
+	# Assert
+	assert_eq(counts.prefix_count, rarity_spec.min_prefix_number)
+	assert_eq(counts.suffix_count, rarity_spec.min_suffix_number)
+	assert_eq(counts.prefix_count + counts.suffix_count, rarity_spec.total_affix_number)
+
+
+func test_get_affix_counts_with_all_remaining_slots() -> void:
+	# Arrange
+	var rarity_spec := RaritySpec.new()
+	rarity_spec.min_prefix_number = 0
+	rarity_spec.min_suffix_number = 0
+	rarity_spec.total_affix_number = 5
+
+	# Act
+	var counts := sut._get_affix_counts(rarity_spec)
+
+	# Assert
+	assert_eq(counts.prefix_count + counts.suffix_count, rarity_spec.total_affix_number)
+
+
 # Parameters
 # [item_type, item_rarity]
 var test_get_stats_pool_from_pools_parameters := [

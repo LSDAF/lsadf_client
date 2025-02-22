@@ -1,13 +1,15 @@
 [gd_resource type="Resource" script_class="ItemBlueprint" load_steps=3 format=3 uid="uid://p8q0c0c8bnpm"]
 
-[ext_resource type="Texture2D" path="res://asset/items/items/Weapon_Singles/Platinum/Platinum_Shield1.png" id="1_0osjt"]
 [ext_resource type="Script" path="res://src/models/items/item_blueprint/item_blueprint.gd" id="2_dkkfm"]
+
+[sub_resource type="Resource" id="Resource_hmoxl"]
+metadata/__load_path__ = "res://asset/items/items/Weapon_Singles/Platinum/Platinum_Shield1.png"
 
 [resource]
 script = ExtResource("2_dkkfm")
-rarity = 4
+rarity = 5
 level = 0
 type = 4
 name = "Legendary Shield 1"
-texture = ExtResource("1_0osjt")
+texture = SubResource("Resource_hmoxl")
 id = "shield_legendary_1"

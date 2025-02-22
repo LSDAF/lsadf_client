@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="ItemBlueprint" load_steps=2 format=3 uid="uid://ccpvw4m3i4u0r"]
 
-[ext_resource type="Script" path="res://src/models/items/item_blueprint/item_blueprint.gd" id="1_yji0i"]
+[ext_resource type="Script" path="res://src/models/items/item_blueprint/item_blueprint.gd" id="1_wbnyt"]
 
 [resource]
-script = ExtResource("1_yji0i")
-rarity = 0
+script = ExtResource("1_wbnyt")
+rarity = 2
 level = 0
-type = 0
+type = 2
 name = ""
 id = ""

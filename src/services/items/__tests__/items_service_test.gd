@@ -380,6 +380,16 @@ func test_get_random_blueprint_from_pools(
 	var item_blueprint: ItemBlueprint = sut._get_random_blueprint_from_pools(item_type, item_rarity)
 
 	# Assert
+
+	gut.p(
+		[
+			ItemType._prettify_type_short(item_type),
+			ItemRarity._prettify_rarity(item_rarity),
+			ItemType._prettify_type_short(expected_type),
+			ItemRarity._prettify_rarity(expected_rarity)
+		]
+	)
+
 	assert_not_null(item_blueprint)
 	assert_true(item_blueprint is ItemBlueprint)
 

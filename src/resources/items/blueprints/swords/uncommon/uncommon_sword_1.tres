@@ -4,8 +4,8 @@
 
 [resource]
 script = ExtResource("1_ncx46")
-rarity = 0
+rarity = 2
 level = 0
-type = 0
+type = 5
 name = ""
 id = ""

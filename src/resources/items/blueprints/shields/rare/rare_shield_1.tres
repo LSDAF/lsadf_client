@@ -1,13 +1,15 @@
 [gd_resource type="Resource" script_class="ItemBlueprint" load_steps=3 format=3 uid="uid://eojtqaewk6y5"]
 
 [ext_resource type="Script" path="res://src/models/items/item_blueprint/item_blueprint.gd" id="1_r6wuy"]
-[ext_resource type="Texture2D" path="res://asset/items/items/Weapon_Singles/Iron/Iron_Shield2.png" id="2_p8b20"]
+
+[sub_resource type="Resource" id="Resource_behbx"]
+metadata/__load_path__ = "res://asset/items/items/Weapon_Singles/Iron/Iron_Shield2.png"
 
 [resource]
 script = ExtResource("1_r6wuy")
-rarity = 1
+rarity = 4
 level = 0
 type = 4
 name = "Rare Shield 1"
-texture = ExtResource("2_p8b20")
+texture = SubResource("Resource_behbx")
 id = "shield_rare_1"

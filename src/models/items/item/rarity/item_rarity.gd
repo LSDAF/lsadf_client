@@ -20,7 +20,7 @@ static func _prettify_rarity(item_rarity: ItemRarity.ItemRarity) -> String:
 		ItemRarity.ItemRarity.COMMON:
 			prettified_rarity = "Common"
 		ItemRarity.ItemRarity.UNCOMMON:
-			prettified_rarity = "Common"
+			prettified_rarity = "Uncommon"
 		ItemRarity.ItemRarity.MAGIC:
 			prettified_rarity = "Magic"
 		ItemRarity.ItemRarity.RARE:

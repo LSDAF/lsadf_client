@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ItemPool" load_steps=17 format=3 uid="uid://dshfo8sgwcbsa"]
 
-[ext_resource type="Script" path="res://src/models/items/item_blueprint/item_blueprint.gd" id="1_0i8xj"]
+[ext_resource type="Script" uid="uid://bby5vxbm2gokx" path="res://src/models/items/item_blueprint/item_blueprint.gd" id="1_0i8xj"]
 [ext_resource type="Resource" uid="uid://dfyvijqw7fbt0" path="res://src/resources/items/blueprints/helmets/normal/normal_helmet_1.tres" id="2_d0kxv"]
 [ext_resource type="Resource" uid="uid://dnn4juf41uwnf" path="res://src/resources/items/blueprints/helmets/normal/normal_helmet_2.tres" id="3_umg6s"]
 [ext_resource type="Resource" uid="uid://moenmd2hdmlx" path="res://src/resources/items/blueprints/helmets/rare/rare_helmet_1.tres" id="4_rhelm"]
@@ -15,7 +15,7 @@
 [ext_resource type="Resource" uid="uid://c8gamhosiujlx" path="res://src/resources/items/blueprints/helmets/uncommon/uncommon_helmet_1.tres" id="13_5ke30"]
 [ext_resource type="Resource" uid="uid://247jaa4epl03" path="res://src/resources/items/blueprints/helmets/common/common_helmet_2.tres" id="13_myhelm"]
 [ext_resource type="Resource" uid="uid://dyhb0xbvi17rs" path="res://src/resources/items/blueprints/helmets/uncommon/uncommon_helmet_2.tres" id="14_cbjoy"]
-[ext_resource type="Script" path="res://src/models/items/item_blueprint/pools/item_pool.gd" id="14_yn70a"]
+[ext_resource type="Script" uid="uid://b2bghee2rrova" path="res://src/models/items/item_blueprint/pools/item_pool.gd" id="14_yn70a"]
 
 [resource]
 script = ExtResource("14_yn70a")

@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="ItemStatsPool" load_steps=9 format=3 uid="uid://ebybc01xtkuq"]
 
-[ext_resource type="Script" path="res://src/models/items/item_blueprint/stats/item_stat_blueprint.gd" id="2_ar4ur"]
+[ext_resource type="Script" uid="uid://cm0rqpauldcgk" path="res://src/models/items/item_blueprint/stats/item_stat_blueprint.gd" id="2_ar4ur"]
 [ext_resource type="Resource" uid="uid://2ll40nljb5u3" path="res://src/resources/items/stats/crit_chance.tres" id="4_52hmx"]
 [ext_resource type="Resource" uid="uid://c6kd05ce16yns" path="res://src/resources/items/stats/crit_damage.tres" id="5_2l4vs"]
 [ext_resource type="Resource" uid="uid://bg6ewikocejtl" path="res://src/resources/items/stats/health_add.tres" id="6_gk4ss"]
 [ext_resource type="Resource" uid="uid://dsx7nyutj0qvy" path="res://src/resources/items/stats/resistance_add.tres" id="7_c3obo"]
 [ext_resource type="Resource" uid="uid://ddyvx7l3od5e3" path="res://src/resources/items/stats/health_mult.tres" id="7_mvdem"]
 [ext_resource type="Resource" uid="uid://dfae63sinpw4f" path="res://src/resources/items/stats/resistance_mult.tres" id="8_cfjmv"]
-[ext_resource type="Script" path="res://src/models/items/item_blueprint/stats/pools/item_stats_pool.gd" id="8_fbvq6"]
+[ext_resource type="Script" uid="uid://b0otd31f4n6u3" path="res://src/models/items/item_blueprint/stats/pools/item_stats_pool.gd" id="8_fbvq6"]
 
 [resource]
 script = ExtResource("8_fbvq6")

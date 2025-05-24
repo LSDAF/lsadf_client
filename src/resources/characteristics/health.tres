@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Characteristic" load_steps=3 format=3 uid="uid://bbxu7eidptypv"]
 
-[ext_resource type="Script" path="res://src/models/characteristic/characteristic.gd" id="1_e866r"]
+[ext_resource type="Script" uid="uid://doshqlqhsrqs0" path="res://src/models/characteristic/characteristic.gd" id="1_e866r"]
 [ext_resource type="Resource" uid="uid://dym26et7v4ln1" path="res://src/resources/scalers/costs/health_cost_scaler.tres" id="1_f3dg4"]
 
 [resource]

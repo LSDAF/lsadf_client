@@ -1,6 +1,6 @@
 [gd_scene load_steps=32 format=3 uid="uid://bxg3qpsweykjl"]
 
-[ext_resource type="Script" path="res://src/elements/mobs/mob/mob.gd" id="1_ojx5b"]
+[ext_resource type="Script" uid="uid://fjqonryv4yn4" path="res://src/elements/mobs/mob/mob.gd" id="1_ojx5b"]
 [ext_resource type="PackedScene" uid="uid://bhmips8pptbi8" path="res://src/elements/mobs/damage_taken/damage_taken_label.tscn" id="2_o1q54"]
 [ext_resource type="Resource" uid="uid://dsw42wgdo4a45" path="res://src/resources/scalers/mobs/mob_scaler.tres" id="3_0xsrk"]
 [ext_resource type="Texture2D" uid="uid://dhf4d60hakqq6" path="res://asset/__banks__to_be_removed/mystic_woods_free_2.2/sprites/characters/slime.png" id="3_mk5dl"]

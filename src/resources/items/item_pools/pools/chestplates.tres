@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ItemPool" load_steps=17 format=3 uid="uid://bggaam86veamm"]
 
-[ext_resource type="Script" path="res://src/models/items/item_blueprint/item_blueprint.gd" id="1_laioh"]
+[ext_resource type="Script" uid="uid://bby5vxbm2gokx" path="res://src/models/items/item_blueprint/item_blueprint.gd" id="1_laioh"]
 [ext_resource type="Resource" uid="uid://c1uxrc8m5qwl1" path="res://src/resources/items/blueprints/chestplates/normal/normal_chestplate_1.tres" id="2_681m5"]
 [ext_resource type="Resource" uid="uid://bcuggirjgdvn5" path="res://src/resources/items/blueprints/chestplates/normal/normal_chestplate_2.tres" id="3_t1ty8"]
 [ext_resource type="Resource" uid="uid://c80jhn2fbybv7" path="res://src/resources/items/blueprints/chestplates/rare/rare_chestplate_1.tres" id="4_rchest"]
@@ -15,7 +15,7 @@
 [ext_resource type="Resource" uid="uid://c304787i5dw58" path="res://src/resources/items/blueprints/chestplates/common/common_chestplate_2.tres" id="13_mychest"]
 [ext_resource type="Resource" uid="uid://ym6tvs8eoj8" path="res://src/resources/items/blueprints/chestplates/uncommon/uncommon_chestplate_1.tres" id="13_vwp1m"]
 [ext_resource type="Resource" uid="uid://bx7sglf626ohk" path="res://src/resources/items/blueprints/chestplates/uncommon/uncommon_chestplate_2.tres" id="14_10lr4"]
-[ext_resource type="Script" path="res://src/models/items/item_blueprint/pools/item_pool.gd" id="14_ps3kb"]
+[ext_resource type="Script" uid="uid://b2bghee2rrova" path="res://src/models/items/item_blueprint/pools/item_pool.gd" id="14_ps3kb"]
 
 [resource]
 script = ExtResource("14_ps3kb")

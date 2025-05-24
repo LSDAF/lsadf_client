@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ItemBlueprint" load_steps=3 format=3 uid="uid://i3rm1a3qev01"]
 
 [ext_resource type="Texture2D" uid="uid://78vp26lt5y5j" path="res://asset/items/items/Weapon_Singles/Platinum/Platinum_Shield3.png" id="2_25f48"]
-[ext_resource type="Script" path="res://src/models/items/item_blueprint/item_blueprint.gd" id="2_dkkfm"]
+[ext_resource type="Script" uid="uid://bby5vxbm2gokx" path="res://src/models/items/item_blueprint/item_blueprint.gd" id="2_dkkfm"]
 
 [resource]
 script = ExtResource("2_dkkfm")

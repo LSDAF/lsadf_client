@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ItemPool" load_steps=17 format=3 uid="uid://csjgdgh03df5v"]
 
-[ext_resource type="Script" path="res://src/models/items/item_blueprint/item_blueprint.gd" id="1_r5i66"]
+[ext_resource type="Script" uid="uid://bby5vxbm2gokx" path="res://src/models/items/item_blueprint/item_blueprint.gd" id="1_r5i66"]
 [ext_resource type="Resource" uid="uid://bhe0vemafjcmv" path="res://src/resources/items/blueprints/shields/normal/normal_shield_1.tres" id="2_2e3qu"]
 [ext_resource type="Resource" uid="uid://bl80qwbhur6pr" path="res://src/resources/items/blueprints/shields/normal/normal_shield_2.tres" id="3_ge1nt"]
 [ext_resource type="Resource" uid="uid://eojtqaewk6y5" path="res://src/resources/items/blueprints/shields/rare/rare_shield_1.tres" id="4_rshield"]
@@ -15,7 +15,7 @@
 [ext_resource type="Resource" uid="uid://be3iqjbh2tdt2" path="res://src/resources/items/blueprints/shields/uncommon/uncommon_shield_1.tres" id="13_imcvh"]
 [ext_resource type="Resource" uid="uid://pyhhaeydwwt" path="res://src/resources/items/blueprints/shields/common/common_shield_2.tres" id="13_myshield"]
 [ext_resource type="Resource" uid="uid://br2arnu8l58t1" path="res://src/resources/items/blueprints/shields/uncommon/uncommon_shield_2.tres" id="14_letmb"]
-[ext_resource type="Script" path="res://src/models/items/item_blueprint/pools/item_pool.gd" id="14_oqtmb"]
+[ext_resource type="Script" uid="uid://b2bghee2rrova" path="res://src/models/items/item_blueprint/pools/item_pool.gd" id="14_oqtmb"]
 
 [resource]
 script = ExtResource("14_oqtmb")

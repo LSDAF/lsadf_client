@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ItemBlueprint" load_steps=3 format=3 uid="uid://ga1m3y6e6xhm"]
 
-[ext_resource type="Script" path="res://src/models/items/item_blueprint/item_blueprint.gd" id="2_dkkfm"]
+[ext_resource type="Script" uid="uid://bby5vxbm2gokx" path="res://src/models/items/item_blueprint/item_blueprint.gd" id="2_dkkfm"]
 [ext_resource type="Texture2D" uid="uid://bvn0wcq8tp1vc" path="res://asset/items/items/Weapon_Singles/Iron/Iron_Weapon5.png" id="2_if7yl"]
 
 [resource]

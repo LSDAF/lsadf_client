@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="ItemBase" load_steps=3 format=3 uid="uid://1fr5nfnvqf42"]
+[gd_resource type="Resource" script_class="ItemBase" load_steps=4 format=3 uid="uid://1fr5nfnvqf42"]
 
+[ext_resource type="Resource" uid="uid://bo4nff8qrgicp" path="res://src/resources/affixes/defensive/final_hp.tres" id="1_0h0cx"]
 [ext_resource type="Script" uid="uid://bby5vxbm2gokx" path="res://src/models/items/item_base/item_base.gd" id="1_uqu2a"]
 [ext_resource type="Texture2D" uid="uid://nt575y2i7vb2" path="res://asset/items/items/Weapon_Singles/Iron/Iron_Shield2.png" id="2_0h0cx"]
 
@@ -9,3 +10,4 @@ type = 4
 name = "Defender's Wall"
 texture = ExtResource("2_0h0cx")
 id = "shield_deffenders_wall"
+implicit_affix = ExtResource("1_0h0cx")

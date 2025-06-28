@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="ItemBase" load_steps=3 format=3 uid="uid://dak56h21s0jhs"]
+[gd_resource type="Resource" script_class="ItemBase" load_steps=4 format=3 uid="uid://dak56h21s0jhs"]
 
+[ext_resource type="Resource" uid="uid://h1h8j0vpsiuw" path="res://src/resources/affixes/mobility/movement_speed.tres" id="1_7u8gj"]
 [ext_resource type="Script" uid="uid://bby5vxbm2gokx" path="res://src/models/items/item_base/item_base.gd" id="1_tq7dt"]
 [ext_resource type="Texture2D" uid="uid://hncgaudkai7x" path="res://asset/items/items/Armor_Singles/Iron/Iron_Boots6.png" id="2_7u8gj"]
 
@@ -9,3 +10,4 @@ type = 0
 name = "Swift Step"
 texture = ExtResource("2_7u8gj")
 id = "boots_swift_step"
+implicit_affix = ExtResource("1_7u8gj")

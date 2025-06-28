@@ -12,7 +12,8 @@ enum ItemStatistics {
 	CDR,  # Cooldown Reduction
 	MOVEMENT_SPEED,  # Movement Speed
 	SKILL_LEVEL,  # Skill Level bonus
-	HP_REGEN,  # HP Regeneration
+	HP_REGEN_ADD,  # HP Regeneration Add
+	HP_REGEN_MULT, # HP Regen Mult
 	HP_REGEN_CDR,  # HP Regen Cooldown
 	ATTACK_SPEED,  # Attack Speed
 	BASIC_ATTACK_DMG,  # Basic Attack Damage
@@ -53,6 +54,8 @@ static func _prettify_statistic(
 			prettified_statistic = "+{0} {1}".format([current_value, "to Skill Level"])
 		ItemStatistics.ItemStatistics.HP_REGEN:
 			prettified_statistic = "+{0} {1}".format([current_value, "HP Regeneration"])
+		ItemStatistics.ItemStatistics.HP_REGEN_MULT:
+			prettified_statistic = "+{0}% {1}".format([current_value, "HP Regeneration"])
 		ItemStatistics.ItemStatistics.HP_REGEN_CDR:
 			prettified_statistic = "+{0}% {1}".format([current_value, "HP Regen CDR"])
 		ItemStatistics.ItemStatistics.ATTACK_SPEED:

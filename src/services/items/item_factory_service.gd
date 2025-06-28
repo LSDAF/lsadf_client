@@ -3,7 +3,7 @@ class_name ItemFactoryService
 # Dependencies
 var _affixes_service: AffixesService
 var _game_save_service: GameSaveService
-var _blueprint_service: BlueprintService
+var _item_bases_service: ItemBasesService
 
 # Resources
 var rarity_specs: RaritySpecs = preload("res://src/resources/items/rarity_specs/rarity_specs.tres")
@@ -12,16 +12,16 @@ var rarity_specs: RaritySpecs = preload("res://src/resources/items/rarity_specs/
 func _init(
 	affixes_service: AffixesService,
 	game_save_service: GameSaveService,
-	blueprint_service: BlueprintService
+	item_bases_service: ItemBasesService
 ) -> void:
 	_affixes_service = affixes_service
 	_game_save_service = game_save_service
-	_blueprint_service = blueprint_service
+	_item_bases_service = item_bases_service
 
 
 func create_item(item_type: ItemType.ItemType, item_rarity: ItemRarity.ItemRarity) -> Item:
 	# Get the item blueprint first, as it contains the implicit affix
-	var item_blueprint: ItemBlueprint = _blueprint_service.get_random_blueprint(item_type, item_rarity)
+	var item_base: ItemBase = _item_bases_service.get_random_item_base(item_type)
 	var item := Item.new()
 
 	# Fixed properties
@@ -33,18 +33,12 @@ func create_item(item_type: ItemType.ItemType, item_rarity: ItemRarity.ItemRarit
 	item.rarity = item_rarity
 
 	# Set blueprint-derived properties
-	item.name = item_blueprint.name
-	item.texture = item_blueprint.texture
-	item.blueprint_id = item_blueprint.id
+	item.name = item_base.name
+	item.texture = item_base.texture
+	item.blueprint_id = item_base.id
 	
-	# Assign implicit affix from blueprint
-	if item_blueprint.implicit_affix:
-		# Create a new instance with the same properties
-		item.implicit_affix = _affixes_service.create_affix_instance(item_blueprint.implicit_affix)
-	else:
-		# No fallback - blueprint must have an implicit affix
-		push_error("Blueprint %s missing required implicit affix" % item_blueprint.id)
-		return null
+	# Set implicit affix from item base
+	item.implicit_affix = _affixes_service.create_affix_instance(item_base.implicit_affix)
 	
 	# Generate affixes
 	var rarity_spec := rarity_specs.get_rarity_spec(item_rarity)

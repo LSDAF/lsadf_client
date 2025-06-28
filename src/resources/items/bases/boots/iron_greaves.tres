@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemBase" load_steps=3 format=3 uid="uid://d4f2d6pvquny1"]
+
+[ext_resource type="Script" uid="uid://bby5vxbm2gokx" path="res://src/models/items/item_base/item_base.gd" id="1_wcmfk"]
+[ext_resource type="Texture2D" uid="uid://t7hgc7wwt8rj" path="res://asset/items/items/Armor_Singles/Iron/Iron_Boots5.png" id="2_2vpma"]
+
+[resource]
+script = ExtResource("1_wcmfk")
+type = 0
+name = "Iron Greaves"
+texture = ExtResource("2_2vpma")
+id = "boots_iron_greaves"

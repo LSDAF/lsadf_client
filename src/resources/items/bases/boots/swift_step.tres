@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemBase" load_steps=3 format=3 uid="uid://dak56h21s0jhs"]
+
+[ext_resource type="Script" uid="uid://bby5vxbm2gokx" path="res://src/models/items/item_base/item_base.gd" id="1_tq7dt"]
+[ext_resource type="Texture2D" uid="uid://hncgaudkai7x" path="res://asset/items/items/Armor_Singles/Iron/Iron_Boots6.png" id="2_7u8gj"]
+
+[resource]
+script = ExtResource("1_tq7dt")
+type = 0
+name = "Swift Step"
+texture = ExtResource("2_7u8gj")
+id = "boots_swift_step"

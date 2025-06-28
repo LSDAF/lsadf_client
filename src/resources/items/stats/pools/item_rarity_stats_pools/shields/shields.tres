@@ -1,8 +1,0 @@
-[gd_resource type="Resource" script_class="ItemRarityStatsPools" load_steps=3 format=3 uid="uid://7e2sws2bsu30"]
-
-[ext_resource type="Resource" uid="uid://drxc0w63iva1l" path="res://src/resources/items/stats/pools/item_rarity_stats_pools/shields/stats_pools/normal.tres" id="1_epoo1"]
-[ext_resource type="Script" uid="uid://s7njfngrm5x8" path="res://src/models/items/item_blueprint/stats/pools/item_rarity_stats_pools.gd" id="2_2evue"]
-
-[resource]
-script = ExtResource("2_2evue")
-normal = ExtResource("1_epoo1")

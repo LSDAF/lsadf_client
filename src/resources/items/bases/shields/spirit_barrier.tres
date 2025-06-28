@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="ItemBase" load_steps=3 format=3 uid="uid://pyhhaeydwwt"]
+[gd_resource type="Resource" script_class="ItemBase" load_steps=4 format=3 uid="uid://pyhhaeydwwt"]
 
+[ext_resource type="Resource" uid="uid://b6vf45yqc2ps6" path="res://src/resources/affixes/defensive/hp_regen_cdr.tres" id="1_e16qx"]
 [ext_resource type="Script" uid="uid://bby5vxbm2gokx" path="res://src/models/items/item_base/item_base.gd" id="1_kvlks"]
 [ext_resource type="Texture2D" uid="uid://cwkiukwm31ofj" path="res://asset/items/items/Weapon_Singles/Iron/Iron_Shield4.png" id="2_e16qx"]
 
@@ -9,3 +10,4 @@ type = 4
 name = "Spirit Barrier"
 texture = ExtResource("2_e16qx")
 id = "shield_spirit_barrier"
+implicit_affix = ExtResource("1_e16qx")

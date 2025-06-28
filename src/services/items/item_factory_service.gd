@@ -20,7 +20,7 @@ func _init(
 
 
 func create_item(item_type: ItemType.ItemType, item_rarity: ItemRarity.ItemRarity) -> Item:
-	# Get the item blueprint first, as it contains the implicit affix
+	# Get the item bas	e first, as it contains the implicit affix
 	var item_base: ItemBase = _item_bases_service.get_random_item_base(item_type)
 	var item := Item.new()
 
@@ -32,10 +32,10 @@ func create_item(item_type: ItemType.ItemType, item_rarity: ItemRarity.ItemRarit
 	item.type = item_type
 	item.rarity = item_rarity
 
-	# Set blueprint-derived properties
+	# Set base-derived properties
 	item.name = item_base.name
 	item.texture = item_base.texture
-	item.blueprint_id = item_base.id
+	item.base_id = item_base.id
 	
 	# Set implicit affix from item base
 	item.implicit_affix = _affixes_service.create_affix_instance(item_base.implicit_affix)

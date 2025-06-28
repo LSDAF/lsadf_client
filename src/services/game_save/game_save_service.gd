@@ -150,7 +150,7 @@ func _convert_item_to_dto(item: Item) -> InventoryItemDto:
 	return InventoryItemDto.new(
 		{
 			"client_id": item.client_id,
-			"blueprint_id": item.blueprint_id,
+			"base_id": item.base_id,
 			"main_stat": ItemStat.to_dictionary(item.main_stat),
 			"additional_stats": item.additional_stats.map(ItemStat.to_dictionary),
 			"rarity": ItemRarity.ItemRarity.keys()[item.rarity],

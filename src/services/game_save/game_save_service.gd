@@ -76,7 +76,7 @@ func load_game_save(game_save_id: String) -> void:
 	_stage_service.set_max_stage(fetched_stage.max_stage)
 
 
-func save_game() -> void:
+func save_game() -> bool:
 	var success := (
 		await _save_currencies()
 		and await _save_stage()
@@ -88,9 +88,10 @@ func save_game() -> void:
 		_game_save_data._last_save_time = _clock_service.get_unix_time_from_system()
 		Services.toaster.toast("Game saved.")
 		print("Game Saved")
-	else:
-		Services.toaster.toast("Failed to save game.")
-		print("Failed to save game.")
+		return true
+	Services.toaster.toast("Failed to save game.")
+	print("Failed to save game.")
+	return false
 
 
 func _save_characteristics() -> bool:

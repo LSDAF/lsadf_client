@@ -59,14 +59,23 @@ func fetch(url: String, auth: bool, upsert_headers: Dictionary = {}) -> HTTPResu
 
 
 func post(
-	url: String, auth: bool, body: Dictionary = {}, upsert_headers: Dictionary = {}
+	url: String,
+	auth: bool,
+	body: Dictionary = {},
+	upsert_headers: Dictionary = {},
+	nb_retries: int = 0
 ) -> HTTPResult:
 	var headers := _generate_headers(upsert_headers, auth, HTTPClient.METHOD_POST)
 	var request_data := JSON.stringify(body)
 
-	var response: HTTPResult = await Http.http_client.http.async_request(
-		url, headers, HTTPClient.METHOD_POST, request_data
-	)
+	var lambda := func() -> HTTPResult:
+		var result := await Http.http_client.http.async_request(
+			url, headers, HTTPClient.METHOD_POST, request_data
+		)
+
+		return result
+
+	var response: HTTPResult = await RetryUtils.run_http_request(lambda, nb_retries)
 
 	_log_error(url, response)
 

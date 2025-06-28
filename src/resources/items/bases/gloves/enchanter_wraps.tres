@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="ItemBase" load_steps=3 format=3 uid="uid://cfkdqyqk2ao2p"]
+[gd_resource type="Resource" script_class="ItemBase" load_steps=4 format=3 uid="uid://cfkdqyqk2ao2p"]
 
 [ext_resource type="Script" uid="uid://bby5vxbm2gokx" path="res://src/models/items/item_base/item_base.gd" id="1_216bd"]
+[ext_resource type="Resource" uid="uid://cqkccdrslh5hy" path="res://src/resources/affixes/utility/skill_level.tres" id="1_wa22y"]
 [ext_resource type="Texture2D" uid="uid://cpi4mnntgi7wf" path="res://asset/items/items/Armor_Singles/Iron/Iron_Gloves5.png" id="2_wa22y"]
 
 [resource]
@@ -9,3 +10,4 @@ type = 2
 name = "Enchanter's Wrap"
 texture = ExtResource("2_wa22y")
 id = "gloves_enchanters_wrap"
+implicit_affix = ExtResource("1_wa22y")

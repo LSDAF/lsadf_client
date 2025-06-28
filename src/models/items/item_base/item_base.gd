@@ -5,3 +5,4 @@ extends Resource
 @export var name: String
 @export var texture: Texture2D
 @export var id: String
+@export var implicit_affix: ItemAffix

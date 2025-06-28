@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="ItemBases" load_steps=15 format=3 uid="uid://deaojtulbmwjv"]
+
+[ext_resource type="Script" uid="uid://bby5vxbm2gokx" path="res://src/models/items/item_base/item_base.gd" id="1_43wbs"]
+[ext_resource type="Script" uid="uid://dsbq33ba4tphw" path="res://src/models/items/item_base/item_bases.gd" id="1_g6gff"]
+[ext_resource type="Resource" uid="uid://d4f2d6pvquny1" path="res://src/resources/items/bases/boots/iron_greaves.tres" id="2_g88gf"]
+[ext_resource type="Resource" uid="uid://dak56h21s0jhs" path="res://src/resources/items/bases/boots/swift_step.tres" id="3_o10mc"]
+[ext_resource type="Resource" uid="uid://c304787i5dw58" path="res://src/resources/items/bases/chestplates/mystic_robe.tres" id="4_w2pdl"]
+[ext_resource type="Resource" uid="uid://rpqayy74ubef" path="res://src/resources/items/bases/chestplates/wardens_chest.tres" id="5_x2oyr"]
+[ext_resource type="Resource" uid="uid://2gcgewjwct1r" path="res://src/resources/items/bases/gloves/crushers_grip.tres" id="6_iwdmd"]
+[ext_resource type="Resource" uid="uid://cfkdqyqk2ao2p" path="res://src/resources/items/bases/gloves/enchanter_wraps.tres" id="7_5e6bu"]
+[ext_resource type="Resource" uid="uid://247jaa4epl03" path="res://src/resources/items/bases/helmets/guardian_helm.tres" id="8_mb187"]
+[ext_resource type="Resource" uid="uid://bay8ds2qnefme" path="res://src/resources/items/bases/helmets/seers_mask.tres" id="9_86144"]
+[ext_resource type="Resource" uid="uid://1fr5nfnvqf42" path="res://src/resources/items/bases/shields/defenders_wall.tres" id="11_ybofp"]
+[ext_resource type="Resource" uid="uid://pyhhaeydwwt" path="res://src/resources/items/bases/shields/spirit_barrier.tres" id="12_pfwjp"]
+[ext_resource type="Resource" uid="uid://ga1m3y6e6xhm" path="res://src/resources/items/bases/swords/dragon_claw.tres" id="13_1pv0g"]
+[ext_resource type="Resource" uid="uid://cj7dnmdbk23h7" path="res://src/resources/items/bases/swords/snake_fang.tres" id="14_ygtva"]
+
+[resource]
+script = ExtResource("1_g6gff")
+boots = Array[ExtResource("1_43wbs")]([ExtResource("2_g88gf"), ExtResource("3_o10mc")])
+chestplates = Array[ExtResource("1_43wbs")]([ExtResource("4_w2pdl"), ExtResource("5_x2oyr")])
+gloves = Array[ExtResource("1_43wbs")]([ExtResource("6_iwdmd"), ExtResource("7_5e6bu")])
+helmets = Array[ExtResource("1_43wbs")]([ExtResource("8_mb187"), ExtResource("9_86144")])
+shields = Array[ExtResource("1_43wbs")]([ExtResource("11_ybofp"), ExtResource("12_pfwjp")])
+swords = Array[ExtResource("1_43wbs")]([ExtResource("13_1pv0g"), ExtResource("14_ygtva")])

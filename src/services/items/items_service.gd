@@ -11,16 +11,14 @@ var item_pools: ItemPools = preload("res://src/resources/items/item_pools/item_p
 var rarity_specs: RaritySpecs = preload("res://src/resources/items/rarity_specs/rarity_specs.tres")
 
 var _game_save_service: GameSaveService
-var _affix_registry: AffixRegistry
-var _affix_pool: AffixPool
+var _affixes_service: AffixesService
 
 
 func _init(
-	game_save_service: GameSaveService, affix_registry: AffixRegistry, affix_pool: AffixPool
+	game_save_service: GameSaveService, affixes_service: AffixesService
 ) -> void:
 	_game_save_service = game_save_service
-	_affix_registry = affix_registry
-	_affix_pool = affix_pool
+	_affixes_service = affixes_service
 
 
 func create_item(item_type: ItemType.ItemType, item_rarity: ItemRarity.ItemRarity) -> Item:
@@ -34,25 +32,20 @@ func create_item(item_type: ItemType.ItemType, item_rarity: ItemRarity.ItemRarit
 	item.type = item_type
 	item.rarity = item_rarity
 
-	# Depend on constructor
-	var item_stats_pool := _get_stats_pool_from_pools(item_type, item_rarity)
-	item.main_stat = _get_main_stat(item_stats_pool)
-	item.additional_stats = _get_additionnal_stats(item_stats_pool)
-
-	# Get affixes
+	# Generate affixes
 	var rarity_spec := rarity_specs.get_rarity_spec(item_rarity)
 	var affix_counts := _get_affix_counts(rarity_spec)
 
 	# Generate prefixes
 	for i in range(affix_counts.prefix_count):
-		var prefix := _create_affix(true, item_type, item_rarity, _affix_pool)
+		var prefix := _create_affix(true, item_type, item_rarity)
 		if prefix == null:
 			break
 		item.prefixes.append(prefix)
 
 	# Generate suffixes
 	for i in range(affix_counts.suffix_count):
-		var suffix := _create_affix(false, item_type, item_rarity, _affix_pool)
+		var suffix := _create_affix(false, item_type, item_rarity)
 		if suffix == null:
 			break
 		item.suffixes.append(suffix)
@@ -153,40 +146,6 @@ func _get_random_blueprint_from_pools(
 			push_error("Unknown rarity: %s" % item_rarity)
 			return item_pools.swords.normal[0]
 
-
-func _get_stats_pool_from_pools(
-	item_type: ItemType.ItemType, item_rarity: ItemRarity.ItemRarity
-) -> ItemStatsPool:
-	match item_type:
-		ItemType.ItemType.BOOTS:
-			match item_rarity:
-				ItemRarity.ItemRarity.NORMAL:
-					return item_stats_pools.boots.normal
-		ItemType.ItemType.CHESTPLATE:
-			match item_rarity:
-				ItemRarity.ItemRarity.NORMAL:
-					return item_stats_pools.chestplates.normal
-		ItemType.ItemType.GLOVES:
-			match item_rarity:
-				ItemRarity.ItemRarity.NORMAL:
-					return item_stats_pools.gloves.normal
-		ItemType.ItemType.HELMET:
-			match item_rarity:
-				ItemRarity.ItemRarity.NORMAL:
-					return item_stats_pools.helmets.normal
-		ItemType.ItemType.SHIELD:
-			match item_rarity:
-				ItemRarity.ItemRarity.NORMAL:
-					return item_stats_pools.shields.normal
-		ItemType.ItemType.SWORD:
-			match item_rarity:
-				ItemRarity.ItemRarity.NORMAL:
-					return item_stats_pools.swords.normal
-
-	# WIP
-	return item_stats_pools.swords.normal
-
-
 func _roll_stat_value(item_stat_blueprint: ItemStatBlueprint) -> ItemStat:
 	var item_stat := ItemStat.new()
 
@@ -244,14 +203,18 @@ func _get_affix_counts(rarity_spec: RaritySpec) -> Dictionary:
 func _create_affix(
 	is_prefix: bool,
 	item_type: ItemType.ItemType,
-	item_rarity: ItemRarity.ItemRarity,
-	affix_pool: AffixPool
+	item_rarity: ItemRarity.ItemRarity
 ) -> ItemAffix:
 	# Get available affixes based on type
 	var available_affixes: Array[ItemAffix] = (
-		affix_pool.get_available_prefixes(item_type)
+		_affixes_service.get_all_prefixes()
 		if is_prefix
-		else affix_pool.get_available_suffixes(item_type)
+		else _affixes_service.get_all_suffixes()
+	)
+	
+	# Filter by item type
+	available_affixes = available_affixes.filter(
+		func(affix: ItemAffix) -> bool: return affix.can_roll_on_item_type(item_type)
 	)
 
 	# Pick a random affix from the pool

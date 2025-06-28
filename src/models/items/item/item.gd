@@ -1,7 +1,7 @@
 class_name Item
 
 var client_id: String
-var blueprint_id: String
+var base_id: String
 var implicit_affix: ItemAffix
 var prefixes: Array[ItemAffix] = []
 var suffixes: Array[ItemAffix] = []

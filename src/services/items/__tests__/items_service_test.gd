@@ -58,8 +58,8 @@ func test_create_item() -> void:
 	assert_eq(item.type, item_type)
 	assert_eq(item.rarity, item_rarity)
 	assert_not_null(item.client_id)
-	assert_not_null(item.blueprint_id)
-	assert_ne(item.blueprint_id, "")
+	assert_not_null(item.base_id)
+	assert_ne(item.base_id, "")
 
 	# Verify affixes
 	var rarity_spec := sut.rarity_specs.get_rarity_spec(item_rarity)
@@ -111,7 +111,7 @@ func test_get_main_stat() -> void:
 
 # Parameters
 # [item_type, item_rarity, expected_type, expected_rarity]
-var test_get_random_blueprint_from_pools_parameters := [
+var test_get_random_base_from_pools_parameters := [
 	# Normal rarity cases
 	[
 		ItemType.ItemType.BOOTS,
@@ -378,8 +378,8 @@ var test_get_random_blueprint_from_pools_parameters := [
 ]
 
 
-func test_get_random_blueprint_from_pools(
-	params: Array = use_parameters(test_get_random_blueprint_from_pools_parameters)
+func test_get_random_base_from_pools(
+	params: Array = use_parameters(test_get_random_base_from_pools_parameters)
 ) -> void:
 	# Arrange
 	var item_type: ItemType.ItemType = params[0]
@@ -388,7 +388,7 @@ func test_get_random_blueprint_from_pools(
 	var expected_rarity: ItemRarity.ItemRarity = params[3]
 
 	# Act
-	var item_blueprint: ItemBlueprint = sut._get_random_blueprint_from_pools(item_type, item_rarity)
+	var item_base: ItemBase = sut._get_random_base_from_pools(item_type, item_rarity)
 
 	# Assert
 
@@ -401,12 +401,12 @@ func test_get_random_blueprint_from_pools(
 		]
 	)
 
-	assert_not_null(item_blueprint)
-	assert_true(item_blueprint is ItemBlueprint)
+	assert_not_null(item_base)
+	assert_true(item_base is ItemBase)
 
 	# For all other cases, behavior should match expected values
-	assert_eq(item_blueprint.type, expected_type)
-	assert_eq(item_blueprint.rarity, expected_rarity)
+	assert_eq(item_base.type, expected_type)
+	assert_eq(item_base.rarity, expected_rarity)
 
 
 func test_get_affix_counts() -> void:
@@ -482,7 +482,7 @@ func test_get_stats_pool_from_pools(
 
 	var unique_stats: Array[int] = []
 	for stat in item_stats_pool.potential_stats:
-		assert_true(stat is ItemStatBlueprint)
+		assert_true(stat is ItemStat)
 		assert_true(stat.statistic is ItemStatistics.ItemStatistics)
 		assert_false(unique_stats.has(stat.statistic))
 		unique_stats.push_back(stat.statistic)
@@ -509,22 +509,22 @@ func test_roll_stat_value(params: Array = use_parameters(test_roll_stat_value_pa
 	var base_value_max: float = params[2]
 	var base_value_step: float = params[3]
 
-	var item_stat_blueprint: ItemStatBlueprint = ItemStatBlueprint.new()
-	item_stat_blueprint.statistic = item_statistic
-	item_stat_blueprint.base_value_min = base_value_min
-	item_stat_blueprint.base_value_max = base_value_max
-	item_stat_blueprint.base_value_step = base_value_step
+	var item_stat: ItemStat = ItemStat.new()
+	item_stat.statistic = item_statistic
+	item_stat.base_value_min = base_value_min
+	item_stat.base_value_max = base_value_max
+	item_stat.base_value_step = base_value_step
 
 	# Act
-	var rolled_stat_value: ItemStat = sut._roll_stat_value(item_stat_blueprint)
+	var rolled_stat_value: ItemStat = sut._roll_stat_value(item_stat)
 
 	# Assert
-	assert_eq(rolled_stat_value.statistic, item_stat_blueprint.statistic)
-	assert_gte(rolled_stat_value.base_value, item_stat_blueprint.base_value_min)
-	assert_lte(rolled_stat_value.base_value, item_stat_blueprint.base_value_max)
+	assert_eq(rolled_stat_value.statistic, item_stat.statistic)
+	assert_gte(rolled_stat_value.base_value, item_stat.base_value_min)
+	assert_lte(rolled_stat_value.base_value, item_stat.base_value_max)
 
-	if rolled_stat_value.base_value < item_stat_blueprint.base_value_max:
-		assert_eq(fmod(rolled_stat_value.base_value, item_stat_blueprint.base_value_step), 0.0)
+	if rolled_stat_value.base_value < item_stat.base_value_max:
+		assert_eq(fmod(rolled_stat_value.base_value, item_stat.base_value_step), 0.0)
 
 
 func test_create_affix_prefix() -> void:

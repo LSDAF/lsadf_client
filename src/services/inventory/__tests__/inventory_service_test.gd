@@ -177,25 +177,25 @@ func test_level_up_item() -> void:
 
 func test_set_inventory_from_fetch_inventory_dto() -> void:
 	# Arrange
-	var test_blueprint_1 := ItemBlueprint.new()
-	test_blueprint_1.id = "sword_normal_1"
-	test_blueprint_1.name = "Test Sword"
-	test_blueprint_1.texture = null
+	var test_base_1 := ItemBase.new()
+	test_base_1.id = "sword_normal_1"
+	test_base_1.name = "Test Sword"
+	test_base_1.texture = null
 
-	var test_blueprint_2 := ItemBlueprint.new()
-	test_blueprint_2.id = "sword_normal_2"
-	test_blueprint_2.name = "Test Chestplate"
-	test_blueprint_2.texture = null
+	var test_base_2 := ItemBase.new()
+	test_base_2.id = "sword_normal_2"
+	test_base_2.name = "Test Chestplate"
+	test_base_2.texture = null
 
-	# Mock get_blueprint_from_id to return our test blueprints
-	var item_pools_double: ItemPools = double(ItemPools).new()
-	stub(item_pools_double, "get_blueprint_from_id").to_return(test_blueprint_1).when_passed(
+	# Mock get_base_from_id to return our test bases
+	var item_bases_service_double: ItemBasesService = double(ItemBasesService).new()
+	stub(item_bases_service_double, "get_base_from_id").to_return(test_base_1).when_passed(
 		"sword_normal_1"
 	)
-	stub(item_pools_double, "get_blueprint_from_id").to_return(test_blueprint_2).when_passed(
+	stub(item_bases_service_double, "get_base_from_id").to_return(test_base_2).when_passed(
 		"sword_normal_2"
 	)
-	sut._item_pools = item_pools_double
+	sut._item_bases_service = item_bases_service_double
 
 	var fetch_inventory_dto := (
 		FetchInventoryDto
@@ -206,7 +206,7 @@ func test_set_inventory_from_fetch_inventory_dto() -> void:
 					{
 						"client_id":
 						"36f27c2a-06e8-4bdb-bf59-56999116f5ef__11111111-1111-1111-1111-111111111111",
-						"blueprint_id": "sword_normal_1",
+						"base_id": "sword_normal_1",
 						"main_stat": {"statistic": "ATTACK_ADD", "base_value": 1.0},
 						"additional_stats": [{"statistic": "CRIT_DAMAGE", "base_value": 3.0}],
 						"rarity": "NORMAL",
@@ -217,7 +217,7 @@ func test_set_inventory_from_fetch_inventory_dto() -> void:
 					{
 						"client_id":
 						"36f27c2a-06e8-4bdb-bf59-56999116f5ef__22222222-2222-2222-2222-222222222222",
-						"blueprint_id": "sword_normal_2",
+						"base_id": "sword_normal_2",
 						"main_stat": {"statistic": "CRIT_CHANCE", "base_value": 2.0},
 						"additional_stats": [{"statistic": "HEALTH_ADD", "base_value": 4.0}],
 						"rarity": "NORMAL",
@@ -249,9 +249,9 @@ func test_set_inventory_from_fetch_inventory_dto() -> void:
 	assert_eq(item.level, 1)
 	assert_eq(item.type, ItemType.ItemType.SWORD)
 	assert_eq(item.is_equipped, false)
-	# Verify texture and name are set from the blueprint
-	assert_eq(item.texture, test_blueprint_1.texture)
-	assert_eq(item.name, test_blueprint_1.name)
+	# Verify texture and name are set from the base
+	assert_eq(item.texture, test_base_1.texture)
+	assert_eq(item.name, test_base_1.name)
 
 	# Verify second item
 	item = inventory_data_partial_double.items[1]
@@ -266,9 +266,9 @@ func test_set_inventory_from_fetch_inventory_dto() -> void:
 	assert_eq(item.level, 10)
 	assert_eq(item.type, ItemType.ItemType.CHESTPLATE)
 	assert_eq(item.is_equipped, true)
-	# Verify texture and name are set from the blueprint
-	assert_eq(item.texture, test_blueprint_2.texture)
-	assert_eq(item.name, test_blueprint_2.name)
+	# Verify texture and name are set from the base
+	assert_eq(item.texture, test_base_2.texture)
+	assert_eq(item.name, test_base_2.name)
 
 
 func test_unequip_item() -> void:

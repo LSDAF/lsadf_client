@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemBase" load_steps=3 format=3 uid="uid://cj7dnmdbk23h7"]
+
+[ext_resource type="Script" uid="uid://bby5vxbm2gokx" path="res://src/models/items/item_base/item_base.gd" id="1_ajcp7"]
+[ext_resource type="Texture2D" uid="uid://cw4hw8ejtiwhl" path="res://asset/items/items/Weapon_Singles/Iron/Iron_Weapon6.png" id="2_whi38"]
+
+[resource]
+script = ExtResource("1_ajcp7")
+type = 5
+name = "Snake Fang"
+texture = ExtResource("2_whi38")
+id = "sword_snake_fang"

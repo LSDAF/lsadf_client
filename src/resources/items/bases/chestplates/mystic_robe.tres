@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemBase" load_steps=3 format=3 uid="uid://c304787i5dw58"]
+
+[ext_resource type="Script" uid="uid://bby5vxbm2gokx" path="res://src/models/items/item_base/item_base.gd" id="1_ch57w"]
+[ext_resource type="Texture2D" uid="uid://m6vuikv7d73i" path="res://asset/items/items/Armor_Singles/Iron/Iron_Chestplate6.png" id="2_a18ys"]
+
+[resource]
+script = ExtResource("1_ch57w")
+type = 1
+name = "Mystic Robe"
+texture = ExtResource("2_a18ys")
+id = "chestplate_mystic_robe"

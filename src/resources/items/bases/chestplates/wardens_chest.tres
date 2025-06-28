@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemBase" load_steps=3 format=3 uid="uid://rpqayy74ubef"]
+
+[ext_resource type="Script" uid="uid://bby5vxbm2gokx" path="res://src/models/items/item_base/item_base.gd" id="1_11g6d"]
+[ext_resource type="Texture2D" uid="uid://d3r2n04xkb4p4" path="res://asset/items/items/Armor_Singles/Iron/Iron_Chestplate5.png" id="2_smi27"]
+
+[resource]
+script = ExtResource("1_11g6d")
+type = 1
+name = "Warden's Chest"
+texture = ExtResource("2_smi27")
+id = "chestplate_wardens_chest"

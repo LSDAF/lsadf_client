@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemBase" load_steps=3 format=3 uid="uid://ga1m3y6e6xhm"]
+
+[ext_resource type="Script" uid="uid://bby5vxbm2gokx" path="res://src/models/items/item_base/item_base.gd" id="1_551gi"]
+[ext_resource type="Texture2D" uid="uid://bvn0wcq8tp1vc" path="res://asset/items/items/Weapon_Singles/Iron/Iron_Weapon5.png" id="2_28hln"]
+
+[resource]
+script = ExtResource("1_551gi")
+type = 5
+name = "Dragon Claw"
+texture = ExtResource("2_28hln")
+id = "sword_dragon_claw"

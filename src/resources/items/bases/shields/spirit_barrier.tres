@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemBase" load_steps=3 format=3 uid="uid://pyhhaeydwwt"]
+
+[ext_resource type="Script" uid="uid://bby5vxbm2gokx" path="res://src/models/items/item_base/item_base.gd" id="1_kvlks"]
+[ext_resource type="Texture2D" uid="uid://cwkiukwm31ofj" path="res://asset/items/items/Weapon_Singles/Iron/Iron_Shield4.png" id="2_e16qx"]
+
+[resource]
+script = ExtResource("1_kvlks")
+type = 4
+name = "Spirit Barrier"
+texture = ExtResource("2_e16qx")
+id = "shield_spirit_barrier"

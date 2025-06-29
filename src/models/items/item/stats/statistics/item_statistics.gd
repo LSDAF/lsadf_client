@@ -52,7 +52,7 @@ static func _prettify_statistic(
 			prettified_statistic = "+{0}% {1}".format([current_value, "Movement Speed"])
 		ItemStatistics.ItemStatistics.SKILL_LEVEL:
 			prettified_statistic = "+{0} {1}".format([current_value, "to Skill Level"])
-		ItemStatistics.ItemStatistics.HP_REGEN:
+		ItemStatistics.ItemStatistics.HP_REGEN_ADD:
 			prettified_statistic = "+{0} {1}".format([current_value, "HP Regeneration"])
 		ItemStatistics.ItemStatistics.HP_REGEN_MULT:
 			prettified_statistic = "+{0}% {1}".format([current_value, "HP Regeneration"])

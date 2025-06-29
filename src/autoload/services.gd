@@ -24,8 +24,12 @@ var stage: StageService = preload("res://src/services/stage/stage_service.gd").n
 	Data.stage, current_quest, difficulty
 )
 
+var item_bases: ItemBasesService = preload("res://src/services/items/item_bases_service.gd").new(
+	Data.item_bases
+)
+
 var inventory: InventoryService = preload("res://src/services/inventory/inventory_service.gd").new(
-	Data.inventory
+	Data.inventory, item_bases
 )
 
 var player_stats: PlayerStatsService = (
@@ -64,7 +68,15 @@ var game_save: GameSaveService = preload("res://src/services/game_save/game_save
 	Data.game_save
 )
 
-var items: ItemsService = preload("res://src/services/items/items_service.gd").new(game_save)
+var affixes: AffixesService = preload("res://src/services/affixes/affixes_service.gd").new(
+	Data.affixes
+)
+
+var item_factory: ItemFactoryService = preload("res://src/services/items/item_factory_service.gd").new(
+	affixes, game_save, item_bases
+)
+
+var items: ItemsService = preload("res://src/services/items/items_service.gd").new(item_factory)
 
 var loot: LootService = preload("res://src/services/loot/loot_service.gd").new(
 	difficulty, inventory, items, random_number_generator

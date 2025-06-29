@@ -142,7 +142,7 @@ func test_suffix_pool_contains_correct_affixes() -> void:
 		]
 	)
 	var hp_regen := ItemAffix.new(
-		ItemStatistics.ItemStatistics.HP_REGEN,
+		ItemStatistics.ItemStatistics.HP_REGEN_ADD,
 		2.0,
 		AffixType.AffixType.SUFFIX,
 		AffixType.AffixRole.DEFENSIVE,
@@ -150,7 +150,7 @@ func test_suffix_pool_contains_correct_affixes() -> void:
 		[ItemType.ItemType.CHESTPLATE, ItemType.ItemType.HELMET, ItemType.ItemType.SHIELD]
 	)
 	var hp_regen_mult := ItemAffix.new(
-		ItemStatistics.ItemStatistics.HP_REGEN,
+		ItemStatistics.ItemStatistics.HP_REGEN_MULT,
 		5.0,
 		AffixType.AffixType.SUFFIX,
 		AffixType.AffixRole.DEFENSIVE,

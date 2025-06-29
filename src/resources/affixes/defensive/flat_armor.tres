@@ -1,9 +1,10 @@
 [gd_resource type="Resource" script_class="ItemAffix" load_steps=2 format=3 uid="uid://1o8rjixw0yck"]
 
-[ext_resource type="Script" uid="uid://dhjxkcb4i2qwo" path="res://src/models/items/item/affix/item_affix.gd" id="1_rxsh6"]
+[ext_resource type="Script" uid="uid://dhjxkcb4i2qwo" path="res://src/models/items/item/affix/item_affix.gd" id="1_n754o"]
 
 [resource]
-script = ExtResource("1_rxsh6")
+script = ExtResource("1_n754o")
+identifier = 0
 statistic = 15
 base_value = 0.0
 affix_type = 0

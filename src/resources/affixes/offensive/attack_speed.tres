@@ -4,6 +4,7 @@
 
 [resource]
 script = ExtResource("1_rxsh6")
+identifier = 8
 statistic = 13
 base_value = 0.0
 affix_type = 1

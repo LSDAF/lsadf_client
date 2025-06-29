@@ -1,6 +1,7 @@
 class_name ItemAffix
 extends Resource
 
+@export var identifier: AffixEnums.AffixIdentifier
 @export var statistic: ItemStatistics.ItemStatistics
 @export var base_value: float
 @export var affix_type: AffixEnums.AffixType

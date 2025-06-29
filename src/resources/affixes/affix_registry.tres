@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="AffixRegistry" load_steps=20 format=3 uid="uid://mpjeubok7ts1"]
 
 [ext_resource type="Script" uid="uid://dhjxkcb4i2qwo" path="res://src/models/items/item/affix/item_affix.gd" id="1_vptkx"]
-[ext_resource type="Resource" uid="uid://1o8rjixw0yck" path="res://src/resources/affixes/defensive/armor.tres" id="2_5oxix"]
+[ext_resource type="Resource" uid="uid://1o8rjixw0yck" path="res://src/resources/affixes/defensive/flat_armor.tres" id="2_5oxix"]
 [ext_resource type="Resource" uid="uid://k4hhkpe4ocx1" path="res://src/resources/affixes/offensive/flat_attack.tres" id="2_bbok5"]
 [ext_resource type="Script" uid="uid://dv6yu1k7wqket" path="res://src/models/items/item/affix/affix_registry.gd" id="2_tmrov"]
 [ext_resource type="Resource" uid="uid://b6fcs46ct1qvl" path="res://src/resources/affixes/offensive/percent_attack.tres" id="3_qpbya"]

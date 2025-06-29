@@ -16,6 +16,7 @@ config/features=PackedStringArray("4.4", "Mobile")
 
 [autoload]
 
+Config="*res://src/autoload/config.gd"
 Http="*res://src/autoload/http/http.gd"
 Data="*res://src/autoload/data.gd"
 Api="*res://src/autoload/api.gd"

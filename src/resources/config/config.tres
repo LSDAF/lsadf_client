@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ConfigResource" load_steps=2 format=3 uid="uid://c4flj8kjjtcbq"]
+
+[ext_resource type="Script" uid="uid://ccm35qnplk3ma" path="res://src/models/config_resource/config_resource.gd" id="1_m3mp0"]
+
+[resource]
+script = ExtResource("1_m3mp0")
+server_url = "https://api.lsadf.k8s.local"
+metadata/_custom_type_script = "uid://ccm35qnplk3ma"

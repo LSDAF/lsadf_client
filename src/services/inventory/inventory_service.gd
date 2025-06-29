@@ -1,11 +1,14 @@
 class_name InventoryService
 
 var _inventory_data: InventoryData
-var _item_pools: ItemPools = preload("res://src/resources/items/item_pools/item_pools.tres")
+var _item_bases_service: ItemBasesService
+var _item_factory_service: ItemFactoryService
 
 
-func _init(inventory_data: InventoryData) -> void:
+func _init(inventory_data: InventoryData, item_bases_service: ItemBasesService, item_factory_service: ItemFactoryService) -> void:
 	_inventory_data = inventory_data
+	_item_bases_service = item_bases_service
+	_item_factory_service = item_factory_service
 
 
 func add_item(item: Item) -> void:
@@ -85,22 +88,8 @@ func level_up_item(item_client_id: String) -> void:
 func set_inventory_from_fetch_inventory_dto(fetch_inventory_dto: FetchInventoryDto) -> void:
 	_inventory_data.items = []
 
-	for inventory_item_dto in fetch_inventory_dto.items:
-		var item := Item.new()
-		item.client_id = inventory_item_dto.client_id
-		item.blueprint_id = inventory_item_dto.blueprint_id
-		item.main_stat = inventory_item_dto.main_stat
-		item.additional_stats = inventory_item_dto.additional_stats
-		item.rarity = inventory_item_dto.rarity
-		item.level = inventory_item_dto.level
-		item.type = inventory_item_dto.type
-		item.is_equipped = inventory_item_dto.is_equipped
-
-		# Set the texture from the blueprint
-		var item_blueprint := _item_pools.get_blueprint_from_id(item.blueprint_id)
-		if item_blueprint:
-			item.texture = item_blueprint.texture
-			item.name = item_blueprint.name
+	for inventory_item_dto: InventoryItemDto in fetch_inventory_dto.items:
+		var item := _item_factory_service.create_item_from_inventory_item_dto(inventory_item_dto)
 
 		_inventory_data.items.append(item)
 

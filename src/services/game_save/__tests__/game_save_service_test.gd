@@ -253,7 +253,7 @@ func test_save_inventory_with_items_to_delete() -> void:
 
 	var item1 := Item.new()
 	item1.client_id = "item1"
-	item1.blueprint_id = "sword_normal_1"
+	item1.base_id = "sword_normal_1"
 	item1.main_stat = main_stat
 	item1.additional_stats = [additional_stat]
 	item1.rarity = ItemRarity.ItemRarity.NORMAL
@@ -265,7 +265,7 @@ func test_save_inventory_with_items_to_delete() -> void:
 
 	var item1_dict: Dictionary = {
 		"client_id": "item1",
-		"blueprint_id": "sword_normal_1",
+		"base_id": "sword_normal_1",
 		"main_stat":
 		{
 			"statistic": ItemStatistics.ItemStatistics.keys()[main_stat.statistic],
@@ -286,7 +286,7 @@ func test_save_inventory_with_items_to_delete() -> void:
 
 	var item2_dict: Dictionary = {
 		"client_id": "item2",
-		"blueprint_id": "shield_normal_1",
+		"base_id": "shield_normal_1",
 		"main_stat":
 		{
 			"statistic": ItemStatistics.ItemStatistics.keys()[main_stat.statistic],
@@ -336,7 +336,7 @@ func test_save_inventory_delete_failure() -> void:
 
 	var item1 := Item.new()
 	item1.client_id = "item1"
-	item1.blueprint_id = "sword_normal_1"
+	item1.base_id = "sword_normal_1"
 	item1.main_stat = main_stat
 	item1.additional_stats = [additional_stat]
 	item1.rarity = ItemRarity.ItemRarity.NORMAL
@@ -348,7 +348,7 @@ func test_save_inventory_delete_failure() -> void:
 
 	var item1_dict: Dictionary = {
 		"client_id": "item1",
-		"blueprint_id": "sword_normal_1",
+		"base_id": "sword_normal_1",
 		"main_stat":
 		{
 			"statistic": ItemStatistics.ItemStatistics.keys()[main_stat.statistic],
@@ -369,7 +369,7 @@ func test_save_inventory_delete_failure() -> void:
 
 	var item2_dict: Dictionary = {
 		"client_id": "item2",
-		"blueprint_id": "shield_normal_1",
+		"base_id": "shield_normal_1",
 		"main_stat":
 		{
 			"statistic": ItemStatistics.ItemStatistics.keys()[main_stat.statistic],
@@ -441,7 +441,7 @@ func test_save_inventory_create_failure() -> void:
 
 	var item1 := Item.new()
 	item1.client_id = "item1"
-	item1.blueprint_id = "sword_normal_1"
+	item1.base_id = "sword_normal_1"
 	item1.main_stat = main_stat
 	item1.additional_stats = [additional_stat]
 	item1.rarity = ItemRarity.ItemRarity.NORMAL
@@ -481,7 +481,7 @@ func test_save_inventory_update_failure() -> void:
 
 	var item1 := Item.new()
 	item1.client_id = "item1"
-	item1.blueprint_id = "sword_normal_1"
+	item1.base_id = "sword_normal_1"
 	item1.main_stat = main_stat
 	item1.additional_stats = [additional_stat]
 	item1.rarity = ItemRarity.ItemRarity.NORMAL
@@ -493,7 +493,7 @@ func test_save_inventory_update_failure() -> void:
 
 	var item1_dict: Dictionary = {
 		"client_id": "item1",
-		"blueprint_id": "sword_normal_1",
+		"base_id": "sword_normal_1",
 		"main_stat":
 		{
 			"statistic": ItemStatistics.ItemStatistics.keys()[main_stat.statistic],
@@ -542,7 +542,7 @@ func test_save_inventory_success() -> void:
 
 	var item1 := Item.new()
 	item1.client_id = "item1"
-	item1.blueprint_id = "sword_normal_1"
+	item1.base_id = "sword_normal_1"
 	item1.main_stat = main_stat
 	item1.additional_stats = [additional_stat]
 	item1.rarity = ItemRarity.ItemRarity.NORMAL
@@ -552,7 +552,7 @@ func test_save_inventory_success() -> void:
 
 	var item2 := Item.new()
 	item2.client_id = "item2"
-	item2.blueprint_id = "shield_normal_1"
+	item2.base_id = "shield_normal_1"
 	item2.main_stat = main_stat
 	item2.additional_stats = [additional_stat]
 	item2.rarity = ItemRarity.ItemRarity.NORMAL
@@ -564,7 +564,7 @@ func test_save_inventory_success() -> void:
 
 	var item1_dict: Dictionary = {
 		"client_id": "item1",
-		"blueprint_id": "sword_normal_1",
+		"base_id": "sword_normal_1",
 		"main_stat":
 		{
 			"statistic": ItemStatistics.ItemStatistics.keys()[main_stat.statistic],
@@ -613,7 +613,7 @@ func test_save_inventory_partial_failure() -> void:
 
 	var item1 := Item.new()
 	item1.client_id = "item1"
-	item1.blueprint_id = "sword_normal_1"
+	item1.base_id = "sword_normal_1"
 	item1.main_stat = main_stat
 	item1.additional_stats = [additional_stat]
 	item1.rarity = ItemRarity.ItemRarity.NORMAL
@@ -623,7 +623,7 @@ func test_save_inventory_partial_failure() -> void:
 
 	var item2 := Item.new()
 	item2.client_id = "item2"
-	item2.blueprint_id = "shield_normal_1"
+	item2.base_id = "shield_normal_1"
 	item2.main_stat = main_stat
 	item2.additional_stats = [additional_stat]
 	item2.rarity = ItemRarity.ItemRarity.NORMAL
@@ -635,7 +635,7 @@ func test_save_inventory_partial_failure() -> void:
 
 	var item1_dict: Dictionary = {
 		"client_id": "item1",
-		"blueprint_id": "sword_normal_1",
+		"base_id": "sword_normal_1",
 		"main_stat":
 		{
 			"statistic": ItemStatistics.ItemStatistics.keys()[main_stat.statistic],

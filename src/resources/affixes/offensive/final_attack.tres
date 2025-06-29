@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemAffix" load_steps=2 format=3 uid="uid://gi20ltlxla8"]
+
+[ext_resource type="Script" uid="uid://dhjxkcb4i2qwo" path="res://src/models/items/item/affix/item_affix.gd" id="1_rxsh6"]
+
+[resource]
+script = ExtResource("1_rxsh6")
+identifier = 12
+statistic = 16
+base_value = 0.0
+affix_type = 1
+affix_role = 0
+scaling_type = 0
+allowed_item_types = Array[int]([])

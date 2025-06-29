@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemBase" load_steps=4 format=3 uid="uid://2gcgewjwct1r"]
+
+[ext_resource type="Resource" uid="uid://k4hhkpe4ocx1" path="res://src/resources/affixes/offensive/flat_attack.tres" id="1_ork5c"]
+[ext_resource type="Script" uid="uid://bby5vxbm2gokx" path="res://src/models/items/item_base/item_base.gd" id="1_qplf0"]
+[ext_resource type="Texture2D" uid="uid://d13myjo7uvcv0" path="res://asset/items/items/Armor_Singles/Iron/Iron_Gloves6.png" id="2_ork5c"]
+
+[resource]
+script = ExtResource("1_qplf0")
+type = 2
+name = "Crusher's Grip"
+texture = ExtResource("2_ork5c")
+id = "gloves_crushers_grip"
+implicit_affix = ExtResource("1_ork5c")

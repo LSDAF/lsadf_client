@@ -1,9 +1,10 @@
 class_name Item
 
 var client_id: String
-var blueprint_id: String
-var main_stat: ItemStat
-var additional_stats: Array[ItemStat]
+var base_id: String
+var implicit_affix: ItemAffix
+var prefixes: Array[ItemAffix] = []
+var suffixes: Array[ItemAffix] = []
 var rarity: ItemRarity.ItemRarity
 var level: int
 var type: ItemType.ItemType
@@ -23,13 +24,18 @@ func item_salvage_price() -> int:
 func total_stat_value(item_statistic: ItemStatistics.ItemStatistics) -> float:
 	var total_value := 0.0
 
-	if main_stat.statistic == item_statistic:
-		total_value += main_stat.base_value * level
+	# Check implicit affix
+	if implicit_affix and implicit_affix.statistic == item_statistic:
+		total_value += implicit_affix.calculate_value(level)
 
-	var corresponding_additional_stats: Array[ItemStat] = additional_stats.filter(
-		func(additional_stat: ItemStat) -> bool: return additional_stat.statistic == item_statistic
-	)
-	for additional_stat in corresponding_additional_stats:
-		total_value += additional_stat.base_value * level
+	# Check prefixes
+	for prefix in prefixes:
+		if prefix.statistic == item_statistic:
+			total_value += prefix.calculate_value(level)
+	
+	# Check suffixes
+	for suffix in suffixes:
+		if suffix.statistic == item_statistic:
+			total_value += suffix.calculate_value(level)
 
 	return total_value

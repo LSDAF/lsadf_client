@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="RaritySpec" load_steps=2 format=3 uid="uid://ds518ywjdw8rm"]
+
+[ext_resource type="Script" uid="uid://bboxhu4spjfa3" path="res://src/models/items/item/rarity_specs/rarity_spec.gd" id="1_k4puv"]
+
+[resource]
+script = ExtResource("1_k4puv")
+range_min_mulitplier = 0.0
+range_max_mulitplier = 0.0
+min_prefix_number = 0
+min_suffix_number = 0
+total_affix_number = 1

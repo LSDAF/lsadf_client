@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bdgi2a1ok72ij"]
 
-[ext_resource type="Script" path="res://src/elements/hud/characteristics_menu/characteristics_menu_item/characteristics_menu_item.gd" id="1_r8c6v"]
+[ext_resource type="Script" uid="uid://bv4w4indbnkfe" path="res://src/elements/hud/characteristics_menu/characteristics_menu_item/characteristics_menu_item.gd" id="1_r8c6v"]
 
 [node name="CharacteristicMenuItem" type="HBoxContainer"]
 script = ExtResource("1_r8c6v")

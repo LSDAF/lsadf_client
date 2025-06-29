@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="RaritySpec" load_steps=2 format=3 uid="uid://c0k87ek1wbmsr"]
+
+[ext_resource type="Script" uid="uid://bboxhu4spjfa3" path="res://src/models/items/item/rarity_specs/rarity_spec.gd" id="1_8sss3"]
+
+[resource]
+script = ExtResource("1_8sss3")
+range_min_mulitplier = 1.25
+range_max_mulitplier = 1.5
+min_prefix_number = 1
+min_suffix_number = 1
+total_affix_number = 2

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemBases" load_steps=5 format=3 uid="uid://deaojtulbmwjv"]
+
+[ext_resource type="Script" uid="uid://dsbq33ba4tphw" path="res://src/models/items/item_base/item_bases.gd" id="1_g6gff"]
+[ext_resource type="Script" uid="uid://bby5vxbm2gokx" path="res://src/models/items/item_base/item_base.gd" id="1_ovear"]
+[ext_resource type="Resource" uid="uid://d4f2d6pvquny1" path="res://src/resources/items/bases/boots/iron_greaves.tres" id="2_g88gf"]
+[ext_resource type="Resource" uid="uid://dak56h21s0jhs" path="res://src/resources/items/bases/boots/swift_step.tres" id="3_o10mc"]
+
+[resource]
+script = ExtResource("1_g6gff")
+boots = Array[ExtResource("1_ovear")]([ExtResource("2_g88gf"), ExtResource("3_o10mc")])
+chestplates = Array[ExtResource("1_ovear")]([])
+gloves = Array[ExtResource("1_ovear")]([])
+helmets = Array[ExtResource("1_ovear")]([])
+shields = Array[ExtResource("1_ovear")]([])
+swords = Array[ExtResource("1_ovear")]([])

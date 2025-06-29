@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="AffixRegistry" load_steps=20 format=3 uid="uid://mpjeubok7ts1"]
+
+[ext_resource type="Script" uid="uid://dhjxkcb4i2qwo" path="res://src/models/items/item/affix/item_affix.gd" id="1_vptkx"]
+[ext_resource type="Resource" uid="uid://1o8rjixw0yck" path="res://src/resources/affixes/defensive/flat_armor.tres" id="2_5oxix"]
+[ext_resource type="Resource" uid="uid://k4hhkpe4ocx1" path="res://src/resources/affixes/offensive/flat_attack.tres" id="2_bbok5"]
+[ext_resource type="Script" uid="uid://dv6yu1k7wqket" path="res://src/models/items/item/affix/affix_registry.gd" id="2_tmrov"]
+[ext_resource type="Resource" uid="uid://b6fcs46ct1qvl" path="res://src/resources/affixes/offensive/percent_attack.tres" id="3_qpbya"]
+[ext_resource type="Resource" uid="uid://bekbohd4vnsap" path="res://src/resources/affixes/defensive/flat_hp.tres" id="4_c28q1"]
+[ext_resource type="Resource" uid="uid://co60tauhdbv0h" path="res://src/resources/affixes/defensive/percent_hp.tres" id="5_v3vpn"]
+[ext_resource type="Resource" uid="uid://do2w62p2k052d" path="res://src/resources/affixes/defensive/flat_hp_regen.tres" id="5_vptkx"]
+[ext_resource type="Resource" uid="uid://b6vf45yqc2ps6" path="res://src/resources/affixes/defensive/hp_regen_cdr.tres" id="6_0ey44"]
+[ext_resource type="Resource" uid="uid://dhm70u6qo7qqx" path="res://src/resources/affixes/offensive/crit_chance.tres" id="6_syn2e"]
+[ext_resource type="Resource" uid="uid://bnoc1iw56av52" path="res://src/resources/affixes/offensive/crit_damage.tres" id="8_vptkx"]
+[ext_resource type="Resource" uid="uid://1k8hreu6phhp" path="res://src/resources/affixes/defensive/percent_hp_regen.tres" id="8_xvwst"]
+[ext_resource type="Resource" uid="uid://bquj583oqkrtk" path="res://src/resources/affixes/utility/cooldown_reduction.tres" id="9_0ey44"]
+[ext_resource type="Resource" uid="uid://bvfofjufpul20" path="res://src/resources/affixes/offensive/attack_speed.tres" id="10_qebl8"]
+[ext_resource type="Resource" uid="uid://cqkccdrslh5hy" path="res://src/resources/affixes/utility/skill_level.tres" id="10_xvwst"]
+[ext_resource type="Resource" uid="uid://ddw82876hl33f" path="res://src/resources/affixes/offensive/basic_attack_damage.tres" id="11_hrprc"]
+[ext_resource type="Resource" uid="uid://h1h8j0vpsiuw" path="res://src/resources/affixes/mobility/movement_speed.tres" id="11_qebl8"]
+[ext_resource type="Resource" uid="uid://gi20ltlxla8" path="res://src/resources/affixes/offensive/final_attack.tres" id="12_hrprc"]
+[ext_resource type="Resource" uid="uid://bo4nff8qrgicp" path="res://src/resources/affixes/defensive/final_hp.tres" id="13_eiw6n"]
+
+[resource]
+script = ExtResource("2_tmrov")
+affixes = Array[ExtResource("1_vptkx")]([ExtResource("2_5oxix"), ExtResource("13_eiw6n"), ExtResource("4_c28q1"), ExtResource("5_vptkx"), ExtResource("6_0ey44"), ExtResource("5_v3vpn"), ExtResource("8_xvwst"), ExtResource("11_qebl8"), ExtResource("10_qebl8"), ExtResource("11_hrprc"), ExtResource("6_syn2e"), ExtResource("8_vptkx"), ExtResource("12_hrprc"), ExtResource("2_bbok5"), ExtResource("3_qpbya"), ExtResource("9_0ey44"), ExtResource("10_xvwst")])
+metadata/_custom_type_script = "uid://dv6yu1k7wqket"

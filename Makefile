@@ -27,10 +27,10 @@ tests-github-actions:
 tests:
 	godot --headless -s addons/gut/gut_cmdln.gd -gconfig=.gutconfig.default.json
 
-# Run a specific test file
-# Usage: make test TEST_FILE=res://src/store/reactive_store/__tests__/reactive_store_test.gd
+# Run a specific test file (path should be relative to repo root)
+# Example: make test TEST_FILE=src/services/items/__tests__/items_service_test.gd
 test:
-	godot --headless -s addons/gut/gut_cmdln.gd -gexit -gtest=$(TEST_FILE)
+	godot --headless -s addons/gut/gut_cmdln.gd -gconfig=.gutconfig.default.json -gtest=res://$(TEST_FILE) -gexit -gdir=
 
 clean-unused-assets:
 	@python3 scripts/find_unused_assets.py --fix --no-interactive

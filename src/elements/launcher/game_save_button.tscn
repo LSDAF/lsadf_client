@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://fwvt5ili38r3"]
 
-[ext_resource type="Script" path="res://src/elements/launcher/game_save_button.gd" id="1_ir8od"]
+[ext_resource type="Script" uid="uid://cxcol4yrodx4o" path="res://src/elements/launcher/game_save_button.gd" id="1_ir8od"]
 [ext_resource type="Texture2D" uid="uid://buut3gtyqb7oc" path="res://asset/ui/wood/UI_Wood_Flat.png" id="2_dr83m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k46ue"]

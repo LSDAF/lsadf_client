@@ -2,11 +2,12 @@ class_name ItemRarity
 
 enum ItemRarity {
 	NORMAL,
-	RARE,
+	COMMON,
+	UNCOMMON,
 	MAGIC,
-	EPIC,
+	RARE,
 	LEGENDARY,
-	MYTHIC,
+	UNIQUE,
 }
 
 
@@ -16,16 +17,18 @@ static func _prettify_rarity(item_rarity: ItemRarity.ItemRarity) -> String:
 	match item_rarity:
 		ItemRarity.ItemRarity.NORMAL:
 			prettified_rarity = "Normal"
-		ItemRarity.ItemRarity.RARE:
-			prettified_rarity = "Rare"
+		ItemRarity.ItemRarity.COMMON:
+			prettified_rarity = "Common"
+		ItemRarity.ItemRarity.UNCOMMON:
+			prettified_rarity = "Uncommon"
 		ItemRarity.ItemRarity.MAGIC:
 			prettified_rarity = "Magic"
-		ItemRarity.ItemRarity.EPIC:
-			prettified_rarity = "Epic"
+		ItemRarity.ItemRarity.RARE:
+			prettified_rarity = "Rare"
 		ItemRarity.ItemRarity.LEGENDARY:
 			prettified_rarity = "Legendary"
-		ItemRarity.ItemRarity.MYTHIC:
-			prettified_rarity = "Mythic"
+		ItemRarity.ItemRarity.UNIQUE:
+			prettified_rarity = "Unique"
 		_:
 			prettified_rarity = "?NO_RARITY"
 

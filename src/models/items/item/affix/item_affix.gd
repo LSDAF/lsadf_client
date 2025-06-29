@@ -11,6 +11,7 @@ extends Resource
 
 
 func _init(
+	_identifier: AffixEnums.AffixIdentifier,
 	_statistic: ItemStatistics.ItemStatistics = ItemStatistics.ItemStatistics.ATTACK_ADD,
 	_base_value: float = 0.0,
 	_affix_type: AffixEnums.AffixType = AffixEnums.AffixType.PREFIX,
@@ -18,6 +19,7 @@ func _init(
 	_scaling_type: AffixScaling.ScalingType = AffixScaling.ScalingType.LINEAR,
 	_allowed_item_types: Array[ItemType.ItemType] = []
 ) -> void:
+	identifier = _identifier
 	statistic = _statistic
 	base_value = _base_value
 	affix_type = _affix_type
@@ -36,6 +38,7 @@ func can_roll_on_item_type(item_type: ItemType.ItemType) -> bool:
 
 func to_dictionary() -> Dictionary:
 	return {
+		"identifier": AffixEnums.AffixIdentifier.keys()[identifier],
 		"statistic": ItemStatistics.ItemStatistics.keys()[statistic],
 		"base_value": base_value,
 		"affix_type": AffixEnums.AffixType.keys()[affix_type],
@@ -50,6 +53,7 @@ func to_dictionary() -> Dictionary:
 
 static func from_dictionary(dict: Dictionary) -> ItemAffix:
 	return ItemAffix.new(
+		dict["identifier"],
 		ItemStatistics.ItemStatistics[dict["statistic"]],
 		dict["base_value"],
 		AffixEnums.AffixType[dict["affix_type"]],

@@ -29,7 +29,7 @@ var item_bases: ItemBasesService = preload("res://src/services/items/item_bases_
 )
 
 var inventory: InventoryService = preload("res://src/services/inventory/inventory_service.gd").new(
-	Data.inventory, item_bases
+	Data.inventory, item_bases, item_factory
 )
 
 var player_stats: PlayerStatsService = (
@@ -73,7 +73,7 @@ var affixes: AffixesService = preload("res://src/services/affixes/affixes_servic
 )
 
 var item_factory: ItemFactoryService = preload("res://src/services/items/item_factory_service.gd").new(
-	affixes, game_save, item_bases
+	affixes, item_bases, Data.game_save
 )
 
 var items: ItemsService = preload("res://src/services/items/items_service.gd").new(item_factory)

@@ -9,24 +9,24 @@ func before_each() -> void:
 		ItemAffix.new(
 			ItemStatistics.ItemStatistics.ATTACK_ADD,
 			10.0,
-			AffixType.AffixType.PREFIX,
-			AffixType.AffixRole.OFFENSIVE,
+			AffixEnums.AffixType.PREFIX,
+			AffixEnums.AffixRole.OFFENSIVE,
 			AffixScaling.ScalingType.LINEAR,
 			[ItemType.ItemType.GLOVES, ItemType.ItemType.SWORD]
 		),
 		ItemAffix.new(
 			ItemStatistics.ItemStatistics.HEALTH_ADD,
 			50.0,
-			AffixType.AffixType.PREFIX,
-			AffixType.AffixRole.DEFENSIVE,
+			AffixEnums.AffixType.PREFIX,
+			AffixEnums.AffixRole.DEFENSIVE,
 			AffixScaling.ScalingType.LINEAR,
 			[ItemType.ItemType.CHESTPLATE, ItemType.ItemType.HELMET]
 		),
 		ItemAffix.new(
 			ItemStatistics.ItemStatistics.CRIT_DAMAGE,
 			10.0,
-			AffixType.AffixType.SUFFIX,
-			AffixType.AffixRole.OFFENSIVE,
+			AffixEnums.AffixType.SUFFIX,
+			AffixEnums.AffixRole.OFFENSIVE,
 			AffixScaling.ScalingType.EXPONENTIAL,
 			[ItemType.ItemType.GLOVES, ItemType.ItemType.SWORD]
 		),
@@ -92,7 +92,7 @@ func test_get_affixes_by_role_returns_empty_array_when_no_affixes_found() -> voi
 	sut._affixes = []
 
 	# Act
-	var result := sut.get_affixes_by_role(ItemType.ItemType.SWORD, AffixType.AffixRole.OFFENSIVE)
+	var result := sut.get_affixes_by_role(ItemType.ItemType.SWORD, AffixEnums.AffixRole.OFFENSIVE)
 
 	# Assert
 	assert_eq(result.size(), 0)

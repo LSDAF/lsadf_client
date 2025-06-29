@@ -3,8 +3,8 @@ extends Resource
 
 @export var statistic: ItemStatistics.ItemStatistics
 @export var base_value: float
-@export var affix_type: AffixType.AffixType
-@export var affix_role: AffixType.AffixRole
+@export var affix_type: AffixEnums.AffixType
+@export var affix_role: AffixEnums.AffixRole
 @export var scaling_type: AffixScaling.ScalingType
 @export var allowed_item_types: Array[ItemType.ItemType]
 
@@ -12,8 +12,8 @@ extends Resource
 func _init(
 	_statistic: ItemStatistics.ItemStatistics = ItemStatistics.ItemStatistics.ATTACK_ADD,
 	_base_value: float = 0.0,
-	_affix_type: AffixType.AffixType = AffixType.AffixType.PREFIX,
-	_affix_role: AffixType.AffixRole = AffixType.AffixRole.OFFENSIVE,
+	_affix_type: AffixEnums.AffixType = AffixEnums.AffixType.PREFIX,
+	_affix_role: AffixEnums.AffixRole = AffixEnums.AffixRole.OFFENSIVE,
 	_scaling_type: AffixScaling.ScalingType = AffixScaling.ScalingType.LINEAR,
 	_allowed_item_types: Array[ItemType.ItemType] = []
 ) -> void:
@@ -37,8 +37,8 @@ func to_dictionary() -> Dictionary:
 	return {
 		"statistic": ItemStatistics.ItemStatistics.keys()[statistic],
 		"base_value": base_value,
-		"affix_type": AffixType.AffixType.keys()[affix_type],
-		"affix_role": AffixType.AffixRole.keys()[affix_role],
+		"affix_type": AffixEnums.AffixType.keys()[affix_type],
+		"affix_role": AffixEnums.AffixRole.keys()[affix_role],
 		"scaling_type": AffixScaling.ScalingType.keys()[scaling_type],
 		"allowed_item_types":
 		allowed_item_types.map(
@@ -51,8 +51,8 @@ static func from_dictionary(dict: Dictionary) -> ItemAffix:
 	return ItemAffix.new(
 		ItemStatistics.ItemStatistics[dict["statistic"]],
 		dict["base_value"],
-		AffixType.AffixType[dict["affix_type"]],
-		AffixType.AffixRole[dict["affix_role"]],
+		AffixEnums.AffixType[dict["affix_type"]],
+		AffixEnums.AffixRole[dict["affix_role"]],
 		AffixScaling.ScalingType[dict["scaling_type"]],
 		dict["allowed_item_types"].map(
 			func(type: String) -> ItemType.ItemType: return ItemType.ItemType[type]

@@ -1,4 +1,4 @@
-class_name AffixType
+class_name AffixEnums
 
 enum AffixType { PREFIX, SUFFIX }
 

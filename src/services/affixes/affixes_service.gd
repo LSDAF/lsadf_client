@@ -12,13 +12,13 @@ func _init(affixes_data: AffixesDataScript) -> void:
 func get_all_prefixes() -> Array[ItemAffix]:
 	var registry: AffixRegistryScript = _affixes_data.registry as AffixRegistryScript
 	return registry.affixes.filter(
-		func(affix: ItemAffix) -> bool: return affix.affix_type == AffixType.AffixType.PREFIX
+		func(affix: ItemAffix) -> bool: return affix.affix_type == AffixEnums.AffixType.PREFIX
 	)
 	
 func get_all_suffixes() -> Array[ItemAffix]:
 	var registry: AffixRegistryScript = _affixes_data.registry as AffixRegistryScript
 	return registry.affixes.filter(
-		func(affix: ItemAffix) -> bool: return affix.affix_type == AffixType.AffixType.SUFFIX
+		func(affix: ItemAffix) -> bool: return affix.affix_type == AffixEnums.AffixType.SUFFIX
 	)
 
 

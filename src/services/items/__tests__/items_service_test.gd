@@ -536,8 +536,8 @@ func test_create_affix_prefix() -> void:
 	var test_affix := ItemAffix.new(
 		ItemStatistics.ItemStatistics.ATTACK_ADD,
 		10.0,
-		AffixType.AffixType.PREFIX,
-		AffixType.AffixRole.OFFENSIVE,
+		AffixEnums.AffixType.PREFIX,
+		AffixEnums.AffixRole.OFFENSIVE,
 		AffixScaling.ScalingType.LINEAR,
 		[item_type]
 	)
@@ -551,7 +551,7 @@ func test_create_affix_prefix() -> void:
 
 	# Assert
 	assert_not_null(affix)
-	assert_eq(affix.affix_type, AffixType.AffixType.PREFIX)
+	assert_eq(affix.affix_type, AffixEnums.AffixType.PREFIX)
 	assert_true(affix.can_roll_on_item_type(item_type))
 
 
@@ -564,8 +564,8 @@ func test_create_affix_suffix() -> void:
 	var test_affix := ItemAffix.new(
 		ItemStatistics.ItemStatistics.ATTACK_ADD,
 		10.0,
-		AffixType.AffixType.SUFFIX,
-		AffixType.AffixRole.OFFENSIVE,
+		AffixEnums.AffixType.SUFFIX,
+		AffixEnums.AffixRole.OFFENSIVE,
 		AffixScaling.ScalingType.LINEAR,
 		[item_type]
 	)
@@ -579,7 +579,7 @@ func test_create_affix_suffix() -> void:
 
 	# Assert
 	assert_not_null(affix)
-	assert_eq(affix.affix_type, AffixType.AffixType.SUFFIX)
+	assert_eq(affix.affix_type, AffixEnums.AffixType.SUFFIX)
 	assert_true(affix.can_roll_on_item_type(item_type))
 
 

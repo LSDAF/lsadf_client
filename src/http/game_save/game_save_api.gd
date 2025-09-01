@@ -16,7 +16,7 @@ func generate_game_save(on_failure: Callable) -> GameSaveDto:
 		on_failure.call(response)
 		return null
 
-	return GameSaveDto.new(json["data"])
+	return GameSaveDto.new(json["data"]["metadata"])
 
 
 func update_game_save_nickname(

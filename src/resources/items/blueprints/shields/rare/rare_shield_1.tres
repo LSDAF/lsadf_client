@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ItemBlueprint" load_steps=3 format=3 uid="uid://eojtqaewk6y5"]
 
-[ext_resource type="Script" path="res://src/models/items/item_blueprint/item_blueprint.gd" id="1_r6wuy"]
-[ext_resource type="Texture2D" path="res://asset/items/items/Weapon_Singles/Iron/Iron_Shield2.png" id="2_p8b20"]
+[ext_resource type="Script" uid="uid://ugyahm5tf2h6" path="res://src/models/items/item_blueprint/item_blueprint.gd" id="1_r6wuy"]
+[ext_resource type="Texture2D" uid="uid://nt575y2i7vb2" path="res://asset/items/items/Weapon_Singles/Iron/Iron_Shield2.png" id="2_p8b20"]
 
 [resource]
 script = ExtResource("1_r6wuy")

@@ -1,7 +1,7 @@
 class_name ApiRoutes
 extends Node
 
-const APP_URL: String = "https://api.lsadf.k8s.local"
+const APP_URL: String = "https://api.lsadf.ovh"
 
 # Public routes
 const LOGIN := APP_URL + "/api/v1/auth/login"

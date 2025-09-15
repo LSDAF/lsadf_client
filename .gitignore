@@ -18,3 +18,6 @@ tmp/
 
 # PyEnv files
 .python-version
+
+# Android build files
+android

@@ -2,12 +2,13 @@ class_name InventoryApi
 
 
 func create_game_save_inventory_item(
-	game_save_id: String, item: InventoryItemDto, on_failure: Callable
+	game_save_id: String, game_session_id: String, item: InventoryItemDto, on_failure: Callable
 ) -> bool:
 	var response: HTTPResult = await Http.api_client.post(
 		Http.api_routes.CREATE_GAME_SAVE_INVENTORY_ITEM.format({"game_save_id": game_save_id}),
 		true,
-		item.to_dictionary()
+		item.to_dictionary(),
+		{"X-GameSession-ID": game_session_id}
 	)
 
 	if !response.success() or response.status_err():
@@ -26,13 +27,14 @@ func create_game_save_inventory_item(
 
 
 func delete_game_save_inventory_item(
-	game_save_id: String, client_id: String, on_failure: Callable
+	game_save_id: String, client_id: String, game_session_id: String, on_failure: Callable
 ) -> bool:
 	var response: HTTPResult = await Http.api_client.delete(
 		Http.api_routes.DELETE_GAME_SAVE_INVENTORY_ITEM.format(
 			{"game_save_id": game_save_id, "client_id": client_id}
 		),
-		true
+		true,
+		{"X-GameSession-ID": game_session_id}
 	)
 
 	if !response.success() or response.status_err():
@@ -71,14 +73,15 @@ func fetch_game_save_inventory(game_save_id: String, on_failure: Callable) -> Fe
 
 
 func update_game_save_inventory_item(
-	game_save_id: String, item: InventoryItemDto, on_failure: Callable
+	game_save_id: String, game_session_id: String, item: InventoryItemDto, on_failure: Callable
 ) -> bool:
 	var response: HTTPResult = await Http.api_client.put(
 		Http.api_routes.UPDATE_GAME_SAVE_INVENTORY_ITEM.format(
 			{"game_save_id": game_save_id, "client_id": item.client_id}
 		),
 		true,
-		item.to_dictionary()
+		item.to_dictionary(),
+		{"X-GameSession-ID": game_session_id}
 	)
 
 	if !response.success() or response.status_err():

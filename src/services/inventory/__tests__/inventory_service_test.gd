@@ -200,33 +200,30 @@ func test_set_inventory_from_fetch_inventory_dto() -> void:
 	var fetch_inventory_dto := (
 		FetchInventoryDto
 		. new(
-			{
-				"items":
-				[
-					{
-						"client_id":
-						"36f27c2a-06e8-4bdb-bf59-56999116f5ef__11111111-1111-1111-1111-111111111111",
-						"blueprint_id": "sword_normal_1",
-						"main_stat": {"statistic": "ATTACK_ADD", "base_value": 1.0},
-						"additional_stats": [{"statistic": "CRIT_DAMAGE", "base_value": 3.0}],
-						"rarity": "NORMAL",
-						"level": 1,
-						"type": "SWORD",
-						"is_equipped": false,
-					},
-					{
-						"client_id":
-						"36f27c2a-06e8-4bdb-bf59-56999116f5ef__22222222-2222-2222-2222-222222222222",
-						"blueprint_id": "sword_normal_2",
-						"main_stat": {"statistic": "CRIT_CHANCE", "base_value": 2.0},
-						"additional_stats": [{"statistic": "HEALTH_ADD", "base_value": 4.0}],
-						"rarity": "NORMAL",
-						"level": 10,
-						"type": "CHESTPLATE",
-						"is_equipped": true,
-					}
-				]
-			}
+			[
+				{
+					"client_id":
+					"36f27c2a-06e8-4bdb-bf59-56999116f5ef__11111111-1111-1111-1111-111111111111",
+					"blueprint_id": "sword_normal_1",
+					"main_stat": {"statistic": "ATTACK_ADD", "base_value": 1.0},
+					"additional_stats": [{"statistic": "CRIT_DAMAGE", "base_value": 3.0}],
+					"rarity": "NORMAL",
+					"level": 1,
+					"type": "SWORD",
+					"is_equipped": false,
+				},
+				{
+					"client_id":
+					"36f27c2a-06e8-4bdb-bf59-56999116f5ef__22222222-2222-2222-2222-222222222222",
+					"blueprint_id": "sword_normal_2",
+					"main_stat": {"statistic": "CRIT_CHANCE", "base_value": 2.0},
+					"additional_stats": [{"statistic": "HEALTH_ADD", "base_value": 4.0}],
+					"rarity": "NORMAL",
+					"level": 10,
+					"type": "CHESTPLATE",
+					"is_equipped": true,
+				}
+			]
 		)
 	)
 

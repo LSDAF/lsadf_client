@@ -10,6 +10,7 @@ var characteristics_data := preload("res://src/data/characteristics/characterist
 var currency_data := preload("res://src/data/currencies/currencies_data.gd")
 var difficulty_data := preload("res://src/data/difficulty/difficulty_data.gd")
 var game_save_data := preload("res://src/data/game_save/game_save_data.gd")
+var game_session_data := preload("res://src/data/game_session/game_session_data.gd")
 var inventory_data := preload("res://src/data/inventory/inventory_data.gd")
 var stage_data := preload("res://src/data/stage/stage_data.gd")
 var characteristics_service := preload(
@@ -30,6 +31,7 @@ var characteristics_data_partial_double: Variant
 var currency_data_partial_double: Variant
 var difficulty_data_partial_double: Variant
 var game_save_data_partial_double: Variant
+var game_session_data_partial_double: Variant
 var inventory_data_partial_double: Variant
 var stage_data_partial_double: Variant
 var characteristics_service_partial_double: Variant
@@ -72,6 +74,7 @@ func before_each() -> void:
 		difficulty_service_partial_double
 	)
 	game_save_data_partial_double = partial_double(game_save_data).new()
+	game_session_data_partial_double = partial_double(game_session_data).new()
 
 	sut = preload("res://src/services/game_save/game_save_service.gd").new(
 		characteristics_api_partial_double,
@@ -83,7 +86,8 @@ func before_each() -> void:
 		currencies_service_partial_double,
 		inventory_service_partial_double,
 		stage_service_partial_double,
-		game_save_data_partial_double
+		game_save_data_partial_double,
+		game_session_data_partial_double
 	)
 
 
@@ -108,7 +112,7 @@ func test_load_game_save() -> void:
 	)
 	var fetched_stage: FetchStageDto = FetchStageDto.new({"current_stage": 100, "max_stage": 200})
 
-	var fetched_inventory: FetchInventoryDto = FetchInventoryDto.new({"items": []})
+	var fetched_inventory: FetchInventoryDto = FetchInventoryDto.new([])
 
 	stub(characteristics_api_partial_double, "fetch_game_save_characteristics").to_return(
 		fetched_characteristics
@@ -143,7 +147,6 @@ func test_load_game_save() -> void:
 func test_save_game_success() -> void:
 	# Arrange
 	stub(clock_service_partial_double, "get_unix_time_from_system").to_return(1000.0)
-
 	stub(characteristics_api_partial_double, "update_game_save_characteristics").to_return(true)
 	stub(currencies_api_partial_double, "update_game_save_currencies").to_return(true)
 	stub(stage_api_partial_double, "update_game_save_stage").to_return(true)
@@ -151,7 +154,7 @@ func test_save_game_success() -> void:
 	var items: Array[Item] = []
 	stub(inventory_service_partial_double, "get_items").to_return(items)
 	stub(inventory_api_partial_double, "fetch_game_save_inventory").to_return(
-		FetchInventoryDto.new({"items": []})
+		FetchInventoryDto.new([])
 	)
 
 	# Act
@@ -172,7 +175,7 @@ func test_save_game_partial_failure() -> void:
 	var items: Array[Item] = []
 	stub(inventory_service_partial_double, "get_items").to_return(items)
 	stub(inventory_api_partial_double, "fetch_game_save_inventory").to_return(
-		FetchInventoryDto.new({"items": []})
+		FetchInventoryDto.new([])
 	)
 
 	# Act
@@ -305,7 +308,7 @@ func test_save_inventory_with_items_to_delete() -> void:
 		"is_equipped": false
 	}
 
-	var fetch_inventory_dto: Dictionary = {"items": [item1_dict, item2_dict]}
+	var fetch_inventory_dto: Array = [item1_dict, item2_dict]
 
 	stub(inventory_service_partial_double, "get_items").to_return(items)
 	stub(inventory_api_partial_double, "fetch_game_save_inventory").to_return(
@@ -388,7 +391,7 @@ func test_save_inventory_delete_failure() -> void:
 		"is_equipped": false
 	}
 
-	var fetch_inventory_dto: Dictionary = {"items": [item1_dict, item2_dict]}
+	var fetch_inventory_dto: Array = [item1_dict, item2_dict]
 
 	stub(inventory_service_partial_double, "get_items").to_return(items)
 	stub(inventory_api_partial_double, "fetch_game_save_inventory").to_return(
@@ -451,7 +454,7 @@ func test_save_inventory_create_failure() -> void:
 
 	var items: Array[Item] = [item1]
 
-	var fetch_inventory_dto: Dictionary = {"items": []}
+	var fetch_inventory_dto: Array = []
 
 	stub(inventory_service_partial_double, "get_items").to_return(items)
 	stub(inventory_api_partial_double, "fetch_game_save_inventory").to_return(
@@ -512,7 +515,7 @@ func test_save_inventory_update_failure() -> void:
 		"is_equipped": false
 	}
 
-	var fetch_inventory_dto: Dictionary = {"items": [item1_dict]}
+	var fetch_inventory_dto: Array = [item1_dict]
 
 	stub(inventory_service_partial_double, "get_items").to_return(items)
 	stub(inventory_api_partial_double, "fetch_game_save_inventory").to_return(
@@ -583,7 +586,7 @@ func test_save_inventory_success() -> void:
 		"is_equipped": false
 	}
 
-	var fetch_inventory_dto: Dictionary = {"items": [item1_dict]}
+	var fetch_inventory_dto: Array = [item1_dict]
 
 	stub(inventory_service_partial_double, "get_items").to_return(items)
 	stub(inventory_api_partial_double, "fetch_game_save_inventory").to_return(
@@ -654,7 +657,7 @@ func test_save_inventory_partial_failure() -> void:
 		"is_equipped": false
 	}
 
-	var fetch_inventory_dto: Dictionary = {"items": [item1_dict]}
+	var fetch_inventory_dto: Array = [item1_dict]
 
 	stub(inventory_service_partial_double, "get_items").to_return(items)
 	stub(inventory_api_partial_double, "fetch_game_save_inventory").to_return(

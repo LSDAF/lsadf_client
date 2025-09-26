@@ -10,6 +10,7 @@ var _currency_service: CurrenciesService
 var _inventory_service: InventoryService
 var _stage_service: StageService
 var _game_save_data: GameSaveData
+var _game_session_data: GameSessionData
 
 
 func _init(
@@ -23,6 +24,7 @@ func _init(
 	inventory_service: InventoryService,
 	stage_service: StageService,
 	game_save_data: GameSaveData,
+	game_session_data: GameSessionData
 ) -> void:
 	_characteristics_api = characteristics_api
 	_currency_api = currency_api
@@ -34,6 +36,7 @@ func _init(
 	_inventory_service = inventory_service
 	_stage_service = stage_service
 	_game_save_data = game_save_data
+	_game_session_data = game_session_data
 
 
 func get_game_save_id() -> String:
@@ -108,7 +111,10 @@ func _save_characteristics() -> bool:
 	)
 
 	return await _characteristics_api.update_game_save_characteristics(
-		_game_save_data._game_save_id, update_characteristics_dto, _on_save_characteristics_error
+		_game_save_data._game_save_id,
+		_game_session_data._game_session_id,
+		update_characteristics_dto,
+		_on_save_characteristics_error
 	)
 
 
@@ -126,7 +132,10 @@ func _save_currencies() -> bool:
 	)
 
 	return await _currency_api.update_game_save_currencies(
-		Data.game_save._game_save_id, update_currencies_dto, _on_save_currencies_error
+		Data.game_save._game_save_id,
+		_game_session_data._game_session_id,
+		update_currencies_dto,
+		_on_save_currencies_error
 	)
 
 
@@ -142,7 +151,10 @@ func _save_stage() -> bool:
 	)
 
 	return await _stage_api.update_game_save_stage(
-		_game_save_data._game_save_id, update_stage_dto, _on_save_stage_error
+		_game_save_data._game_save_id,
+		_game_session_data._game_session_id,
+		update_stage_dto,
+		_on_save_stage_error
 	)
 
 
@@ -181,21 +193,30 @@ func _execute_inventory_operations(
 	# Delete items
 	for client_id in items_to_delete:
 		if not await _inventory_api.delete_game_save_inventory_item(
-			_game_save_data._game_save_id, client_id, _on_save_inventory_error
+			_game_save_data._game_save_id,
+			_game_session_data._game_session_id,
+			client_id,
+			_on_save_inventory_error
 		):
 			success = false
 
 	# Create new items
 	for item in items_to_create:
 		if not await _inventory_api.create_game_save_inventory_item(
-			_game_save_data._game_save_id, item, _on_save_inventory_error
+			_game_save_data._game_save_id,
+			_game_session_data._game_session_id,
+			item,
+			_on_save_inventory_error
 		):
 			success = false
 
 	# Update existing items
 	for item in items_to_update:
 		if not await _inventory_api.update_game_save_inventory_item(
-			_game_save_data._game_save_id, item, _on_save_inventory_error
+			_game_save_data._game_save_id,
+			_game_session_data._game_session_id,
+			item,
+			_on_save_inventory_error
 		):
 			success = false
 

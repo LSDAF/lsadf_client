@@ -19,5 +19,6 @@ func initialize(game_save_dto: GameSaveDto, on_game_loaded: Callable) -> void:
 
 
 func _on_pressed() -> void:
-	Services.game_save.load_game_save(_game_save_dto.id)
+	await Services.game_session.open_new_game_session(_game_save_dto.id)
+	await Services.game_save.load_game_save(_game_save_dto.id)
 	game_loaded.emit()

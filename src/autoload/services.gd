@@ -7,6 +7,11 @@ var characteristics: CharacteristicsService = (
 	. new(Data.characteristics)
 )
 
+var game_session: GameSessionService = (
+	preload("res://src/services/game_session/game_session_service.gd")
+	. new(Api.game_session, Data.game_session)
+)
+
 var currencies: CurrenciesService = (
 	preload("res://src/services/currencies/currencies_service.gd").new(Data.currencies)
 )
@@ -61,7 +66,8 @@ var game_save: GameSaveService = preload("res://src/services/game_save/game_save
 	currencies,
 	inventory,
 	stage,
-	Data.game_save
+	Data.game_save,
+	Data.game_session
 )
 
 var items: ItemsService = preload("res://src/services/items/items_service.gd").new(game_save)

@@ -9,3 +9,4 @@ var game_save: GameSaveApi = preload("res://src/http/game_save/game_save_api.gd"
 var inventory: InventoryApi = preload("res://src/http/inventory/inventory_api.gd").new()
 var stage: StageApi = preload("res://src/http/stage/stage_api.gd").new()
 var user: UserApi = preload("res://src/http/user/user_api.gd").new()
+var game_session: GameSessionApi = preload("res://src/http/game_session/game_session_api.gd").new()

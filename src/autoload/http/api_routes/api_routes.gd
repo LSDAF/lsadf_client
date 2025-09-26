@@ -2,9 +2,9 @@ class_name ApiRoutes
 extends Node
 
 # LOCALHOST
-#const APP_PORT: String = "8080"
-#const APP_URL: String = "http://localhost:" + APP_PORT
-const APP_URL: String = "https://api.lsadf.k8s.local"
+const APP_PORT: String = "8080"
+const APP_URL: String = "http://localhost:" + APP_PORT
+#const APP_URL: String = "https://api.lsadf.k8s.local"
 
 # Public routes
 const LOGIN := APP_URL + "/api/v1/auth/login"
@@ -29,3 +29,5 @@ const UPDATE_GAME_SAVE_CHARACTERISTICS := APP_URL + "/api/v1/characteristics/{ga
 const UPDATE_GAME_SAVE_CURRENCIES := APP_URL + "/api/v1/currency/{game_save_id}"
 const UPDATE_GAME_SAVE_STAGE := APP_URL + "/api/v1/stage/{game_save_id}"
 const UPDATE_GAME_SAVE_NICKNAME := APP_URL + "/api/v1/game_save/{game_save_id}/nickname"
+const OPEN_NEW_GAME_SESSION := APP_URL + "/api/v1/game_session?game_save_id={id}"
+const REFRESH_GAME_SESSION := APP_URL + "/api/v1/game_session/{game_session_id}"

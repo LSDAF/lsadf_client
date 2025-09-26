@@ -10,6 +10,9 @@ var current_quest: CurrentQuestData = (
 )
 var difficulty: DifficultyData = preload("res://src/data/difficulty/difficulty_data.gd").new()
 var game_save: GameSaveData = preload("res://src/data/game_save/game_save_data.gd").new()
+var game_session: GameSessionData = (
+	preload("res://src/data/game_session/game_session_data.gd").new()
+)
 var inventory: InventoryData = preload("res://src/data/inventory/inventory_data.gd").new()
 var user_local_data: UserLocalData = preload("res://src/data/user_local/user_local_data.gd").new()
 var stage: StageData = preload("res://src/data/stage/stage_data.gd").new()

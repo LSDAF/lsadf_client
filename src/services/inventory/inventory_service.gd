@@ -52,7 +52,9 @@ func get_items_to_delete() -> Array[Item]:
 
 func add_item(item: Item) -> void:
 	_inventory_data.items.push_back(item)
+	_insert_mutex.lock()
 	_insert_item_queue.enqueue(item)
+	_insert_mutex.unlock()
 
 	EventBus.inventory_update.emit()
 
@@ -67,7 +69,10 @@ func delete_item(item_client_id: String) -> void:
 	if item_to_delete_index == -1:
 		return
 
-	items.pop_at(item_to_delete_index)
+	var deleted: Item = items.pop_at(item_to_delete_index)
+	_delete_mutex.lock()
+	_delete_item_queue.enqueue(deleted)
+	_delete_mutex.unlock()
 
 	EventBus.inventory_update.emit()
 
@@ -87,7 +92,9 @@ func equip_item(item_client_id: String) -> void:
 			continue
 
 		items[index].is_equipped = items[index].client_id == item_client_id
+		_update_mutex.lock()
 		_update_item_queue.enqueue(items[index])
+		_update_mutex.unlock()
 
 	EventBus.inventory_update.emit()
 
@@ -154,6 +161,8 @@ func unequip_item(item_client_id: String) -> void:
 	for item_index in len(items):
 		if items[item_index].client_id == item_client_id:
 			items[item_index].is_equipped = false
-
+			_update_mutex.lock()
+			_update_item_queue.enqueue(items[item_index])
+			_update_mutex.unlock()
 			EventBus.inventory_update.emit()
 			return

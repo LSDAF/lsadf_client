@@ -17,4 +17,11 @@ unique_name_in_owner = true
 wait_time = 15.0
 autostart = true
 
+[node name="GameSessionTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 900.0
+autostart = true
+
+
 [connection signal="timeout" from="GameSaveTimer" to="." method="_on_game_save_timer_timeout"]
+[connection signal="timeout" from="GameSessionTimer" to="." method="_on_game_session_timer_timeout"]

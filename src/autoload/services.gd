@@ -7,11 +7,6 @@ var characteristics: CharacteristicsService = (
 	. new(Data.characteristics)
 )
 
-var game_session: GameSessionService = (
-	preload("res://src/services/game_session/game_session_service.gd")
-	. new(Api.game_session, Data.game_session)
-)
-
 var currencies: CurrenciesService = (
 	preload("res://src/services/currencies/currencies_service.gd").new(Data.currencies)
 )
@@ -54,6 +49,11 @@ var toaster: ToasterService = preload("res://src/services/toaster/toaster_servic
 var user_local_data: UserLocalDataService = (
 	preload("res://src/services/user_local_data/user_local_data_service.gd")
 	. new(Api.auth, Data.user_local_data, resource_loader, resource_saver)
+)
+
+var game_session: GameSessionService = (
+	preload("res://src/services/game_session/game_session_service.gd")
+	. new(Api.game_session, Data.game_session, resource_loader, resource_saver)
 )
 
 var game_save: GameSaveService = preload("res://src/services/game_save/game_save_service.gd").new(

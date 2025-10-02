@@ -2,9 +2,9 @@ class_name ApiRoutes
 extends Node
 
 # LOCALHOST
-const APP_PORT: String = "8080"
-const APP_URL: String = "http://localhost:" + APP_PORT
-#const APP_URL: String = "https://api.lsadf.k8s.local"
+#const APP_PORT: String = "8080"
+#const APP_URL: String = "http://localhost:" + APP_PORT
+const APP_URL: String = "https://api.lsadf.k8s.local"
 
 # Public routes
 const LOGIN := APP_URL + "/api/v1/auth/login"

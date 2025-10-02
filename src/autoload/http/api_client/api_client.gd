@@ -86,3 +86,15 @@ func put(
 	_log_error(url, response)
 
 	return response
+
+
+func patch(url: String, auth: bool, upsert_headers: Dictionary = {}) -> HTTPResult:
+	var headers := _generate_headers(upsert_headers, auth, HTTPClient.METHOD_PATCH)
+
+	var response: HTTPResult = await Http.http_client.http.async_request(
+		url, headers, HTTPClient.METHOD_PATCH
+	)
+
+	_log_error(url, response)
+
+	return response

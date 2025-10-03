@@ -225,13 +225,13 @@ func _execute_inventory_operations(
 
 func _save_inventory() -> bool:
 	var organized_items: Dictionary
-	var insert_items := _inventory_service.get_items_to_insert()
+	var insert_items: Array[Item] = _inventory_service.get_items_to_insert()
 	var dto_insert_list: Array[InventoryItemDto] = []
 	for item in insert_items:
 		dto_insert_list.append(_convert_item_to_dto(item))
 	organized_items["items_to_create"] = dto_insert_list
 
-	var delete_items := _inventory_service.get_items_to_delete()
+	var delete_items: Array[Item] = _inventory_service.get_items_to_delete()
 	var delete_items_ids: Array[String] = []
 	for item in delete_items:
 		delete_items_ids.append(item.client_id)

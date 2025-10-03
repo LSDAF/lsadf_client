@@ -11,7 +11,7 @@ func process_queue(prioritary: bool) -> void:
 	var queue_to_process: Queue = _prioritary_queue if prioritary else _queue
 	while not queue_to_process.is_empty():
 		var event: HttpEvent = queue_to_process.dequeue()
-		var result: bool = await _process_event(event)
+		var result: bool = _process_event(event)
 		if result:
 			print("Function called successfully.")
 			break

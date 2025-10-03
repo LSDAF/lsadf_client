@@ -6,11 +6,11 @@ var emerald: int
 var amethyst: int
 
 
-func _init(dictionary: Dictionary) -> void:
-	gold = dictionary["gold"]
-	diamond = dictionary["diamond"]
-	emerald = dictionary["emerald"]
-	amethyst = dictionary["amethyst"]
+func _init(gold: int, diamond: int, emerald: int, amethyst: int) -> void:
+	gold = gold
+	diamond = diamond
+	emerald = emerald
+	amethyst = amethyst
 
 
 func to_dictionary() -> Dictionary:

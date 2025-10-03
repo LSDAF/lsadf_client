@@ -119,16 +119,11 @@ func _save_characteristics() -> bool:
 
 
 func _save_currencies() -> bool:
-	var update_currencies_dto := (
-		UpdateCurrenciesDto
-		. new(
-			{
-				"gold": Data.currencies.gold.get_value(),
-				"diamond": Data.currencies.diamond.get_value(),
-				"emerald": Data.currencies.emerald.get_value(),
-				"amethyst": Data.currencies.amethyst.get_value(),
-			}
-		)
+	var update_currencies_dto := UpdateCurrenciesDto.new(
+		Data.currencies.gold.get_value(),
+		Data.currencies.diamond.get_value(),
+		Data.currencies.emerald.get_value(),
+		Data.currencies.amethyst.get_value()
 	)
 
 	return await _currency_api.update_game_save_currencies(

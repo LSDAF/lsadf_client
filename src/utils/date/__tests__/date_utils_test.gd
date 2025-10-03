@@ -55,3 +55,159 @@ func test_format_unix_time_to_date_string_with_invalid_time() -> void:
 	var result: String = DateUtils.format_unix_time_to_date_string(unix_time)
 	# Assert
 	assert_eq(result, "")
+
+
+func test_compare_datetime_dicts_earlier_year() -> void:
+	# Arrange
+	var date1 = {"year": 2022, "month": 10, "day": 5, "hour": 14, "minute": 30, "second": 0}
+	var date2 = {"year": 2023, "month": 10, "day": 5, "hour": 14, "minute": 30, "second": 0}
+
+	# Act
+	var result = DateUtils.compare_datetime_dicts(date1, date2)
+
+	# Assert
+	assert_eq(result, -1, "Earlier year should return -1")
+
+
+func test_compare_datetime_dicts_later_year() -> void:
+	# Arrange
+	var date1 = {"year": 2024, "month": 10, "day": 5, "hour": 14, "minute": 30, "second": 0}
+	var date2 = {"year": 2023, "month": 10, "day": 5, "hour": 14, "minute": 30, "second": 0}
+
+	# Act
+	var result = DateUtils.compare_datetime_dicts(date1, date2)
+
+	# Assert
+	assert_eq(result, 1, "Later year should return 1")
+
+
+func test_compare_datetime_dicts_earlier_month() -> void:
+	# Arrange
+	var date1 = {"year": 2023, "month": 9, "day": 5, "hour": 14, "minute": 30, "second": 0}
+	var date2 = {"year": 2023, "month": 10, "day": 5, "hour": 14, "minute": 30, "second": 0}
+
+	# Act
+	var result = DateUtils.compare_datetime_dicts(date1, date2)
+
+	# Assert
+	assert_eq(result, -1, "Earlier month should return -1")
+
+
+func test_compare_datetime_dicts_later_month() -> void:
+	# Arrange
+	var date1 = {"year": 2023, "month": 11, "day": 5, "hour": 14, "minute": 30, "second": 0}
+	var date2 = {"year": 2023, "month": 10, "day": 5, "hour": 14, "minute": 30, "second": 0}
+
+	# Act
+	var result = DateUtils.compare_datetime_dicts(date1, date2)
+
+	# Assert
+	assert_eq(result, 1, "Later month should return 1")
+
+
+func test_compare_datetime_dicts_earlier_day() -> void:
+	# Arrange
+	var date1 = {"year": 2023, "month": 10, "day": 4, "hour": 14, "minute": 30, "second": 0}
+	var date2 = {"year": 2023, "month": 10, "day": 5, "hour": 14, "minute": 30, "second": 0}
+
+	# Act
+	var result = DateUtils.compare_datetime_dicts(date1, date2)
+
+	# Assert
+	assert_eq(result, -1, "Earlier day should return -1")
+
+
+func test_compare_datetime_dicts_later_day() -> void:
+	# Arrange
+	var date1 = {"year": 2023, "month": 10, "day": 6, "hour": 14, "minute": 30, "second": 0}
+	var date2 = {"year": 2023, "month": 10, "day": 5, "hour": 14, "minute": 30, "second": 0}
+
+	# Act
+	var result = DateUtils.compare_datetime_dicts(date1, date2)
+
+	# Assert
+	assert_eq(result, 1, "Later day should return 1")
+
+
+func test_compare_datetime_dicts_earlier_hour() -> void:
+	# Arrange
+	var date1 = {"year": 2023, "month": 10, "day": 5, "hour": 13, "minute": 30, "second": 0}
+	var date2 = {"year": 2023, "month": 10, "day": 5, "hour": 14, "minute": 30, "second": 0}
+
+	# Act
+	var result = DateUtils.compare_datetime_dicts(date1, date2)
+
+	# Assert
+	assert_eq(result, -1, "Earlier hour should return -1")
+
+
+func test_compare_datetime_dicts_later_hour() -> void:
+	# Arrange
+	var date1 = {"year": 2023, "month": 10, "day": 5, "hour": 15, "minute": 30, "second": 0}
+	var date2 = {"year": 2023, "month": 10, "day": 5, "hour": 14, "minute": 30, "second": 0}
+
+	# Act
+	var result = DateUtils.compare_datetime_dicts(date1, date2)
+
+	# Assert
+	assert_eq(result, 1, "Later hour should return 1")
+
+
+func test_compare_datetime_dicts_earlier_minute() -> void:
+	# Arrange
+	var date1 = {"year": 2023, "month": 10, "day": 5, "hour": 14, "minute": 29, "second": 0}
+	var date2 = {"year": 2023, "month": 10, "day": 5, "hour": 14, "minute": 30, "second": 0}
+
+	# Act
+	var result = DateUtils.compare_datetime_dicts(date1, date2)
+
+	# Assert
+	assert_eq(result, -1, "Earlier minute should return -1")
+
+
+func test_compare_datetime_dicts_later_minute() -> void:
+	# Arrange
+	var date1 = {"year": 2023, "month": 10, "day": 5, "hour": 14, "minute": 31, "second": 0}
+	var date2 = {"year": 2023, "month": 10, "day": 5, "hour": 14, "minute": 30, "second": 0}
+
+	# Act
+	var result = DateUtils.compare_datetime_dicts(date1, date2)
+
+	# Assert
+	assert_eq(result, 1, "Later minute should return 1")
+
+
+func test_compare_datetime_dicts_earlier_second() -> void:
+	# Arrange
+	var date1 = {"year": 2023, "month": 10, "day": 5, "hour": 14, "minute": 30, "second": 0}
+	var date2 = {"year": 2023, "month": 10, "day": 5, "hour": 14, "minute": 30, "second": 1}
+
+	# Act
+	var result = DateUtils.compare_datetime_dicts(date1, date2)
+
+	# Assert
+	assert_eq(result, -1, "Earlier second should return -1")
+
+
+func test_compare_datetime_dicts_later_second() -> void:
+	# Arrange
+	var date1 = {"year": 2023, "month": 10, "day": 5, "hour": 14, "minute": 30, "second": 2}
+	var date2 = {"year": 2023, "month": 10, "day": 5, "hour": 14, "minute": 30, "second": 1}
+
+	# Act
+	var result = DateUtils.compare_datetime_dicts(date1, date2)
+
+	# Assert
+	assert_eq(result, 1, "Later second should return 1")
+
+
+func test_compare_datetime_dicts_equal() -> void:
+	# Arrange
+	var date1 = {"year": 2023, "month": 10, "day": 5, "hour": 14, "minute": 30, "second": 0}
+	var date2 = {"year": 2023, "month": 10, "day": 5, "hour": 14, "minute": 30, "second": 0}
+
+	# Act
+	var result = DateUtils.compare_datetime_dicts(date1, date2)
+
+	# Assert
+	assert_eq(result, 0, "Equal dates should return 0")

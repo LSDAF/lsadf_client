@@ -1,10 +1,9 @@
 class_name HttpEventHandler
 extends Node
 
-const RETRY_DELAY: int = 5
-
 var _queue: Queue
 var _prioritary_queue: Queue
+var _timer: TimerService
 
 
 func process_queue(prioritary: bool) -> void:
@@ -30,15 +29,27 @@ func _process_event(http_event: HttpEvent) -> bool:
 	var callable: Callable = http_event.get_function()
 	var nb_tries: int = http_event.get_nb_tries()
 
-	var final_result: bool = false
+	var result: bool = await callable.call()
 
-	for i in range(nb_tries):
-		callable.call()
-	# waits for 5 seconds before retrying
+	var try: int = 1
 
-	return true
+	while result == false and try <= nb_tries:
+		print("Result is false, retrying in " + str(try) + "s...")
+		await _timer.wait(try)
+		try += 1
+		result = await callable.call()
+
+	if (result):
+		print("Result is true")
+		return result
+
+	print("No retry left, result false")
+	return result
 
 
-func _init(queue: Queue, prioritary_queue: Queue) -> void:
+func _init(queue: Queue,
+			prioritary_queue: Queue,
+			timer: TimerService) -> void:
 	_queue = queue
 	_prioritary_queue = prioritary_queue
+	_timer = timer

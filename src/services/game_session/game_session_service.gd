@@ -38,7 +38,7 @@ func open_new_game_session(game_save_id: String) -> void:
 		"Game Session ID: %s" % _game_session_data._game_session_id,
 		" (V%d)" % _game_session_data._version
 	)
-	print("End Time: %s" % _game_session_data._end_time_str)
+	print("End Time: %s" % _game_session_data._end_time)
 
 	# Save the game session data locally
 	save_game_session_data()

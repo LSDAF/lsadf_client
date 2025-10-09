@@ -1,0 +1,117 @@
+OAuth Implementation Plan for Cross-Platform Keycloak Authentication
+================================================================
+
+Project: LSADF Client
+Date: October 9, 2025
+Target: Keycloak instance at keycloak.k8s.local with realm lsadf
+
+OVERVIEW
+--------
+Create a cross-platform OAuth authentication system that works on iOS, Android, and Desktop platforms.
+The system will use OS.shell_open() to launch an external browser for authentication and implement
+platform-specific callback mechanisms to retrieve the authorization code.
+
+IMPLEMENTATION STEPS
+====================
+
+Step 1: Core OAuth Manager Structure
+------------------------------------
+- Create the main `OauthManager` class with a single public `login()` method
+- Define constants for Keycloak configuration (realm, client_id, redirect URIs)
+- Set up platform detection to handle iOS/Android/Desktop differently
+- Location: src/autoload/auth/oauth_manager.gd
+
+Step 2: Platform-Specific Redirect URI Handling
+-----------------------------------------------
+- Desktop: Implement a simple HTTP server listening on localhost (e.g., http://localhost:8080/callback)
+- Mobile (iOS/Android): Use custom URI scheme (e.g., lsadf://oauth/callback)
+- Configure the redirect URIs in your Keycloak client settings
+
+Step 3: Browser Launch Implementation
+------------------------------------
+- Use OS.shell_open() to launch the system browser with the Keycloak authorization URL
+- Construct the OAuth authorization URL with proper parameters:
+  * client_id
+  * redirect_uri (platform-specific)
+  * response_type=code
+  * scope=openid profile email
+  * state (for security)
+
+Step 4: Authorization Code Retrieval
+------------------------------------
+- Desktop: HTTP server listens for GET requests to /callback endpoint
+- Mobile: Handle custom URI scheme through Godot's _notification() with NOTIFICATION_WM_FOCUS_IN
+- Parse the authorization code from the callback URL parameters
+
+Step 5: Token Exchange
+----------------------
+- Make HTTP POST request to Keycloak token endpoint
+- Exchange authorization code for JWT access token and refresh token
+- Handle token response and errors
+- Integrate with existing HTTP infrastructure (src/autoload/http/http.gd)
+
+Step 6: Security Considerations
+------------------------------
+- Implement PKCE (Proof Key for Code Exchange) for additional security
+- Generate and validate state parameter to prevent CSRF attacks
+- Secure storage of tokens (consider using Godot's encryption features)
+
+Step 7: Error Handling & User Experience
+----------------------------------------
+- Handle network errors, user cancellation, and invalid responses
+- Provide appropriate feedback through signals or callbacks
+- Implement timeout mechanisms
+- Integrate with existing event bus system (src/autoload/event_bus.gd)
+
+KEY TECHNICAL COMPONENTS NEEDED
+==============================
+
+1. HTTPRequest node for token exchange
+2. TCPServer for desktop callback handling
+3. Platform detection logic
+4. URL parsing utilities
+5. State management for OAuth flow
+6. Signal system for async communication
+
+CONFIGURATION DETAILS
+=====================
+
+Keycloak Settings:
+- Server: keycloak.k8s.local
+- Realm: lsadf
+- Authorization URL: https://keycloak.k8s.local/realms/lsadf/protocol/openid-connect/auth
+- Token URL: https://keycloak.k8s.local/realms/lsadf/protocol/openid-connect/token
+
+Redirect URIs to configure in Keycloak:
+- Desktop: http://localhost:8080/callback
+- Mobile: lsadf://oauth/callback
+
+PUBLIC API
+==========
+
+OauthManager will expose:
+- login() -> void : Single public method to initiate OAuth flow
+- Signals for success/failure callbacks
+- Token storage and retrieval methods
+
+INTEGRATION POINTS
+==================
+
+- Event Bus: For broadcasting authentication events
+- HTTP Service: For making token exchange requests
+- Services: For storing user authentication state
+- Data: For persisting tokens securely
+
+IMPLEMENTATION ORDER
+====================
+
+1. Basic class structure and platform detection
+2. Desktop HTTP server implementation
+3. Mobile custom URI scheme handling
+4. Browser launch and URL construction
+5. Authorization code parsing
+6. Token exchange implementation
+7. Security features (PKCE, state validation)
+8. Error handling and user feedback
+9. Integration with existing systems
+10. Testing across all platforms

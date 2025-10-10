@@ -1,6 +1,7 @@
 extends MarginContainer
 
 signal on_login(email: String, password: String)
+signal on_oauth_login(access_token: String, refresh_token: String)
 
 var _login_email: String
 var _login_password: String
@@ -17,6 +18,7 @@ func _ready() -> void:
 	_remember_me = Services.user_local_data.get_remember_me()
 	_login_email = Services.user_local_data.get_email()
 	_register_email = Services.user_local_data.get_email()
+	OAuthManager.token_ready.connect(_on_token_received)
 	_apply()
 
 
@@ -50,9 +52,22 @@ func register(name: String, email: String, password: String) -> void:
 	on_login.emit(email, password)
 
 
+func _on_token_received(access_token: String, refresh_token: String) -> void:
+	print("[login_register.gd][_on_token_received()] Access token: %s" % access_token)
+	print("[login_register.gd][_on_token_received()] Refresh token: %s" % refresh_token)
+	#Services.user_local_data.save_access_token(access_token)
+	#Services.user_local_data.save_refresh_token(refresh_token)
+	on_oauth_login.emit(access_token, refresh_token)
+
+
 func error(response: Variant) -> void:
 	Services.toaster.toast("Error when registering")
 	print(response)
+
+
+func _on_oauth_login_button_pressed() -> void:
+	print("[login_register.gd][_on_oauth_login_button_pressed()] OAuth Login button pressed")
+	OAuthManager.authorize()
 
 
 func _on_login_button_pressed() -> void:

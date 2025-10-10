@@ -56,6 +56,11 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Login"
 
+[node name="OAuthLoginButton" type="Button" parent="LoginVBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "OAuth Login"
+
 [node name="RegisterVBoxContainer" type="VBoxContainer" parent="."]
 unique_name_in_owner = true
 visible = false
@@ -108,6 +113,7 @@ text = "Register"
 [connection signal="text_changed" from="LoginVBoxContainer/LoginPasswordLineEdit" to="." method="_on_login_password_line_edit_text_changed"]
 [connection signal="toggled" from="LoginVBoxContainer/MarginContainer2/VBoxContainer/LoginRememberMeCheckBox" to="." method="_on_remember_me_check_box_toggled"]
 [connection signal="pressed" from="LoginVBoxContainer/MarginContainer2/VBoxContainer/LoginButton" to="." method="_on_login_button_pressed"]
+[connection signal="pressed" from="LoginVBoxContainer/MarginContainer2/VBoxContainer/OAuthLoginButton" to="." method="_on_oauth_login_button_pressed"]
 [connection signal="pressed" from="RegisterVBoxContainer/MarginContainer/GoToLoginButton" to="." method="_on_go_to_login_button_pressed"]
 [connection signal="text_changed" from="RegisterVBoxContainer/RegisterNameLineEdit" to="." method="_on_register_name_line_edit_text_changed"]
 [connection signal="text_changed" from="RegisterVBoxContainer/RegisterEmailLineEdit" to="." method="_on_register_email_line_edit_text_changed"]

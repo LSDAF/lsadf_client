@@ -50,7 +50,9 @@ func load() -> UserData:
 
 
 func relog_user() -> bool:
-	if _user_local_data._user_data.refresh_token == "" or _user_local_data._user_data.email == "":
+	var user_data: UserData = _user_local_data._user_data
+
+	if user_data.refresh_token == "" or user_data.email == "":
 		return false
 
 	var refresh_login_response := await _auth_api.refresh_login(
@@ -98,8 +100,26 @@ func save_access_token(access_token: String) -> bool:
 	return result == Error.OK
 
 
+func save_access_token_and_expiration(access_token: String, expires_in: Dictionary) -> bool:
+	_user_local_data._user_data.access_token = access_token
+	_user_local_data._user_data.expires_in = expires_in
+
+	var result: Error = save_to_device()
+	return result == Error.OK
+
+
 func save_refresh_token(refresh_token: String) -> bool:
 	_user_local_data._user_data.refresh_token = refresh_token
+
+	var result: Error = save_to_device()
+	return result == Error.OK
+
+
+func save_refresh_token_and_expiration(
+	refresh_token: String, refresh_expires_in: Dictionary
+) -> bool:
+	_user_local_data._user_data.refresh_token = refresh_token
+	_user_local_data._user_data.refresh_expires_in = refresh_expires_in
 
 	var result: Error = save_to_device()
 	return result == Error.OK

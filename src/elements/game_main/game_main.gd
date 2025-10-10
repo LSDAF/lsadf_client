@@ -28,11 +28,11 @@ func _on_game_save_timer_timeout() -> void:
 
 func _on_game_session_timer_timeout() -> void:
 	#	Services.game_session.renew_session()
-	print("Running game session renewal...")
+	print_debug("Running game session renewal...")
 	var http_request: HttpEvent = HttpEvent.new(
 		{"function": _game_session_renewal, "nb_tries": 1, "prioritary": false}
 	)
 	Services.http_event_handler.enqueue_event(http_request)
 	Services.http_event_handler.process_queue(false)
 	Services.http_event_handler.process_queue(true)
-	print("Game session renewed.")
+	print_debug("Game session renewed.")

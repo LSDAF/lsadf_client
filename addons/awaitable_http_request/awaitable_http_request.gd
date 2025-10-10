@@ -18,8 +18,8 @@ var is_requesting := false  ## Whether the node is busy performing a request. Th
 ## func _ready() -> void:
 ##     var resp := await async_request("https://api.github.com/users/swarkin")
 ##     if resp.success() and resp.status_ok():
-##         print(resp.status)                   # 200
-##         print(resp.headers["content-type"])  # application/json
+##         print_debug(resp.status)                   # 200
+##         print_debug(resp.headers["content-type"])  # application/json
 ##
 ##         var json := resp.body_as_json()
 ##         print(json["login"])                 # Swarkin

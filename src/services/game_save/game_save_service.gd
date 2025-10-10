@@ -90,10 +90,10 @@ func save_game() -> void:
 	if success:
 		_game_save_data._last_save_time = _clock_service.get_unix_time_from_system()
 		Services.toaster.toast("Game saved.")
-		print("Game Saved")
+		print_debug("Game Saved")
 	else:
 		Services.toaster.toast("Failed to save game.")
-		print("Failed to save game.")
+		print_debug("Failed to save game.")
 
 
 func _save_characteristics() -> bool:
@@ -248,27 +248,27 @@ func _save_inventory() -> bool:
 
 func _on_fetch_characteristics_error(response: Variant) -> void:
 	Services.toaster.toast("Failed to fetch characteristics.")
-	print(response)
+	print_debug(response)
 
 
 func _on_fetch_currencies_error(response: Variant) -> void:
 	Services.toaster.toast("Failed to fetch currencies.")
-	print(response)
+	print_debug(response)
 
 
 func _on_fetch_inventory_error(response: Variant) -> void:
 	Services.toaster.toast("Failed to fetch inventory.")
-	print(response)
+	print_debug(response)
 
 
 func _on_fetch_stage_error(response: Variant) -> void:
 	Services.toaster.toast("Failed to fetch stage.")
-	print(response)
+	print_debug(response)
 
 
 func _on_save_characteristics_error(response: Variant) -> void:
 	Services.toaster.toast("Failed to save characteristics.")
-	print(response)
+	print_debug(response)
 
 
 func _on_save_currencies_error(response: Variant) -> void:

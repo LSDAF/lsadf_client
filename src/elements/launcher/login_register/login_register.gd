@@ -53,8 +53,8 @@ func register(name: String, email: String, password: String) -> void:
 
 
 func _on_token_received(access_token: String, refresh_token: String) -> void:
-	print("[login_register.gd][_on_token_received()] Access token: %s" % access_token)
-	print("[login_register.gd][_on_token_received()] Refresh token: %s" % refresh_token)
+	print_debug("[login_register.gd][_on_token_received()] Access token: %s" % access_token)
+	print_debug("[login_register.gd][_on_token_received()] Refresh token: %s" % refresh_token)
 	#Services.user_local_data.save_access_token(access_token)
 	#Services.user_local_data.save_refresh_token(refresh_token)
 	on_oauth_login.emit(access_token, refresh_token)
@@ -62,11 +62,11 @@ func _on_token_received(access_token: String, refresh_token: String) -> void:
 
 func error(response: Variant) -> void:
 	Services.toaster.toast("Error when registering")
-	print(response)
+	print_debug(response)
 
 
 func _on_oauth_login_button_pressed() -> void:
-	print("[login_register.gd][_on_oauth_login_button_pressed()] OAuth Login button pressed")
+	print_debug("[login_register.gd][_on_oauth_login_button_pressed()] OAuth Login button pressed")
 	OAuthManager.authorize()
 
 

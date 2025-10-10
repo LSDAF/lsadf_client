@@ -13,10 +13,10 @@ func process_queue(prioritary: bool) -> void:
 		var event: HttpEvent = queue_to_process.dequeue()
 		var result: bool = _process_event(event)
 		if result:
-			print("Function called successfully.")
+			print_debug("Function called successfully.")
 			break
 		else:
-			print("Error while calling the function.")
+			print_debug("Error while calling the function.")
 
 
 func enqueue_event(http_event: HttpEvent) -> void:

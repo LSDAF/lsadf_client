@@ -141,4 +141,4 @@ func save_email(email: String) -> bool:
 
 func _on_relog_failed(response: Variant) -> void:
 	Services.toaster.toast("Error when relogging")
-	print(response)
+	print_debug(response)

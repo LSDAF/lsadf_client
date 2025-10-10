@@ -30,8 +30,8 @@ func fetch_game_saves() -> void:
 
 
 func oauth_login(access_token: String, refresh_token: String) -> void:
-	print("[launcher.gd][oauth_login()] Access token: %s" % access_token)
-	print("[launcher.gd][oauth_login()] Refresh token: %s" % refresh_token)
+	print_debug("[launcher.gd][oauth_login()] Access token: %s" % access_token)
+	print_debug("[launcher.gd][oauth_login()] Refresh token: %s" % refresh_token)
 	fetch_game_saves()
 
 
@@ -57,17 +57,17 @@ func return_to_login_form() -> void:
 
 func _on_generate_game_save_error(response: Variant) -> void:
 	Services.toaster.toast("Error when generating save")
-	print(response)
+	print_debug(response)
 
 
 func _on_login_error(response: Variant) -> void:
 	Services.toaster.toast("Error when logging in")
-	print(response)
+	print_debug(response)
 
 
 func _on_fetch_game_saves_error(response: Variant) -> void:
 	Services.toaster.toast("Error when fetching games")
-	print(response)
+	print_debug(response)
 
 	Services.user_local_data.create_new_user_data()
 	return_to_login_form()

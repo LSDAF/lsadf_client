@@ -23,22 +23,22 @@ func _init(
 
 func open_new_game_session(game_save_id: String) -> void:
 	if load_game_session_data():
-		print("Found saved game session: %s" % _game_session_data._game_session_id)
+		print_debug("Found saved game session: %s" % _game_session_data._game_session_id)
 		if is_game_session_valid():
-			print("Game session is still valid, using saved data")
+			print_debug("Game session is still valid, using saved data")
 			return
-		print("Saved game session expired, requesting new one")
+		print_debug("Saved game session expired, requesting new one")
 
 	var fetched: GameSessionDto = await _game_session_api.open_new_game_session(
 		game_save_id, _on_fetch_game_session_error
 	)
 	_set_game_session_data_from_dto(fetched)
 
-	print(
+	print_debug(
 		"Game Session ID: %s" % _game_session_data._game_session_id,
 		" (V%d)" % _game_session_data._version
 	)
-	print("End Time: %s" % _game_session_data._end_time)
+	print_debug("End Time: %s" % _game_session_data._end_time)
 
 	# Save the game session data locally
 	save_game_session_data()
@@ -49,11 +49,11 @@ func refresh_game_session() -> void:
 		_game_session_data._game_session_id, _on_fetch_game_session_error
 	)
 	_set_game_session_data_from_dto(fetched)
-	print(
+	print_debug(
 		"Game Session ID: %s" % _game_session_data._game_session_id,
 		" (V%d)" % _game_session_data._version
 	)
-	print("End Time: %s" % _game_session_data._end_time_str)
+	print_debug("End Time: %s" % _game_session_data._end_time_str)
 
 	# Save the updated game session data
 	save_game_session_data()
@@ -61,7 +61,7 @@ func refresh_game_session() -> void:
 
 func _on_fetch_game_session_error(response: Variant) -> void:
 	Services.toaster.toast("Failed to fetch game session.")
-	print(response)
+	print_debug(response)
 
 
 func save_game_session_data() -> void:
@@ -69,7 +69,7 @@ func save_game_session_data() -> void:
 	if result != OK:
 		push_error("Failed to save game session data. Error code: %d" % result)
 	else:
-		print("Game session data saved successfully")
+		print_debug("Game session data saved successfully")
 
 
 func load_game_session_data() -> bool:

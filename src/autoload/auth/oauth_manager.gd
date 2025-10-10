@@ -128,7 +128,7 @@ func get_token_from_auth(auth_code: String) -> void:
 		)
 		token_ready.emit(token, refresh_token)
 	else:
-		print("ERROR WHILE PARSING JSON")
+		print_debug("ERROR WHILE PARSING JSON")
 
 
 func refresh_tokens() -> bool:

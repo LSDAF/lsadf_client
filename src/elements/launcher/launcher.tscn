@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://sv2hctgcy3li"]
+[gd_scene load_steps=7 format=3 uid="uid://sv2hctgcy3li"]
 
 [ext_resource type="Texture2D" uid="uid://buut3gtyqb7oc" path="res://asset/ui/wood/UI_Wood_Flat.png" id="1_1rwln"]
 [ext_resource type="Script" uid="uid://v12caqypm5bo" path="res://src/elements/launcher/launcher.gd" id="1_72agk"]
 [ext_resource type="PackedScene" uid="uid://fwvt5ili38r3" path="res://src/elements/launcher/game_save_button.tscn" id="2_vepi3"]
 [ext_resource type="PackedScene" uid="uid://c1einsb6nyd1r" path="res://src/elements/launcher/login_register/login_register.tscn" id="4_j8w3q"]
+[ext_resource type="Script" uid="uid://b6q8c0k4koj4j" path="res://src/autoload/auth/oauth_manager.gd" id="5_1wqja"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nr1t5"]
 atlas = ExtResource("1_1rwln")
@@ -36,6 +37,10 @@ patch_margin_bottom = 32
 [node name="LoginRegister" parent="." instance=ExtResource("4_j8w3q")]
 unique_name_in_owner = true
 layout_mode = 1
+
+[node name="OAuthManager" type="Node" parent="LoginRegister"]
+script = ExtResource("5_1wqja")
+metadata/_custom_type_script = "uid://b6q8c0k4koj4j"
 
 [node name="GameSavesCenterContainer" type="CenterContainer" parent="."]
 unique_name_in_owner = true

@@ -9,6 +9,8 @@ signal game_loaded
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	%LoginRegister.on_login.connect(login)
+	%LoginRegister.on_oauth_login.connect(oauth_login)
+	set_process(true)
 
 	if await Services.user_local_data.relog_user() == true:
 		fetch_game_saves()
@@ -25,6 +27,12 @@ func fetch_game_saves() -> void:
 		game_save.initialize(game_save_dto, _on_game_loaded)
 
 		%GameSavesVBoxContainer.add_child(game_save)
+
+
+func oauth_login(access_token: String, refresh_token: String) -> void:
+	print("[launcher.gd][oauth_login()] Access token: %s" % access_token)
+	print("[launcher.gd][oauth_login()] Refresh token: %s" % refresh_token)
+	fetch_game_saves()
 
 
 func login(email: String, password: String) -> void:

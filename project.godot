@@ -22,6 +22,7 @@ Api="*res://src/autoload/api.gd"
 EventBus="*res://src/autoload/event_bus.gd"
 Services="*res://src/autoload/services.gd"
 Tools="*res://src/autoload/tools.gd"
+OAuthManager="*res://src/autoload/auth/oauth_manager.gd"
 
 [debug]
 

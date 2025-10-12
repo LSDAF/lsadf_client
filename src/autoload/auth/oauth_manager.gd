@@ -67,7 +67,7 @@ func _process(_delta: float) -> void:
 			get_token_from_auth(auth_code)
 
 			connection.put_data(("HTTP/1.1 %d\r\n" % 200).to_ascii_buffer())
-			#connection.put_data(load_HTML("res://OAuth2/display_page.html").to_ascii_buffer())
+			connection.put_data(load_html("res://asset/html/login_success.html").to_ascii_buffer())
 			redirect_server.stop()
 
 

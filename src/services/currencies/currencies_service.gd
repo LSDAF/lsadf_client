@@ -39,6 +39,14 @@ func get_amethyst_value() -> int:
 	return _currency_data.amethyst.get_value()
 
 
+func get_emerald_value() -> int:
+	return _currency_data.emerald.get_value()
+
+
+func connect_emerald_updated(callback: Callable) -> void:
+	_currency_data.emerald.updated.connect(callback)
+
+
 func connect_amethyst_updated(callback: Callable) -> void:
 	_currency_data.amethyst.updated.connect(callback)
 

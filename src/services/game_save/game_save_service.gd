@@ -77,6 +77,7 @@ func load_game_save(game_save_id: String) -> void:
 	)
 	_stage_service.set_current_stage(fetched_stage.current_stage)
 	_stage_service.set_max_stage(fetched_stage.max_stage)
+	_stage_service.set_current_wave(fetched_stage.wave)
 
 
 func save_game() -> void:
@@ -135,14 +136,12 @@ func _save_currencies() -> bool:
 
 
 func _save_stage() -> bool:
-	var update_stage_dto := (
-		UpdateStageDto
-		. new(
-			{
-				"current_stage": _stage_service.get_current_stage(),
-				"max_stage": _stage_service.get_max_stage(),
-			}
-		)
+	var update_stage_dto := UpdateStageDto.new(
+		{
+			"current_stage": _stage_service.get_current_stage(),
+			"max_stage": _stage_service.get_max_stage(),
+			"wave": _stage_service.get_current_wave()
+		}
 	)
 
 	return await _stage_api.update_game_save_stage(

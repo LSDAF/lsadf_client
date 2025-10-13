@@ -6,15 +6,18 @@ signal token_ready(access_token: String, refresh_token: String)
 const UUID = preload("res://addons/uuid/uuid.gd")
 
 # Keycloak configuration constants
-const KEYCLOAK_SERVER: String = "https://keycloak.k8s.local"
 const REALM: String = "LSADF"
 const SCOPE: String = "openid profile email"
 
 # OAuth URLs
-const AUTH_URL: String = KEYCLOAK_SERVER + "/realms/" + REALM + "/protocol/openid-connect/auth"
-const TOKEN_URL: String = KEYCLOAK_SERVER + "/realms/" + REALM + "/protocol/openid-connect/token"
+const AUTH_URL: String = (
+	ApiRoutes.KEYCLOAK_SERVER + "/realms/" + REALM + "/protocol/openid-connect/auth"
+)
+const TOKEN_URL: String = (
+	ApiRoutes.KEYCLOAK_SERVER + "/realms/" + REALM + "/protocol/openid-connect/token"
+)
 const TOKEN_INFO_URL: String = (
-	KEYCLOAK_SERVER + "/realms/" + REALM + "/protocol/openid-connect/userinfo"
+	ApiRoutes.KEYCLOAK_SERVER + "/realms/" + REALM + "/protocol/openid-connect/userinfo"
 )
 
 const PORT := 31419
@@ -98,8 +101,6 @@ func get_token_from_auth(auth_code: String) -> void:
 	]
 
 	var body := "&".join(PackedStringArray(body_parts))
-
-# warning-ignore:return_value_discarded
 	var http_request := HTTPRequest.new()
 	add_child(http_request)
 	var now := Time.get_datetime_dict_from_system(true)
@@ -146,7 +147,6 @@ func refresh_tokens() -> bool:
 	]
 	var body := "&".join(PackedStringArray(body_parts))
 
-# warning-ignore:return_value_discarded
 	var http_request := HTTPRequest.new()
 	add_child(http_request)
 	var now: Dictionary = Time.get_date_dict_from_system(true)

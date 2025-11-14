@@ -23,16 +23,24 @@ func _init(
 
 func open_new_game_session(game_save_id: String) -> void:
 	if load_game_session_data():
-		print_debug("Found saved game session: %s" % _game_session_data._game_session_id)
-		if is_game_session_valid():
+		print_debug(
+			"Found saved game session: %s (game_save_id: %s)" % _game_session_data._game_session_id,
+			_game_session_data._game_save_id
+		)
+		if game_save_id != _game_session_data._game_save_id:
+			print_debug(
+				"Saved game session does not match current game save ID, requesting new one"
+			)
+		elif is_game_session_valid(game_save_id):
 			print_debug("Game session is still valid, using saved data")
 			return
-		print_debug("Saved game session expired, requesting new one")
+		else:
+			print_debug("Saved game session expired or invalid, requesting new one")
 
 	var fetched: GameSessionDto = await _game_session_api.open_new_game_session(
 		game_save_id, _on_fetch_game_session_error
 	)
-	_set_game_session_data_from_dto(fetched)
+	_set_game_session_data_from_dto(fetched, game_save_id)
 
 	print_debug(
 		"Game Session ID: %s" % _game_session_data._game_session_id,
@@ -48,7 +56,7 @@ func refresh_game_session() -> void:
 	var fetched: GameSessionDto = await _game_session_api.refresh_game_session(
 		_game_session_data._game_session_id, _on_fetch_game_session_error
 	)
-	_set_game_session_data_from_dto(fetched)
+	_set_game_session_data_from_dto(fetched, _game_session_data._game_save_id)
 	print_debug(
 		"Game Session ID: %s" % _game_session_data._game_session_id,
 		" (V%d)" % _game_session_data._version
@@ -84,11 +92,12 @@ func load_game_session_data() -> bool:
 	return true
 
 
-func is_game_session_valid() -> bool:
+func is_game_session_valid(id: String) -> bool:
 	if (
 		_game_session_data._game_session_id.is_empty()
 		or _game_session_data._end_time == null
 		or _game_session_data._end_time.is_empty()
+		or _game_session_data._game_save_id != id
 	):
 		return false
 
@@ -100,15 +109,19 @@ func is_game_session_valid() -> bool:
 	return DateUtils.compare_datetime_dicts(end_time, now) > 0
 
 
-func _set_game_session_data_from_dto(game_session_dto: GameSessionDto) -> void:
+func _set_game_session_data_from_dto(
+	game_session_dto: GameSessionDto, game_save_id: String
+) -> void:
 	_game_session_data._game_session_id = game_session_dto.id
 	_game_session_data._end_time = Time.get_datetime_dict_from_datetime_string(
 		game_session_dto.end_time, false
 	)
 	_game_session_data._version = game_session_dto.version
+	_game_session_data._game_save_id = game_save_id
 
 
 func _set_game_session_data_from_resource(game_session_resource: GameSessionData) -> void:
 	_game_session_data._game_session_id = game_session_resource._game_session_id
 	_game_session_data._end_time = game_session_resource._end_time
 	_game_session_data._version = game_session_resource._version
+	_game_session_data._game_save_id = game_session_resource._game_save_id

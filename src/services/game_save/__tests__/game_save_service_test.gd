@@ -110,7 +110,9 @@ func test_load_game_save() -> void:
 	var fetched_currencies: CurrenciesDto = CurrenciesDto.new(
 		{"gold": 1000, "diamond": 2000, "emerald": 3000, "amethyst": 4000}
 	)
-	var fetched_stage: FetchStageDto = FetchStageDto.new({"current_stage": 100, "max_stage": 200})
+	var fetched_stage: FetchStageDto = FetchStageDto.new(
+		{"current_stage": 100, "max_stage": 200, "wave": 1}
+	)
 
 	var fetched_inventory: FetchInventoryDto = FetchInventoryDto.new([])
 
